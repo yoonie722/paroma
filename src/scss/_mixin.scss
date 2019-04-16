@@ -1,0 +1,99 @@
+@function calcRem($size) { /*Mobile용 믹스인*/
+  $remSize: $size / $font_def;
+  @return  #{$remSize}rem;
+}
+
+@function calcPercent($size, $defsize) { /*Mobile용 믹스인*/
+  $remSize: $size / $defsize;
+  @return percentage($remSize);
+}
+
+@mixin setFont($nm, $fileNm, $weight:100){
+  @font-face {
+    font-family: $nm;
+    font-weight: $weight;
+    font-display: block;
+    src: local("※"), url($font_url + $fileNm + ".woff2") format('woff2'),
+    local("※"), url($font_url + $fileNm + ".woff") format("woff");
+  }
+}
+
+@mixin fontfamily($weight:100){
+  font-family: $family;
+  font-weight:$weight;
+}
+
+@mixin bg($fileNm:null, $repeat:no-repeat, $bgPos:0 0, $bgSize:null, $bgColor:null){
+  background:$bgColor url($url + $fileNm + $version) $repeat $bgPos;
+  @if $bgSize != null {
+    background-size:$bgSize;
+  }
+}
+@mixin ellipsis($type:null,$num:2) {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  @if $type == multi {
+    white-space: normal;
+    word-wrap: break-word;
+    display:-webkit-box;
+    -webkit-line-clamp:$num;
+    -webkit-box-orient:vertical;
+  }@else{
+    white-space:nowrap;
+  }
+}
+
+@mixin clear($display:block){
+  display: $display;
+  clear: both;
+  content: "";
+}
+
+@mixin set_content($width:auto, $height:auto, $display:inline-block, $position:relative,  $color:null) {
+  content:"";
+  width:$width;
+  height:$height;
+  display:$display;
+  position:$position;
+  @if $color != null {
+    background:$color;
+  }
+}
+
+@mixin blind {
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -2000em;
+}
+
+
+@mixin ico_angle_vrt($direction: 'up', $width: 9px, $height: 15px, $thick: 2px, $color: #747474, $display: inline-block, $position: relative){
+  $size: floor($width/$sqrt_2 - 2*$thick);
+  $rate: 2*$height/$width;
+  content: '';
+  display: $display;
+  position: $position;
+  width: $size;
+  height: $size;
+  vertical-align: middle;
+  @if ($direction == 'left' or $direction == 'right') {
+    $margin-left: round($rate*$size/(2*$sqrt_2));
+    @if ($rate == 1) {
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg);
+    } @else {
+      -webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+      transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+    }
+    @if ($direction == 'left') {
+      margin-left: $margin-left;
+      border-left: $thick solid $color;
+      border-bottom: $thick solid $color;
+    } @else if ($direction == 'right') {
+      margin-left: - $margin-left;
+      border-top: $thick solid $color;
+      border-right: $thick solid $color;
+    }
+  }
+}
