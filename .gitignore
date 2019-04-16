@@ -1,0 +1,8 @@
+/dist
+/node_modules
+/src/config.rb
+*/css
+/old_html
+*.xml
+*/.idea
+*.iml
