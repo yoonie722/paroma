@@ -32,7 +32,7 @@
 ### 소프트웨어 WEB - PROT 100*
 1. GOM LAB - 반응형 
 2. GOM PRODUCT Web Version
-* 
+
 
 ### 소프트웨어 WEB PRODUCT - PROT 2000
 1. GOM Mix Web
