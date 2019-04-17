@@ -11,7 +11,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify');
 
 var paths = {
-  port:'8080',
+  port:'9001',
   input:'./src/**/*',
   output:'./dist/',
   html: {
