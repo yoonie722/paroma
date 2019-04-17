@@ -1,17 +1,11 @@
-image: node:8.10.0
+image: alpine:latest
 
 pages:
-  cache:
-    paths:
-    - node_modules/
-
+  stage: deploy
   script:
-  - npm install gulp -g
-  - npm install
-  - gulp build
-  - mv dist public
+  - echo 'Nothing to do...'
   artifacts:
     paths:
     - public
   only:
-    - master
+  - master
