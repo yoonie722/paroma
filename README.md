@@ -14,7 +14,7 @@
 * **github** - ui guide : https://gomui.github.io/guide/#body
 
 # 담당 프로젝트
-## 소프트웨어 사업실
+### 소프트웨어 사업실
 * GOM LAB - 반응형
 * GOM PRODUCT Web Version
 * GOM PRODUCT Web Veiw
@@ -26,11 +26,11 @@
 * gom & company pc
 * gom & company mobile
 
-## 플렛브레드
+### 플렛브레드
 * virx
 * vridge
 
-## ETC
+### ETC
 * Ait
 * kocowa - 반응형
 * kocowa mini web 
