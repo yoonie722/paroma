@@ -9,5 +9,5 @@
 # 구글, github 계정
 * **ID** : teamUIdev@gmail.com
 * **PW** : ui11ui!@
-* **github** : https://gomui.github.io/guide/#body
+* **github** : https://github.com/GomUI/guide
 * **github** - ui guide : https://gomui.github.io/guide/#body
