@@ -1,82 +1,34 @@
 <!DOCTYPE HTML>
 <html lang="ko">
 <include src="include/head.html" title="Index | UI Template">
-  <style type="text/css">
-    html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {margin:0; padding:0;}
-    body {font-family:NanumGothic,'나눔고딕',Dotum,"돋움",Gulim,"굴림",arial; font-size:12px; color:#3a3a3a; background:#fff;position: relative;}
-    h1{font-weight:bold;font-size:24px;color:#957963;padding:0px 0 30px;}
-    h2 {margin:50px 0 5px; font-size:14px; color:#000;}
-    table {border-collapse:collapse;}
-    ul, ol {list-style-type:none;}
-    #body_wrap {margin:0 auto; padding:50px 10px 80px; max-width:960px;}
-    .today {padding:20px 0; text-align:right;}
-    .desc_ul {padding:0;}
-    .desc_ul li {line-height:25px; font-size:13px;}
-    .desc_ul strong {color:#f87910;}
-    .tbl {width:100%; border-top:2px solid #ccc;}
-    .tbl th {padding:10px 0; background:#dadbdf; border-bottom:2px solid #ddd;}
-    .tbl td {text-align:center; padding:10px 0; line-height:18px; vertical-align:middle; border-bottom:1px solid #ddd;}
-    .tbl tr.del td {text-decoration:line-through; color:#ccc; background:#fafafa;}
-    .tbl tr.del td * {color:#aaa;}
-    .tbl .subj {text-align:left; padding-left:20px;}
-    .tbl .subj a {color:#957963;text-decoration: none;}
-    .tbl .subj a:hover {font-weight: bold;}
-    em {color:#f87910; font-weight: bold;margin-left: 5px; font-style: normal;}
-    .desc{font-size: 11px; color:#aaa;}
-  </style>
+<style type="text/css">
+  body{width: 1200px;margin: 0 auto; padding: 60px 0 100px; font-size: 16px; line-height: 2.5; color:#444444;}
+  h1{background: url('/img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 100px;margin: 0 auto 100px;line-height: 1;}
+  h3{margin-bottom:30px;font-size: 32px;line-height: 1;}
+  strong{font-weight: bold;}
+  .txt_blind{overflow: hidden; font-size: 0;line-height: 0;text-indent: -2000em;}
+  .red{color:#e53434;}
+  .blue{color:#2a84b0;}
+  .gom{color:#ff7600;}
+</style>
 </include>
 <body>
-<div id="body_wrap">
-  <h1>UI Template Index Page</h1>
-  <ul class="desc_ul">
-    <li>- <strong>IE10</strong> 이상, <strong>webkit</strong> 기반의 브라우저 (서브페이지에 들어가는 gnb도 동일합니다.)</li>
-    <li>- 신규 구축(메인) 페이지는 <strong>style.css</strong>로 제어합니다.</li>
-    <li>- UI개발에서 관리하는 스크립트 파일은 <strong>ui.js</strong></li>
-  </ul>
-  <h2>모듈</h2>
-  <table class="tbl">
-    <colgroup>
-      <col />
-      <col style="width:20%">
-      <col style="width:20%">
-    </colgroup>
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Modify</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td class="subj"><a href="module.html" target="_blank">모듈</a> <em class="new">new</em></td>
-      <td>19.04.16</td>
-      <td>-</td>
-    </tr>
-    </tbody>
-  </table>
-  <h2>메인</h2>
-  <table class="tbl">
-    <colgroup>
-      <col />
-      <col style="width:20%">
-      <col style="width:20%">
-    </colgroup>
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Modify</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td class="subj"><a href="00_main/main.html" target="_blank">메인</a> <em class="new">new</em></td>
-      <td>19.04.16</td>
-      <td>-</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+  <h1 class="txt_blind">logo</h1>
+  <section class="container">
+    <h2 class="blind">UI Guide</h2>
+    <article class="cont">
+      <h3>🐌 규칙</h3>
+      <ul class="lst">
+        <li>- 기본적인 <strong>웹 표준</strong>, <strong>접근성</strong>, <strong>SEO</strong>에 대한 개념을 숙지하고 있어야 합니다.</li>
+        <li>- 서비스별 <strong>코딩 규약과 특징</strong>을 정확히 구분하고 있어야 합니다.</li>
+        <li>- 기본 가이드를 벗어나는 코딩 방식을 선택할 때는 반드시 <strong>사전 협의</strong>가 있어야 합니다.</li>
+        <li>- 플러그인은 협의된 기본적인 것만 사용 추가로 사용시 반드시 <strong>사전 협의</strong>가 있어야합니다.</li>
+        <li>- HTML5, CSS, SCSS, svg, gulp, jquery-1.12.4(IE8 지원) 기준</li>
+        <li>- slick.js, Iscroll.js (일부 프로젝트는 bx슬라이드를 쓰지만 버그가 많아 slick 사용)</li>
+        <li>- 신규 구축 시 <strong>UI 템플릿</strong> 사용</li>
+        <li>- style 기능별 모듈화 필수 (페이지별 모듈화는 사용하지 않는다)</li>
+      </ul>
+    </article>
+  </section>
 </body>
 </html>

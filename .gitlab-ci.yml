@@ -1,0 +1,17 @@
+image: alpine:latest
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+  - npm install gulp -g
+  - npm install
+  - gulp build
+  - mv dist public
+  artifacts:
+    paths:
+    - public
+  only:
+    - master

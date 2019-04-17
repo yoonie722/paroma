@@ -36,7 +36,7 @@ gulp.task('browserSync', function () {
     server:{
       baseDir: paths.html.output
     },
-    startPath:'./html/index.html'
+    startPath:'./html/ui_guide.html' //index.html 일반 프로젝트에서는 index.html 로 변경
   })
 });
 
