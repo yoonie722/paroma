@@ -12,3 +12,25 @@
 * **PW** : ui11ui!@
 * **github** : https://github.com/GomUI/guide
 * **github** - ui guide : https://gomui.github.io/guide/#body
+
+# 담당 프로젝트
+## 소프트웨어 사업실
+* GOM LAB - 반응형
+* GOM PRODUCT Web Version
+* GOM PRODUCT Web Veiw
+## 컨텐츠 사업실
+* GOMTV
+* GOMTV Mobile
+* GOMTV Mini web
+* nmp
+* gom & company pc
+* gom & company mobile
+
+## 플렛브레드
+* virx
+* vridge
+
+## ETC
+* Ait
+* kocowa - 반응형
+* kocowa mini web 
