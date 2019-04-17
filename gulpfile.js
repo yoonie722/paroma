@@ -13,18 +13,18 @@ var gulp = require('gulp'),
 var paths = {
   port:'8080',
   input:'./src/**/*',
-  output:'./public/',
+  output:'./dist/',
   html: {
     input: './src/**/*.html',
-    output: './public/'
+    output: './dist/'
   },
   style:{
     input:'./src/scss/*.scss',
-    output:'./public/css'
+    output:'./dist/css'
   },
   js: {
     input : './src/ui_js/*.js',
-    output : './public/ui_js/'
+    output : './dist/ui_js/'
   }
 };
 
