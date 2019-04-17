@@ -29,34 +29,33 @@
 * **github** - ui guide : https://gomui.github.io/guide/#body
 
 # 담당 프로젝트
-### 소프트웨어 WEB - 1000
-* GOM LAB - 반응형 
-* GOM PRODUCT Web Version
-* GOM PRODUCT Web Veiw
+### 소프트웨어 WEB - PROT 1000
+1 GOM LAB - 반응형 
+2 GOM PRODUCT Web Version
 * 
 
-### 소프트웨어 WEB PRODUCT - 2000
-* GOM Mix Web
+### 소프트웨어 WEB PRODUCT - PROT 2000
+1 GOM Mix Web
 
-## GOMTV - 3000 
-* GOMTV (마크업 없음)
-* GOMTV Mobile
-* GOMTV Mini web
-* nmp
-
-
-## GOMTV - 4000 
-* gom & company pc
-* gom & company mobile
-
-### kocowa - 5000
-* kocowa - 반응형
-* kocowa mini web 
+## GOMTV - PROT 3000 
+1 GOMTV (마크업 없음 히스토리 쌓는 중)
+2 GOMTV Mobile
+3 GOMTV Mini web
+4 nmp
 
 
-### 플렛브레드 - 6000
-* virx
-* vridge
+## GOMTV - PROT 4000 
+1 gom & company pc
+2 gom & company mobile
+
+### kocowa - PROT 5000
+1 kocowa - 반응형
+2 kocowa mini web 
+
+
+### 플렛브레드 - PROT 6000
+1 virx
+2 vridge
  
-### ETC - 9000
-* Ait
+### ETC - PROT 9000
+1 Ait
