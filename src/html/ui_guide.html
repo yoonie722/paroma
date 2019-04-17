@@ -2,10 +2,10 @@
 <html lang="ko">
 <include src="include/head.html" title="Index | UI Template">
 <style type="text/css">
-  body{width: 1200px;margin: 0 auto; padding: 60px 0 100px; font-size: 16px; line-height: 2.5; color:#444444;}
+  body{width: 1200px;margin: 0 auto; padding: 60px 0 100px; font-size: 16px; line-height: 2.5; color:#444444;position: relative;}
   .logo{background: url('/img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 100px;margin: 0 auto 50px;line-height: 1;}
   h2{margin-bottom:30px;font-size: 32px;line-height: 1;}
-  h3{margin:40px 0 20px;font-size: 24px;line-height: 1;}
+  h3{margin:50px 0 30px;font-size: 24px;line-height: 1;}
   strong{font-weight: bold;}
   .cont{padding:100px 0;}
   .cont+.cont{border-top: 1px  solid #e1e1e1;}
@@ -14,14 +14,35 @@
   .blue{color:#2a84b0;}
   .gom{color:#ff7600;}
   .ex{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
+  pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
+  .code{line-height: 2;}
+  nav{margin: 100px 0 -50px;text-align: right;}
+  nav li{display: inline-block; line-height: 1;}
+  nav li:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
+  nav li:first-child:before{display: none;}
+  .quick{position: fixed; bottom: 30px; right: 50px;width: 60px;}
+  .quick a{width:100%; display:block; padding: 10px 0; text-align:center;line-height: 1; background: rgba(0,0,0, 0.6); color: #fff;border-bottom: 1px solid #fff; font-size: 12px;}
 </style>
 </include>
-<body>
+<body  id="body">
+  <ul class="quick">
+    <li><a href="#body">Top</a></li>
+    <li><a href="#footer">Down</a></li>
+  </ul>
   <div class="logo txt_blind">logo</div>
+  <nav>
+    <ul>
+      <li><a href="#common">공통</a></li>
+      <li><a href="#naming">Naming</a></li>
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#style">스타일</a></li>
+      <li><a href="#style">스타일</a></li>
+    </ul>
+  </nav>
   <section class="container">
     <h1 class="blind">UI Guide</h1>
-    <article class="cont">
-      <h2>🐌 공통 규칙</h2>
+    <article id="common" class="cont">
+      <h2>🐌 공통</h2>
       <ul class="lst">
         <li>- 기본적인 <strong>웹 표준</strong>, <strong>접근성</strong>, <strong>SEO</strong>에 대한 개념을 숙지하고 있어야 합니다.</li>
         <li>- 서비스별 <strong>코딩 규약과 특징</strong>을 정확히 구분하고 있어야 합니다.</li>
@@ -34,8 +55,8 @@
         <li>- css해결 가능한건 css에서 해결, js는 꼭 필요한 경우에 적용</li>
       </ul>
     </article>
-    <article class="cont">
-      <h2>🐌 Naming 규칙</h2>
+    <article id="naming" class="cont">
+      <h2>🐌 Naming</h2>
       <ul class="lst">
         <li>
           -  이름 맨 앞에 특수문자, 숫자는 사용안됨 (마크업 폴더 예외)
@@ -48,8 +69,8 @@
         <li>- <strong>형태_ 의미_상태</strong> 3단계를 넘어가지 않게 작성</li>
       </ul>
     </article>
-    <article class="cont">
-      <h2>🐌 HTML 규칙 - gulp 기준</h2>
+    <article id="html" class="cont">
+      <h2>🐌 HTML - gulp 기준</h2>
       <ul class="lst">
         <li>
           -  시멘틱 태그 사용
@@ -64,7 +85,74 @@
         </li>
         <li>- 다국어페이지 같은 경우 1가지 마크업으로 적용(서비스하는 모든 언어에서 작업할수있게 작업)</li>
       </ul>
+      <h3>폴더 구조</h3>
+      <pre>
+src
+├── scss     <span class="blue">//disk/min 폴더에 생성된 css 업로드 (map은 배포 안함)</span>
+├── font
+├── img
+├── ui_js    <span class="blue">//disk/min 폴더에 생성된 js 업로드</span>
+    └── ui.js
+└── html
+    ├── index.html     <span class="blue"> //마크업 리스트</span>
+    ├── module.html    <span class="blue"> //모듈</span>
+    ├── 0*_서비스명
+    ├── 의미.html
+    └── include
+      ├── head.html
+      ├── header.html
+      ├── footer.html
+      ├── location.html
+      ├── paging.html
+      └── pop
+</pre>
+      <h3>Head.html</h3>
+<pre class="code">
+&lt;head&gt;
+  ...
+  &lt;title&gt; @@ title <span class="blue">[페이지명 | 사이트명]</span> &lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="//www.gomcorp.com/ui/pc/css/style.css?v1904011"&gt;
+        &lt;!--&lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;--&gt;
+  &lt;script type="text/javascript" src="//www.gomcorp.com/ui/pc/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="//www.gomcorp.com/ui/pc/js/ui_jquery.js?v1904010"&gt;&lt;/script&gt;
+        &lt;!-- &lt;script type="text/javascript" src="/js/ui_jquery.js"&gt;&lt;/script&gt; --&gt;
+  @@ content  <span class="blue">[페이지별 사용 되는 스크립트]</span>
+&lt;/head&gt;
+</pre>
+    </article>
+    <article id="style" class="cont">
+      <h2>🐌 스타일</h2>
+      <ul class="lst">
+        <li>- 전처리 도구는 scss를 사용</li>
+        <li>
+          - <span class="blue">autoprefixer</span>는 gulp 빌드 시 자동으로 추가
+          <p class="ex">souremap이 안맞아서, min 폴더 안에 있는 css에만 적용</p>
+        </li>
+        <li>- <span class="blue">reset</span>에는 페이지 구성에 가장 기본적인 것만 넣는다.(모든 프로젝트 공통으로 사용 가능)</li>
+        <li>
+          - 이미지 버전 관리는 <span class="blue">...?v=날짜</span>
+          <p class="ex">실서버 적용 후 사용안하는 이미지는 삭제 해야되는데, 자주 누락 되서 캐싱 처리 방법으로 변경</p>
+        </li>
+        <li>- id는 반드시 유니크 해야한다.</li>
+        <li>- id는 퀵네비 또는 페이지내 이동 시를 제외하고 사용하지 않는다.</li>
+        <li>- id는 camelcase 방식으로 하며, class는 underscore 방식으로 사용한다.</li>
+        <li>
+          -  헷갈릴 소제가 있는 이름 경우 절대 단독클레스로 사용하지 않는다(전역사용 x, 중복클레스사용 o)
+          <p class="ex">ex) left, right, top, bottom, big, box 등 (x)  .btn.big, cont.left(o)</p>
+        </li>
+        <li>
+          - class 이름은 기능을 알수있게 명확하게 표시
+          <p class="ex">ex) tbl1 (x), `tbl board(o)`</p>
+        </li>
+        <li>
+          - 공통요소는 common.ccss
+          <p class="ex">ex) common에 있는것들은 예외는 되도록 만들지 않는다.</p>
+        </li>
+        <li>- 공통으로 사용 되는 스타일 코드는 mixin.scss의 function, mixin 참고</li>
+        <li>- 임시 이미지는 temp_*.* 사용 후 실서비스 적용 후 삭제</li>
+      </ul>
     </article>
   </section>
+  <div id="footer"></div>
 </body>
 </html>
