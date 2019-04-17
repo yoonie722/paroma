@@ -6,7 +6,7 @@
     네이밍, 파일구조, css, jqure 가이드
 * 반드시 확인 후 작업 부탁드립니다.
 
-#구글, github 계정
+# 구글, github 계정
 * **ID** : teamUIdev@gmail.com
 * **PW** : ui11ui!@
 * **github** : https://gomui.github.io/guide/#body
