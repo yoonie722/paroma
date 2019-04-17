@@ -13,9 +13,8 @@
 
     GITLAB 세팅 되어있지 않는 프로젝트인 경우 추가하거나 공유 폴더에 업로드 해야합니다.
 
-`* 컨텐츠 UI개발은 분리 되어 해당 문서에 추가를 작성 안함`
 
-### ftp co : `아나바다` (2018-09)
+`* ftp co : `아나바다` (2018-09)
 
 # UI 가이드
 * [https://gomui.github.io/guide/#body](https://gomui.github.io/guide/)
