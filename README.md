@@ -44,7 +44,7 @@
 4. nmp
 
 
-## GOMTV - PROT 400* 
+## GOM&Company - PROT 400* 
 1. gom & company pc
 2. gom & company mobile
 
