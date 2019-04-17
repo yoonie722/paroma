@@ -3,21 +3,25 @@
 <include src="include/head.html" title="Index | UI Template">
 <style type="text/css">
   body{width: 1200px;margin: 0 auto; padding: 60px 0 100px; font-size: 16px; line-height: 2.5; color:#444444;}
-  h1{background: url('/img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 100px;margin: 0 auto 100px;line-height: 1;}
-  h3{margin-bottom:30px;font-size: 32px;line-height: 1;}
+  .logo{background: url('/img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 100px;margin: 0 auto 50px;line-height: 1;}
+  h2{margin-bottom:30px;font-size: 32px;line-height: 1;}
+  h3{margin:40px 0 20px;font-size: 24px;line-height: 1;}
   strong{font-weight: bold;}
+  .cont{padding:100px 0;}
+  .cont+.cont{border-top: 1px  solid #e1e1e1;}
   .txt_blind{overflow: hidden; font-size: 0;line-height: 0;text-indent: -2000em;}
   .red{color:#e53434;}
   .blue{color:#2a84b0;}
   .gom{color:#ff7600;}
+  .ex{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
 </style>
 </include>
 <body>
-  <h1 class="txt_blind">logo</h1>
+  <div class="logo txt_blind">logo</div>
   <section class="container">
-    <h2 class="blind">UI Guide</h2>
+    <h1 class="blind">UI Guide</h1>
     <article class="cont">
-      <h3>🐌 규칙</h3>
+      <h2>🐌 공통 규칙</h2>
       <ul class="lst">
         <li>- 기본적인 <strong>웹 표준</strong>, <strong>접근성</strong>, <strong>SEO</strong>에 대한 개념을 숙지하고 있어야 합니다.</li>
         <li>- 서비스별 <strong>코딩 규약과 특징</strong>을 정확히 구분하고 있어야 합니다.</li>
@@ -27,6 +31,38 @@
         <li>- slick.js, Iscroll.js (일부 프로젝트는 bx슬라이드를 쓰지만 버그가 많아 slick 사용)</li>
         <li>- 신규 구축 시 <strong>UI 템플릿</strong> 사용</li>
         <li>- style 기능별 모듈화 필수 (페이지별 모듈화는 사용하지 않는다)</li>
+        <li>- css해결 가능한건 css에서 해결, js는 꼭 필요한 경우에 적용</li>
+      </ul>
+    </article>
+    <article class="cont">
+      <h2>🐌 Naming 규칙</h2>
+      <ul class="lst">
+        <li>
+          -  이름 맨 앞에 특수문자, 숫자는 사용안됨 (마크업 폴더 예외)
+          <p class="ex">ex) 1img_noti (x), img_noti (o)</p>
+        </li>
+        <li>
+          - 넘버링은 이름 다름 바로
+          <p class="ex">ex) img_noti_02 (x), img_noti1 (o)</p>
+        </li>
+        <li>- <strong>형태_ 의미_상태</strong> 3단계를 넘어가지 않게 작성</li>
+      </ul>
+    </article>
+    <article class="cont">
+      <h2>🐌 HTML 규칙 - gulp 기준</h2>
+      <ul class="lst">
+        <li>
+          -  시멘틱 태그 사용
+          <p class="ex">웹접근성, 웹표준, seo 준수</p>
+        </li>
+        <li>
+          - 비슷한 형태는 따로 파일을 만들지 않고 gulp 기능을 이용하여 처리
+          <p class="ex">ex) header_main(x), tit = "회사소개" @@tit (o)</p>
+        </li>
+        <li>
+          - 다른 팀원과 같이 작업이 가능하게 모듈페이지 작성
+        </li>
+        <li>- 다국어페이지 같은 경우 1가지 마크업으로 적용(서비스하는 모든 언어에서 작업할수있게 작업)</li>
       </ul>
     </article>
   </section>
