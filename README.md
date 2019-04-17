@@ -29,23 +29,34 @@
 * **github** - ui guide : https://gomui.github.io/guide/#body
 
 # 담당 프로젝트
-### 소프트웨어 사업실
-* GOM LAB - 반응형
+### 소프트웨어 WEB - 1000
+* GOM LAB - 반응형 
 * GOM PRODUCT Web Version
 * GOM PRODUCT Web Veiw
-## 컨텐츠 사업실
+* 
+
+### 소프트웨어 WEB PRODUCT - 2000
+* GOM Mix Web
+
+## GOMTV - 3000 
 * GOMTV (마크업 없음)
 * GOMTV Mobile
 * GOMTV Mini web
 * nmp
+
+
+## GOMTV - 4000 
 * gom & company pc
 * gom & company mobile
 
-### 플렛브레드
-* virx
-* vridge
-
-### ETC
-* Ait
+### kocowa - 5000
 * kocowa - 반응형
 * kocowa mini web 
+
+
+### 플렛브레드 - 6000
+* virx
+* vridge
+ 
+### ETC - 9000
+* Ait
