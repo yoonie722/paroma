@@ -4,7 +4,7 @@
 <style type="text/css">
   body{width: 1200px;margin: 0 auto; padding: 60px 0 100px; font-size: 16px; line-height: 2.5; color:#444444;position: relative;}
   .logo{background: url('/img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 100px;margin: 0 auto 50px;line-height: 1;}
-  h2{margin-bottom:30px;font-size: 32px;line-height: 1;}
+  h2{margin-bottom:40px;font-size: 32px;line-height: 1;}
   h3{margin:50px 0 30px;font-size: 24px;line-height: 1;}
   strong{font-weight: bold;}
   .cont{padding:100px 0;}
@@ -14,14 +14,17 @@
   .blue{color:#2a84b0;}
   .gom{color:#ff7600;}
   .ex{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
-  pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
   .code{line-height: 2;}
+  pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
   nav{margin: 100px 0 -50px;text-align: right;}
   nav li{display: inline-block; line-height: 1;}
   nav li:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
   nav li:first-child:before{display: none;}
   .quick{position: fixed; bottom: 30px; right: 50px;width: 60px;}
   .quick a{width:100%; display:block; padding: 10px 0; text-align:center;line-height: 1; background: rgba(0,0,0, 0.6); color: #fff;border-bottom: 1px solid #fff; font-size: 12px;}
+  .tbl th{background: #efefef;border-top: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
+  .tbl td{padding: 10px 20px;border-bottom: 1px solid #e0e0e0;}
+  .tbl tr{}
 </style>
 </include>
 <body  id="body">
@@ -43,7 +46,7 @@
     <h1 class="blind">UI Guide</h1>
     <article id="common" class="cont">
       <h2>🐌 공통</h2>
-      <ul class="lst">
+      <ul class="list">
         <li>- 기본적인 <strong>웹 표준</strong>, <strong>접근성</strong>, <strong>SEO</strong>에 대한 개념을 숙지하고 있어야 합니다.</li>
         <li>- 서비스별 <strong>코딩 규약과 특징</strong>을 정확히 구분하고 있어야 합니다.</li>
         <li>- 기본 가이드를 벗어나는 코딩 방식을 선택할 때는 반드시 <strong>사전 협의</strong>가 있어야 합니다.</li>
@@ -57,7 +60,7 @@
     </article>
     <article id="naming" class="cont">
       <h2>🐌 Naming</h2>
-      <ul class="lst">
+      <ul class="list">
         <li>
           -  이름 맨 앞에 특수문자, 숫자는 사용안됨 (마크업 폴더 예외)
           <p class="ex">ex) 1img_noti (x), img_noti (o)</p>
@@ -71,7 +74,7 @@
     </article>
     <article id="html" class="cont">
       <h2>🐌 HTML - gulp 기준</h2>
-      <ul class="lst">
+      <ul class="list">
         <li>
           -  시멘틱 태그 사용
           <p class="ex">웹접근성, 웹표준, seo 준수</p>
@@ -122,7 +125,7 @@ src
     </article>
     <article id="style" class="cont">
       <h2>🐌 스타일</h2>
-      <ul class="lst">
+      <ul class="list">
         <li>- 전처리 도구는 scss를 사용</li>
         <li>
           - <span class="blue">autoprefixer</span>는 gulp 빌드 시 자동으로 추가
@@ -151,6 +154,239 @@ src
         <li>- 공통으로 사용 되는 스타일 코드는 mixin.scss의 function, mixin 참고</li>
         <li>- 임시 이미지는 temp_*.* 사용 후 실서비스 적용 후 삭제</li>
       </ul>
+    </article>
+    <article>
+      <h2>🐌 Prefix</h2>
+      <table class="tbl">
+        <colgroup>
+          <col style="width: 20%;">
+          <col style="width: 30%;">
+          <col style="">
+        </colgroup>
+        <thead>
+        <tr>
+          <th scope="col">분류</th>
+          <th scope="col">prefix</th>
+          <th scope="col">부가설명</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>타이틀</td>
+          <td>tit</td>
+          <td>일반적인 타이틀</td>
+        </tr>
+        <tr>
+          <td rowspan="3">영역</td>
+          <td>section</td>
+          <td>제목 태그(Heading Tag)를 지닌 영역 구분 (선택적 사용, 중첩사용 지양)</td>
+        </tr>
+        <tr>
+          <td>wrap</td>
+          <td>일반 영역의 묶음 (선택적 사용, 중첩사용 지양)</td>
+        </tr>
+        <tr>
+          <td>inner</td>
+          <td>부모 wrapper 가 존재하며 자식 묶음이 단독으로 필요한 경우</td>
+        </tr>
+        <tr>
+          <td rowspan="3">내비게이션</td>
+          <td>gnb</td>
+          <td>서비스 전체 내비게이션</td>
+        </tr>
+        <tr>
+          <td>lnb</td>
+          <td>지역 내비게이션(gnb 영역)</td>
+        </tr>
+        <tr>
+          <td>snb</td>
+          <td>사이드 내비게이션(좌측메뉴)</td>
+        </tr>
+        <tr>
+          <td>패딩 여백 없음</td>
+          <td>nopd</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>list에서 데이터가 없을때</td>
+          <td>nodata</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>탭</td>
+          <td>tab</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>테이블</td>
+          <td>tbl</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>목록</td>
+          <td>list</td>
+          <td>일반 목록(ul, ol, 리스트 형식의 dl)</td>
+        </tr>
+        <tr>
+          <td rowspan="3">폼</td>
+          <td>inp</td>
+          <td>input 타입 radio, checkbox, file 등</td>
+        </tr>
+        <tr>
+          <td>selc</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>label</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>버튼 박스</td>
+          <td>btn</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>버튼</td>
+          <td>btns</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>박스</td>
+          <td>bx</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>아이콘 박스</td>
+          <td>btn</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>아이콘</td>
+          <td>ico</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>배경</td>
+          <td>bg</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>섬네일 이미지</td>
+          <td>thum</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>페이징</td>
+          <td>paging</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>배너</td>
+          <td>bnr</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="5">텍스트</td>
+          <td>txt</td>
+          <td>일반 텍스트</td>
+        </tr>
+        <tr>
+          <td>bar</td>
+          <td> | 구분선 텍스트</td>
+        </tr>
+        <tr>
+          <td>num</td>
+          <td>ex) num1, num2, ... - 숫자 사용 시 언더바(underscore) 사용 X</td>
+        </tr>
+        <tr>
+          <td>copyright</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>time</td>
+          <td>날짜 및 시간</td>
+        </tr>
+        <tr>
+          <td rowspan="2">링크</td>
+          <td>link</td>
+          <td>일반 링크</td>
+        </tr>
+        <tr>
+          <td>more</td>
+          <td>더 보기 링크</td>
+        </tr>
+        <tr>
+          <td>팝업 박스</td>
+          <td>pop</td>
+          <td>dim과 각 팝업을 포함한다.</td>
+        </tr>
+        <tr>
+          <td>팝업</td>
+          <td>pop_팝업이름</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>레이어</td>
+          <td>layer</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>광고</td>
+          <td>ad</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>상세내용</td>
+          <td>desc</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>댓글</td>
+          <td>cmt</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>위치변화</td>
+          <td>top/mid/bot/left/right</td>
+          <td>지역 or 중복클래스로 사용</td>
+        </tr>
+        <tr>
+          <td>화살표</td>
+          <td>arr_*</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>방향</td>
+          <td>hori/vert</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>카테고리</td>
+          <td>cate</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>순위</td>
+          <td>rank</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>이전</td>
+          <td>prev</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>다음</td>
+          <td>next</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>요소 숨기기</td>
+          <td>blide</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
     </article>
   </section>
   <div id="footer"></div>
