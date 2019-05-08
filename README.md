@@ -56,6 +56,7 @@
 ### 플렛브레드 - PROT 600*
 1. virx
 2. vridge
+3. player
  
 ### ETC - PROT 900*
 1. UI Template
