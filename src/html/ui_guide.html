@@ -14,6 +14,7 @@
   .blue{color:#2a84b0;}
   .gom{color:#ff7600;}
   .ex{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
+  .howto{line-height:1.7; font-size: 14px; color: #777;margin: 3px 0 0 11px;}
   .code{line-height: 2;}
   pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
   nav{margin: 100px 0 -50px;text-align: right;}
@@ -40,6 +41,7 @@
       <li><a href="#html">HTML</a></li>
       <li><a href="#style">스타일</a></li>
       <li><a href="#style">스타일</a></li>
+      <li><a href="#compression">이미지 압축</a></li>
     </ul>
   </nav>
   <section class="container">
@@ -382,6 +384,29 @@ src
         </tr>
         </tbody>
       </table>
+    </article>
+
+    <article id="compression" class="cont">
+      <h2>🐌 이미지 압축</h2>
+      <ul>
+        <li>
+          - JPEG: Photoshop - Save for Web 사용<br/>
+          <p class="howto">
+            Option<br/>
+            1) <b>Preset</b>: JPEG High (quality 60%) Optimized.<br/>
+            2) <b>Metadata</b>: None. 사진에 대한 정보가 필요하지 않으므로 메타데이터는 저장하지 않는다.
+          </p>
+          <br/>
+        </li>
+        <li>
+          - SVG: <a href="https://jakearchibald.github.io/svgomg/" style="text-decoration: underline;" target="_blank">https://jakearchibald.github.io/svgomg/</a> 사용<br/>
+          <p class="howto">
+            Option<br/>
+            1) <b>Precision</b>: 대부분 1~2, 간혹 깨지는 경우 더 높게 조정한다. 미리보기 화면을 확인하며 깨지지 않는 선에서 최대한 압축률을 낮게 조정한다.<br/>
+            2) <b>Remove viewBox</b> 체크를 풀어서 viewBox가 삭제되지 않아야 css로 width를 조정할 수 있다.
+          </p>
+        </li>
+      </ul>
     </article>
   </section>
   <div id="footer"></div>
