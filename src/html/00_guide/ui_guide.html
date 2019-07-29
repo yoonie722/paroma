@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<include src="../include/head.html" title="Index | UI Template">
+  <style type="text/css">
+    body{width: 1200px;margin: 0 auto; padding: 60px 50px 100px; box-sizing: border-box; font-size: 16px; line-height: 2.5; color:#444444;position: relative;}
+    .logo{background: url('/img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 110px;margin: 0 auto 50px;line-height: 1;}
+    h2{margin-bottom:40px;font-size: 32px;line-height: 1;}
+    h3{margin:50px 0 30px;font-size: 24px;line-height: 1;}
+    strong{font-weight: bold;}
+    .cont{padding:100px 0;}
+    .cont+.cont{border-top: 1px  solid #e1e1e1;}
+    .txt_blind{overflow: hidden; font-size: 0;line-height: 0;text-indent: -2000em;}
+    .red{color:#e53434;}
+    .blue{color:#2a84b0;}
+    .gom{color:#ff7600;}
+    .ex{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
+    .howto{line-height:1.7; font-size: 14px; color: #777;margin: 3px 0 0 11px;}
+    .code{line-height: 2;}
+    pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
+    nav{margin: 100px 0 -50px;text-align: right;}
+    nav li{display: inline-block; line-height: 1;}
+    nav li:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
+    nav li:first-child:before{display: none;}
+    .quick{position: fixed; bottom: 30px; right: 50px;width: 60px;}
+    .quick a{width:100%; display:block; padding: 10px 0; text-align:center;line-height: 1; background: rgba(0,0,0, 0.6); color: #fff;border-bottom: 1px solid #fff; font-size: 12px;}
+    .tbl th{background: #efefef;border-top: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
+    .tbl td{padding: 10px 20px;border-bottom: 1px solid #e0e0e0;}
+  </style>
+</include>
+<body  id="body">
+<ul class="quick">
+  <li><a href="#body">Top</a></li>
+  <li><a href="#footer">Down</a></li>
+</ul>
+<div class="logo txt_blind">logo</div>
+<nav>
+  <ul>
+    <li><a href="#common">공통</a></li>
+    <li><a href="#naming">Naming</a></li>
+    <li><a href="#html">HTML</a></li>
+    <li><a href="#style">스타일</a></li>
+    <li><a href="#style">스타일</a></li>
+    <li><a href="#compression">이미지 압축</a></li>
+  </ul>
+</nav>
+<section class="container">
+  <h1 class="blind">GOM & Company<br>UI Guide</h1>
+  <article id="common" class="cont">
+    <h2>🐌 공통</h2>
+    <ul class="list">
+      <li>- 기본적인 <strong>웹 표준</strong>, <strong>접근성</strong>, <strong>SEO</strong>에 대한 개념을 숙지하고 있어야 합니다.</li>
+      <li>- 서비스별 <strong>코딩 규약과 특징</strong>을 정확히 구분하고 있어야 합니다.</li>
+      <li>- 기본 가이드를 벗어나는 코딩 방식을 선택할 때는 반드시 <strong>사전 협의</strong>가 있어야 합니다.</li>
+      <li>- 플러그인은 협의된 기본적인 것만 사용 추가로 사용시 반드시 <strong>사전 협의</strong>가 있어야합니다.</li>
+      <li>- HTML5, CSS, SCSS, svg, gulp, jquery-1.12.4(IE8 지원) 기준</li>
+      <li>- slick.js, Iscroll.js (일부 프로젝트는 bx슬라이드를 쓰지만 버그가 많아 slick 사용)</li>
+      <li>- 신규 구축 시 <strong>UI 템플릿</strong> 사용</li>
+      <li>- style 기능별 모듈화 필수 (페이지별 모듈화는 사용하지 않는다)</li>
+      <li>- css해결 가능한건 css에서 해결, js는 꼭 필요한 경우에 적용</li>
+    </ul>
+  </article>
+  <article id="naming" class="cont">
+    <h2>🐌 Naming</h2>
+    <ul class="list">
+      <li>
+        -  이름 맨 앞에 특수문자, 숫자는 사용안됨 (마크업 폴더 예외)
+        <p class="ex">ex) 1img_noti (x), img_noti (o)</p>
+      </li>
+      <li>
+        - 넘버링은 이름 다름 바로
+        <p class="ex">ex) img_noti_02 (x), img_noti1 (o)</p>
+      </li>
+      <li>- <strong>형태_ 의미_상태</strong> 3단계를 넘어가지 않게 작성</li>
+    </ul>
+  </article>
+  <article id="html" class="cont">
+    <h2>🐌 HTML - gulp 기준</h2>
+    <ul class="list">
+      <li>
+        -  시멘틱 태그 사용
+        <p class="ex">웹접근성, 웹표준, seo 준수</p>
+      </li>
+      <li>
+        - 비슷한 형태는 따로 파일을 만들지 않고 gulp 기능을 이용하여 처리
+        <p class="ex">ex) header_main(x), tit = "회사소개" @@tit (o)</p>
+      </li>
+      <li>
+        - 다른 팀원과 같이 작업이 가능하게 모듈페이지 작성
+      </li>
+      <li>- 다국어페이지 같은 경우 1가지 마크업으로 적용(서비스하는 모든 언어에서 작업할수있게 작업)</li>
+    </ul>
+    <h3>폴더 구조</h3>
+    <pre>
+src
+├── scss     <span class="blue">//disk/min 폴더에 생성된 css 업로드 (map은 배포 안함)</span>
+├── font
+├── img
+├── ui_js    <span class="blue">//disk/min 폴더에 생성된 js 업로드</span>
+    └── ui.js
+└── html
+    ├── index.html     <span class="blue"> //마크업 리스트</span>
+    ├── module.html    <span class="blue"> //모듈</span>
+    ├── 0*_서비스명
+    ├── 의미.html
+    └── include
+      ├── head.html
+      ├── header.html
+      ├── footer.html
+      ├── location.html
+      ├── paging.html
+      └── pop
+</pre>
+    <h3>Head.html</h3>
+    <pre class="code">
+&lt;head&gt;
+  ...
+  &lt;title&gt; @@ title <span class="blue">[페이지명 | 사이트명]</span> &lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="//www.gomcorp.com/ui/pc/css/style.css?v1904011"&gt;
+        &lt;!--&lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;--&gt;
+  &lt;script type="text/javascript" src="//www.gomcorp.com/ui/pc/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="//www.gomcorp.com/ui/pc/js/ui_jquery.js?v1904010"&gt;&lt;/script&gt;
+        &lt;!-- &lt;script type="text/javascript" src="/js/ui_jquery.js"&gt;&lt;/script&gt; --&gt;
+  @@ content  <span class="blue">[페이지별 사용 되는 스크립트]</span>
+&lt;/head&gt;
+</pre>
+  </article>
+  <article id="style" class="cont">
+    <h2>🐌 스타일</h2>
+    <ul class="list">
+      <li>- 전처리 도구는 scss를 사용</li>
+      <li>
+        - <span class="blue">autoprefixer</span>는 gulp 빌드 시 자동으로 추가
+        <p class="ex">souremap이 안맞아서, min 폴더 안에 있는 css에만 적용</p>
+      </li>
+      <li>- <span class="blue">reset</span>에는 페이지 구성에 가장 기본적인 것만 넣는다.(모든 프로젝트 공통으로 사용 가능)</li>
+      <li>
+        - 이미지 버전 관리는 <span class="blue">...?v=날짜</span>
+        <p class="ex">실서버 적용 후 사용안하는 이미지는 삭제 해야되는데, 자주 누락 되서 캐싱 처리 방법으로 변경</p>
+      </li>
+      <li>- id는 반드시 유니크 해야한다.</li>
+      <li>- id는 퀵네비 또는 페이지내 이동 시를 제외하고 사용하지 않는다.</li>
+      <li>- id는 camelcase 방식으로 하며, class는 underscore 방식으로 사용한다.</li>
+      <li>
+        -  헷갈릴 소제가 있는 이름 경우 절대 단독클레스로 사용하지 않는다(전역사용 x, 중복클레스사용 o)
+        <p class="ex">ex) left, right, top, bottom, big, box 등 (x)  .btn.big, cont.left(o)</p>
+      </li>
+      <li>
+        - class 이름은 기능을 알수있게 명확하게 표시
+        <p class="ex">ex) tbl1 (x), `tbl board(o)`</p>
+      </li>
+      <li>
+        - 공통요소는 common.ccss
+        <p class="ex">ex) common에 있는것들은 예외는 되도록 만들지 않는다.</p>
+      </li>
+      <li>- 공통으로 사용 되는 스타일 코드는 mixin.scss의 function, mixin 참고</li>
+      <li>- 임시 이미지는 temp_*.* 사용 후 실서비스 적용 후 삭제</li>
+    </ul>
+  </article>
+  <article>
+    <h2>🐌 Prefix</h2>
+    <table class="tbl">
+      <colgroup>
+        <col style="width: 20%;">
+        <col style="width: 30%;">
+        <col style="">
+      </colgroup>
+      <thead>
+      <tr>
+        <th scope="col">분류</th>
+        <th scope="col">prefix</th>
+        <th scope="col">부가설명</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>타이틀</td>
+        <td>tit</td>
+        <td>일반적인 타이틀</td>
+      </tr>
+      <tr>
+        <td rowspan="3">영역</td>
+        <td>section</td>
+        <td>제목 태그(Heading Tag)를 지닌 영역 구분 (선택적 사용, 중첩사용 지양)</td>
+      </tr>
+      <tr>
+        <td>wrap</td>
+        <td>일반 영역의 묶음 (선택적 사용, 중첩사용 지양)</td>
+      </tr>
+      <tr>
+        <td>inner</td>
+        <td>부모 wrapper 가 존재하며 자식 묶음이 단독으로 필요한 경우</td>
+      </tr>
+      <tr>
+        <td rowspan="3">내비게이션</td>
+        <td>gnb</td>
+        <td>서비스 전체 내비게이션</td>
+      </tr>
+      <tr>
+        <td>lnb</td>
+        <td>지역 내비게이션(gnb 영역)</td>
+      </tr>
+      <tr>
+        <td>snb</td>
+        <td>사이드 내비게이션(좌측메뉴)</td>
+      </tr>
+      <tr>
+        <td>패딩 여백 없음</td>
+        <td>nopd</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>list에서 데이터가 없을때</td>
+        <td>nodata</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>탭</td>
+        <td>tab</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>테이블</td>
+        <td>tbl</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>목록</td>
+        <td>list</td>
+        <td>일반 목록(ul, ol, 리스트 형식의 dl)</td>
+      </tr>
+      <tr>
+        <td rowspan="3">폼</td>
+        <td>inp</td>
+        <td>input 타입 radio, checkbox, file 등</td>
+      </tr>
+      <tr>
+        <td>selc</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>버튼 박스</td>
+        <td>btns</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>버튼</td>
+        <td>btn</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>박스</td>
+        <td>bx</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>아이콘 박스</td>
+        <td>icos</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>아이콘</td>
+        <td>ico</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>배경</td>
+        <td>bg</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>섬네일 이미지</td>
+        <td>thum</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>페이징</td>
+        <td>paging</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>배너</td>
+        <td>bnr</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="5">텍스트</td>
+        <td>txt</td>
+        <td>일반 텍스트</td>
+      </tr>
+      <tr>
+        <td>bar</td>
+        <td> | 구분선 텍스트</td>
+      </tr>
+      <tr>
+        <td>num</td>
+        <td>ex) num1, num2, ... - 숫자 사용 시 언더바(underscore) 사용 X</td>
+      </tr>
+      <tr>
+        <td>copyright</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>time</td>
+        <td>날짜 및 시간</td>
+      </tr>
+      <tr>
+        <td rowspan="2">링크</td>
+        <td>link</td>
+        <td>일반 링크</td>
+      </tr>
+      <tr>
+        <td>more</td>
+        <td>더 보기 링크</td>
+      </tr>
+      <tr>
+        <td>팝업 박스</td>
+        <td>pop</td>
+        <td>dim과 각 팝업을 포함한다.</td>
+      </tr>
+      <tr>
+        <td>팝업</td>
+        <td>pop_팝업이름</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>레이어</td>
+        <td>layer</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>광고</td>
+        <td>ad</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>상세내용</td>
+        <td>desc</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>댓글</td>
+        <td>cmt</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>위치변화</td>
+        <td>top/mid/bot/left/right</td>
+        <td>지역 or 중복클래스로 사용</td>
+      </tr>
+      <tr>
+        <td>화살표</td>
+        <td>arr_*</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>카테고리</td>
+        <td>cate</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>순위</td>
+        <td>rank</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>이전</td>
+        <td>prev</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>다음</td>
+        <td>next</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>요소 숨기기</td>
+        <td>blind</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article id="compression" class="cont">
+    <h2>🐌 이미지 압축</h2>
+    <ul>
+      <li>
+        - JPEG: Photoshop - Save for Web 사용<br/>
+        <p class="howto">
+          Option<br/>
+          1) <b>Preset</b>: JPEG High (quality 60%) Optimized.<br/>
+          2) <b>Metadata</b>: None. 사진에 대한 정보가 필요하지 않으므로 메타데이터는 저장하지 않는다.
+        </p>
+        <br/>
+      </li>
+      <li>
+        - SVG: <a href="https://jakearchibald.github.io/svgomg/" style="text-decoration: underline;" target="_blank">https://jakearchibald.github.io/svgomg/</a> 사용<br/>
+        <p class="howto">
+          Option<br/>
+          1) <b>Precision</b>: 대부분 1~2, 간혹 깨지는 경우 더 높게 조정한다. 미리보기 화면을 확인하며 깨지지 않는 선에서 최대한 압축률을 낮게 조정한다.<br/>
+          2) <b>Remove viewBox</b> 체크를 풀어서 viewBox가 삭제되지 않아야 css로 width를 조정할 수 있다.
+        </p>
+      </li>
+    </ul>
+  </article>
+</section>
+<div id="footer"></div>
+</body>
+</html>
