@@ -2,236 +2,243 @@
 <html lang="ko">
 <include src="../include/head.html" title="Index | UI Template">
   <style type="text/css">
-    .horizon{display:block;width:100%;height:1px;margin:50px 0;background:#e1e1e1;}
     .ftp_ex{width:450px;margin: 10px 10px 10px 0;}
     p span {color: #f87910;}
+    .tbl {margin-bottom: 80px;}
+    .tbl td {word-break: break-all;}
   </style>
 </include>
 <body id="body" class="guide">
+<section class="container">
   <include src="include/quick.html"></include>
   <h1>Gom & Company UI Guide</h1>
-  <h1>🐌 FTP 정보</h1>
-  <img src="../../img/ftp1.png" alt="ftp 예시사진" class="ftp_ex">
-  <img src="../../img/ftp3.png" alt="ftp 예시사진" class="ftp_ex">
-  <p>- 로그온 유형은 위 예시 사진과 같이 <strong>키 파일, 비밀번호</strong> 두가지 입니다. 프로젝트 별로 로그온 유형이 다르니 참고해주세요.</p>
-  <img src="../../img/ftp2.png" alt="ftp 예시사진" class="ftp_ex">
-  <p>- <strong>리모트 디렉터리</strong>는 고급탭에서 설정 가능합니다.</p>
-  <div class="horizon"></div>
 
-  <p>* 곰티비 비밀번호 (컨텐츠 팀) : <span>__</span>!@dkdl09 <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<span>__</span>: 아(<span>djqfhej</span>)나(<span>folder</span>)바다 (항상 djqfhej id는 첫번째, folder id는 두번째 글자가 암호로 들어간다)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;위 암호는 3개월마다 변경 되는데 요즘은 불시에 변경됨, 접속이 안될시 컨텐츠팀 개발팀장님께 비밀번호 문의</p>
-  <p>* 키파일 경로: \\192.168.23.21\디자인lUI\UI\@UI_Guide\FTP</p><br>
+  <article class="cont">
+    <h2>🐌 FTP 정보</h2>
+    <img src="../../img/ftp1.png" alt="ftp 예시사진" class="ftp_ex">
+    <img src="../../img/ftp3.png" alt="ftp 예시사진" class="ftp_ex">
+    <p>- 로그온 유형은 위 예시 사진과 같이 <strong>키 파일, 비밀번호</strong> 두가지 입니다. 프로젝트 별로 로그온 유형이 다르니 참고해주세요.</p>
+    <img src="../../img/ftp2.png" alt="ftp 예시사진" class="ftp_ex">
+    <p>- <strong>리모트 디렉터리</strong>는 고급탭에서 설정 가능합니다.</p>
+  </article>
 
-  <h2>🐌 FTP</h2>
-  <table class="tbl">
-    <caption>FTP 정보 테이블</caption>
-    <colgroup>
-      <col style="width: 16%;">
-      <col style="width: 10%;">
-      <col style="width: 15%;">
-      <col style="width: 10%;">
-      <col style="width: 15%;">
-      <col style="width: 10%;">
-      <col style="width: auto;">
-    </colgroup>
-    <thead>
-    <tr>
-      <th></th>
-      <th>프로토콜</th>
-      <th>호스트</th>
-      <th>사용자</th>
-      <th>키파일</th>
-      <th>비밀번호</th>
-      <th>리모트 디렉터리</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><strong>곰랩(구버전/이미지 저장용)</strong></td>
-      <td>SFTP</td>
-      <td>34.192.176.169</td>
-      <td>ec2-user</td>
-      <td>gurupop-ec2.ppk</td>
-      <td>-</td>
-      <td>/data2/img.gomlab.com/htdocs</td>
-    </tr>
-    <tr>
-      <td><strong>곰랩(신규)</strong></td>
-      <td>SFTP</td>
-      <td>34.192.176.169</td>
-      <td>ec2-user</td>
-      <td>gurupop-ec2.ppk</td>
-      <td>-</td>
-      <td>/mnt/s3mnt-gomlab-img/www.gomlab.com/gomlab_v2/ui</td>
-    </tr>
-    <tr>
-      <td><strong>곰랩 제품페이지</strong></td>
-      <td>SFTP</td>
-      <td>34.192.176.169</td>
-      <td>ec2-user</td>
-      <td>gurupop-ec2.ppk</td>
-      <td>-</td>
-      <td>/mnt/s3mnt-gomlab-img/gomlab/ui</td>
-    </tr>
-    <tr>
-      <td><strong>곰믹스 웹</strong></td>
-      <td>SFTP</td>
-      <td>34.192.176.169</td>
-      <td>ec2-user</td>
-      <td>gurupop-ec2.ppk</td>
-      <td>-</td>
-      <td>/mnt/s3mnt-gomlab-img/www.gomlab.com/gomlab_v2/ui/gommixweb</td>
-    </tr>
-    <tr>
-      <td><strong>곰밈메이커</strong></td>
-      <td>SFTP</td>
-      <td>34.192.176.169</td>
-      <td>ec2-user</td>
-      <td>gurupop-ec2.ppk</td>
-      <td>-</td>
-      <td>/mnt/s3mnt-gomlab-img/www.gomlab.com/gomlab_v2/ui/gommeme</td>
-    </tr>
-    <tr>
-      <td><strong>곰소프트</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.199</td>
-      <td>folder</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/gomsoft</td>
-    </tr>
-    <tr>
-      <td><strong>곰앤컴퍼니 PC</strong></td>
-      <td>FTP</td>
-      <td>175.207.20.231</td>
-      <td>folder</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/www.gretech.com/htdocs/ui/pc</td>
-    </tr>
-    <tr>
-      <td><strong>곰앤컴퍼니 MOBILE</strong></td>
-      <td>FTP</td>
-      <td>175.207.20.231</td>
-      <td>folder</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/m.gomcorp.com/htdocs/ui</td>
-    </tr>
-    <tr>
-      <td><strong>코코와</strong></td>
-      <td>SFTP</td>
-      <td>13.114.87.13</td>
-      <td>ubuntu</td>
-      <td>kocowa_key.ppk</td>
-      <td>-</td>
-      <td>/s3mnt/ui</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 PC</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.199</td>
-      <td>djqfhej</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/neo_gomtv/images/event</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 MOBILE</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.199</td>
-      <td>djqfhej</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/gom_mobile</td>
-    </tr>
-    <tr>
-      <td><strong>MTEST(테스트용)</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.64</td>
-      <td>folder</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/mtest.gomtv.com/htdocs/ui</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 QC</strong></td>
-      <td>FTP</td>
-      <td>183.110.12.91</td>
-      <td>folder</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/neo_gomtv</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 private _QC</strong></td>
-      <td>FTP</td>
-      <td>183.110.12.91</td>
-      <td>folder</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/private.gomtv.com/htdocs/gomtv20/static/neo_gomtv</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 미니웹(메인페이지, 신규)</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.199</td>
-      <td>djqfhej</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/gom_mini</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 미니웹(서브페이지, 구버전)</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.199</td>
-      <td>djqfhej</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/neo_app</td>
-    </tr>
-    <tr>
-      <td><strong>곰티비 NMP</strong></td>
-      <td>FTP</td>
-      <td>183.110.11.199</td>
-      <td>djqfhej</td>
-      <td>-</td>
-      <td>__!@dkdl09</td>
-      <td>/data/img.gomtv.com/htdocs/images/gom_nmp</td>
-    </tr>
-    </tbody>
-  </table>
+  <article class="cont">
+    <p>* 곰티비 비밀번호 (컨텐츠 팀) : <span>__</span>!@dkdl09 <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span>__</span>: 아(<span>djqfhej</span>) / 나(<span>folder</span>) / 바 / 다 (항상 djqfhej id는 첫번째, folder id는 두번째 글자가 암호로 들어간다)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;위 암호는 3개월마다 변경 되는데 요즘은 불시에 변경됨, 접속이 안될시 컨텐츠팀 개발팀장님께 비밀번호 문의</p>
+    <p>* 키파일 경로: \\192.168.23.21\디자인lUI\UI\@UI_Guide\FTP</p><br>
 
-  <h2>🐌 AWS</h2>
-  <table>
-    <caption>AWS 정보 테이블</caption>
-    <colgroup>
-      <col style="width: 15%;">
-      <col style="width: 15%;">
-      <col style="width: 15%;">
-      <col style="width: 15%;">
-      <col style="width: auto;">
-    </colgroup>
-    <thead>
-    <tr>
-      <th></th>
-      <th>계정</th>
-      <th>사용자</th>
-      <th>비밀번호</th>
-      <th>사용 툴</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><strong>아잇</strong></td>
-      <td>gomcorp-devel</td>
-      <td>uidevel</td>
-      <td>개발팀에 문의</td>
-      <td>S3(아이디/비밀번호는 \\192.168.23.21\디자인lUI\UI\@UI_Guide\FTP\ait\accessKeys-ui를 참고한다.)</td>
-    </tr>
-    </tbody>
-  </table>
+    <h2>🐌 FTP</h2>
+    <table class="tbl">
+      <caption>FTP 정보 테이블</caption>
+      <colgroup>
+        <col style="width: 15%;">
+        <col style="width: 8%;">
+        <col style="width: 15%;">
+        <col style="width: 10%;">
+        <col style="width: 16%;">
+        <col style="width: 13%;">
+        <col style="width: auto;">
+      </colgroup>
+      <thead>
+      <tr>
+        <th></th>
+        <th>프로토콜</th>
+        <th>호스트</th>
+        <th>사용자</th>
+        <th>키파일</th>
+        <th>비밀번호</th>
+        <th>리모트 디렉터리</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>곰랩(구버전/이미지 저장용)</strong></td>
+        <td>SFTP</td>
+        <td>34.192.176.169</td>
+        <td>ec2-user</td>
+        <td>gurupop-ec2.ppk</td>
+        <td>-</td>
+        <td>/data2/img.gomlab.com/htdocs</td>
+      </tr>
+      <tr>
+        <td><strong>곰랩(신규)</strong></td>
+        <td>SFTP</td>
+        <td>34.192.176.169</td>
+        <td>ec2-user</td>
+        <td>gurupop-ec2.ppk</td>
+        <td>-</td>
+        <td>/mnt/s3mnt-gomlab-img/www.gomlab.com/gomlab_v2/ui</td>
+      </tr>
+      <tr>
+        <td><strong>곰랩 제품페이지</strong></td>
+        <td>SFTP</td>
+        <td>34.192.176.169</td>
+        <td>ec2-user</td>
+        <td>gurupop-ec2.ppk</td>
+        <td>-</td>
+        <td>/mnt/s3mnt-gomlab-img/gomlab/ui</td>
+      </tr>
+      <tr>
+        <td><strong>곰믹스 웹</strong></td>
+        <td>SFTP</td>
+        <td>34.192.176.169</td>
+        <td>ec2-user</td>
+        <td>gurupop-ec2.ppk</td>
+        <td>-</td>
+        <td>/mnt/s3mnt-gomlab-img/www.gomlab.com/gomlab_v2/ui/gommixweb</td>
+      </tr>
+      <tr>
+        <td><strong>곰밈메이커</strong></td>
+        <td>SFTP</td>
+        <td>34.192.176.169</td>
+        <td>ec2-user</td>
+        <td>gurupop-ec2.ppk</td>
+        <td>-</td>
+        <td>/mnt/s3mnt-gomlab-img/www.gomlab.com/gomlab_v2/ui/gommeme</td>
+      </tr>
+      <tr>
+        <td><strong>곰소프트</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.199</td>
+        <td>folder</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/gomsoft</td>
+      </tr>
+      <tr>
+        <td><strong>곰앤컴퍼니 PC</strong></td>
+        <td>FTP</td>
+        <td>175.207.20.231</td>
+        <td>folder</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/www.gretech.com/htdocs/ui/pc</td>
+      </tr>
+      <tr>
+        <td><strong>곰앤컴퍼니 MOBILE</strong></td>
+        <td>FTP</td>
+        <td>175.207.20.231</td>
+        <td>folder</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/m.gomcorp.com/htdocs/ui</td>
+      </tr>
+      <tr>
+        <td><strong>코코와</strong></td>
+        <td>SFTP</td>
+        <td>13.114.87.13</td>
+        <td>ubuntu</td>
+        <td>kocowa_key.ppk</td>
+        <td>-</td>
+        <td>/s3mnt/ui</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 PC</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.199</td>
+        <td>djqfhej</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/neo_gomtv/images/event</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 MOBILE</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.199</td>
+        <td>djqfhej</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/gom_mobile</td>
+      </tr>
+      <tr>
+        <td><strong>MTEST(테스트용)</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.64</td>
+        <td>folder</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/mtest.gomtv.com/htdocs/ui</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 QC</strong></td>
+        <td>FTP</td>
+        <td>183.110.12.91</td>
+        <td>folder</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/neo_gomtv</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 private _QC</strong></td>
+        <td>FTP</td>
+        <td>183.110.12.91</td>
+        <td>folder</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/private.gomtv.com/htdocs/gomtv20/static/neo_gomtv</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 미니웹(메인페이지, 신규)</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.199</td>
+        <td>djqfhej</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/gom_mini</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 미니웹(서브페이지, 구버전)</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.199</td>
+        <td>djqfhej</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/neo_app</td>
+      </tr>
+      <tr>
+        <td><strong>곰티비 NMP</strong></td>
+        <td>FTP</td>
+        <td>183.110.11.199</td>
+        <td>djqfhej</td>
+        <td>-</td>
+        <td>__!@dkdl09</td>
+        <td>/data/img.gomtv.com/htdocs/images/gom_nmp</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h2>🐌 AWS</h2>
+    <table class="tbl">
+      <caption>AWS 정보 테이블</caption>
+      <colgroup>
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: auto;">
+      </colgroup>
+      <thead>
+      <tr>
+        <th></th>
+        <th>계정</th>
+        <th>사용자</th>
+        <th>비밀번호</th>
+        <th>사용 툴</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>아잇</strong></td>
+        <td>gomcorp-devel</td>
+        <td>uidevel</td>
+        <td>개발팀에 문의</td>
+        <td>S3(아이디/비밀번호는 \\192.168.23.21\디자인lUI\UI\@UI_Guide\FTP\ait\accessKeys-ui를 참고한다.)</td>
+      </tr>
+      </tbody>
+    </table>
+  </article>
   <div id="footer"></div>
+</section>
 </body>
 </html>
