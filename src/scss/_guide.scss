@@ -1,0 +1,27 @@
+.guide{
+  width: 1200px;margin: 0 auto; padding: 60px 50px 100px; box-sizing: border-box; font-size: 16px; line-height: 2.5; color:#444444;position: relative;
+  h1{font-weight:bold;font-size:36px;color:#957963;padding:0px 0 30px;}
+  h2{margin-bottom:40px;font-size: 32px;line-height: 1;}
+  h3{margin:50px 0 30px;font-size: 24px;line-height: 1;}
+  strong{font-weight: bold;}
+  .cont{padding:100px 0;}
+  .txt_blind{overflow: hidden; font-size: 0;line-height: 0;text-indent: -2000em;}
+  .red{color:#e53434;}
+  .blue{color:#2a84b0;}
+  .gom{color:#ff7600;}
+  .cont+.cont{border-top: 1px  solid #e1e1e1;}
+  .desc{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
+  .option{line-height:1.7; font-size: 14px; color: #777;margin: 3px 0 0 11px;}
+  .code{line-height: 2;}
+  pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
+  nav{
+    margin: 100px 0 -50px;text-align: right;
+    li{
+      display: inline-block; line-height: 1;
+      &:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
+      &:first-child:before{display: none;}
+    }
+  }
+  .tbl th{background: #efefef;border-top: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
+  .tbl td{padding: 10px 20px;border-bottom: 1px solid #e0e0e0;}
+}

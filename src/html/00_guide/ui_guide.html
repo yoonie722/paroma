@@ -2,30 +2,10 @@
 <html lang="ko">
 <include src="../include/head.html" title="Index | UI Template">
   <style type="text/css">
-    body{width: 1200px;margin: 0 auto; padding: 60px 50px 100px; box-sizing: border-box; font-size: 16px; line-height: 2.5; color:#444444;position: relative;}
-    .logo{background: url('../../img/logo.png') no-repeat; background-size: 100%; width: 200px; height: 110px;margin: 0 auto 50px;line-height: 1;}
-    h2{margin-bottom:40px;font-size: 32px;line-height: 1;}
-    h3{margin:50px 0 30px;font-size: 24px;line-height: 1;}
-    strong{font-weight: bold;}
-    .cont{padding:100px 0;}
-    .cont+.cont{border-top: 1px  solid #e1e1e1;}
-    .txt_blind{overflow: hidden; font-size: 0;line-height: 0;text-indent: -2000em;}
-    .red{color:#e53434;}
-    .blue{color:#2a84b0;}
-    .gom{color:#ff7600;}
-    .ex{font-size: 14px; color: #999;margin: -10px 0 0 11px;}
-    .howto{line-height:1.7; font-size: 14px; color: #777;margin: 3px 0 0 11px;}
-    .code{line-height: 2;}
-    pre{font-size: 14px; line-height: 1.7; padding: 30px 50px; background: #fafafa;}
-    nav{margin: 100px 0 -50px;text-align: right;}
-    nav li{display: inline-block; line-height: 1;}
-    nav li:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
-    nav li:first-child:before{display: none;}
-    .tbl th{background: #efefef;border-top: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
-    .tbl td{padding: 10px 20px;border-bottom: 1px solid #e0e0e0;}
+    .logo{background: url("/img/logo.png") no-repeat; background-size: 100%; width: 200px; height: 110px;margin: 0 auto 50px;line-height: 1;}
   </style>
 </include>
-<body  id="body">
+<body id="body" class="guide">
 <include src="include/quick.html"></include>
 <div class="logo txt_blind">logo</div>
 <nav>
@@ -59,11 +39,11 @@
     <ul class="list">
       <li>
         -  이름 맨 앞에 특수문자, 숫자는 사용안됨 (마크업 폴더 예외)
-        <p class="ex">ex) 1img_noti (x), img_noti (o)</p>
+        <p class="desc">ex) 1img_noti (x), img_noti (o)</p>
       </li>
       <li>
         - 넘버링은 이름 다름 바로
-        <p class="ex">ex) img_noti_02 (x), img_noti1 (o)</p>
+        <p class="desc">ex) img_noti_02 (x), img_noti1 (o)</p>
       </li>
       <li>- <strong>형태_ 의미_상태</strong> 3단계를 넘어가지 않게 작성</li>
     </ul>
@@ -73,11 +53,11 @@
     <ul class="list">
       <li>
         -  시멘틱 태그 사용
-        <p class="ex">웹접근성, 웹표준, seo 준수</p>
+        <p class="desc">웹접근성, 웹표준, seo 준수</p>
       </li>
       <li>
         - 비슷한 형태는 따로 파일을 만들지 않고 gulp 기능을 이용하여 처리
-        <p class="ex">ex) header_main(x), tit = "회사소개" @@tit (o)</p>
+        <p class="desc">ex) header_main(x), tit = "회사소개" @@tit (o)</p>
       </li>
       <li>
         - 다른 팀원과 같이 작업이 가능하게 모듈페이지 작성
@@ -125,27 +105,27 @@ src
       <li>- 전처리 도구는 scss를 사용</li>
       <li>
         - <span class="blue">autoprefixer</span>는 gulp 빌드 시 자동으로 추가
-        <p class="ex">souremap이 안맞아서, min 폴더 안에 있는 css에만 적용</p>
+        <p class="desc">souremap이 안맞아서, min 폴더 안에 있는 css에만 적용</p>
       </li>
       <li>- <span class="blue">reset</span>에는 페이지 구성에 가장 기본적인 것만 넣는다.(모든 프로젝트 공통으로 사용 가능)</li>
       <li>
         - 이미지 버전 관리는 <span class="blue">...?v=날짜</span>
-        <p class="ex">실서버 적용 후 사용안하는 이미지는 삭제 해야되는데, 자주 누락 되서 캐싱 처리 방법으로 변경</p>
+        <p class="desc">실서버 적용 후 사용안하는 이미지는 삭제 해야되는데, 자주 누락 되서 캐싱 처리 방법으로 변경</p>
       </li>
       <li>- id는 반드시 유니크 해야한다.</li>
       <li>- id는 퀵네비 또는 페이지내 이동 시를 제외하고 사용하지 않는다.</li>
       <li>- id는 camelcase 방식으로 하며, class는 underscore 방식으로 사용한다.</li>
       <li>
         -  헷갈릴 소제가 있는 이름 경우 절대 단독클레스로 사용하지 않는다(전역사용 x, 중복클레스사용 o)
-        <p class="ex">ex) left, right, top, bottom, big, box 등 (x)  .btn.big, cont.left(o)</p>
+        <p class="desc">ex) left, right, top, bottom, big, box 등 (x)  .btn.big, cont.left(o)</p>
       </li>
       <li>
         - class 이름은 기능을 알수있게 명확하게 표시
-        <p class="ex">ex) tbl1 (x), `tbl board(o)`</p>
+        <p class="desc">ex) tbl1 (x), `tbl board(o)`</p>
       </li>
       <li>
         - 공통요소는 common.ccss
-        <p class="ex">ex) common에 있는것들은 예외는 되도록 만들지 않는다.</p>
+        <p class="desc">ex) common에 있는것들은 예외는 되도록 만들지 않는다.</p>
       </li>
       <li>- 공통으로 사용 되는 스타일 코드는 mixin.scss의 function, mixin 참고</li>
       <li>- 임시 이미지는 temp_*.* 사용 후 실서비스 적용 후 삭제</li>
@@ -385,7 +365,7 @@ src
     <ul>
       <li>
         - JPEG: Photoshop - Save for Web 사용<br/>
-        <p class="howto">
+        <p class="option">
           Option<br/>
           1) <b>Preset</b>: JPEG High (quality 60%) Optimized.<br/>
           2) <b>Metadata</b>: None. 사진에 대한 정보가 필요하지 않으므로 메타데이터는 저장하지 않는다.
@@ -394,7 +374,7 @@ src
       </li>
       <li>
         - SVG: <a href="https://jakearchibald.github.io/svgomg/" style="text-decoration: underline;" target="_blank">https://jakearchibald.github.io/svgomg/</a> 사용<br/>
-        <p class="howto">
+        <p class="option">
           Option<br/>
           1) <b>Precision</b>: 대부분 1~2, 간혹 깨지는 경우 더 높게 조정한다. 미리보기 화면을 확인하며 깨지지 않는 선에서 최대한 압축률을 낮게 조정한다.<br/>
           2) <b>Remove viewBox</b> 체크를 풀어서 viewBox가 삭제되지 않아야 css로 width를 조정할 수 있다.
