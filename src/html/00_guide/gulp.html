@@ -1,96 +1,51 @@
 <!DOCTYPE HTML>
 <html lang="ko">
-<include src="../include/head.html" title="Index | UI Template">
+<include src="../include/head.html" title="GULP | UI Template">
   <style type="text/css">
-    body{width: 1200px;margin: 0 auto; padding: 60px 50px 100px; box-sizing: border-box; font-size: 16px; line-height: 2.5; color:#444444;position: relative;}
-    .horizon{display:block;width:100%;height:1px;margin:30px 0;background:#e1e1e1;}
-    nav {margin-bottom: 40px;}
-    nav li{display: inline-block; line-height: 1;}
-    nav li:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
-    nav li:first-child:before{display: none;}
-    div a:active, div a:link, div a:visited, div a:hover{text-decoration: underline;}
-    p {padding: 0 20px;}
-    strong{display: block;}
-    span {display: block; margin-left: 30px;font-size: 14px; color: #888; line-height: 2;}
-    em {font-weight: bold;}
-    img {display: block; margin-left: 30px; margin-bottom: 10px; height: 200px;}
-    h2#old{margin-top: 140px;}
   </style>
 </include>
-<body  id="body">
+<body id="body" class="guide">
 <include src="include/quick.html"></include>
-<h1>🐌 Gulp 세팅</h1>
+<h1>GOM & Company Gulp 세팅</h1>
 <nav>
   <ul>
     <li><a href="#new">신규 프로젝트 세팅</a></li>
-    <li><a href="#old">기존 프로젝트 실행 시 세팅</a></li>
+    <li><a href="#old">기존 프로젝트 세팅</a></li>
   </ul>
 </nav>
-
-<h2 id="new">신규 프로젝트 세팅</h2>
-<div>
-  <h3>01. Node.js 설치</h3>
-  <a href="https://nodejs.org/ko/" target="_blank">https://nodejs.org/ko/</a> 설치 후 npm -v 으로 버전 확인
-
-  <h3>02. gulp 설치</h3>
-  <p>
-    <strong>STEP 1. cmd창 열기</strong>
-    <span>방법1. 작업할 폴더 경로에서 shift + 마우스 오른쪽 버튼 -> '여기서 명령창 열기'</span>
-    <img src="../../img/gulp1.png" alt="gulp 설명">
-    <span>방법2. 작업할 폴더 주소창에 'cmd' or 'cmd .' 입력</span>
-    <img src="../../img/gulp2.png" alt="gulp 설명">
-    <strong>STEP 2. cmd창의 작업경로 확인</strong>
-  </p>
-  <p>
-    <strong>STEP 3. 같은 폴더경로에 'node_modules' 폴더 생성</strong>
-    <span>cmd창에 npm init, npm install 차례로 입력</span>
-    <span>D:\test>npm init</span>
-    <span>D:\test>npm install</span>
-    <img src="../../img/gulp3.png" alt="gulp 설명" style="height: 130px;">
-  </p>
-  <o>
-    <strong>STEP 4. gulp 설치</strong>
-    <span>현재폴더에서만 설치: <em>npm install --save-dev gulp</em></span>
-    <span>폴더 전역에 설치: <em>npm install -g gulp</em></span>
-    <span>npm install gulp.spritesmith (자동설치 안됨- 수동으로 설치)</span>
-  </o>
-  <div class="horizon"></div>
-  <h3>작업 폴더</h3>
-  <p>
-    <img src="../../img/gulp4.png" alt="gulp 설명" style="height: 130px;">
-    <span>dist: 최종 작업본, Gulp에 의해 빌드 된 파일, 산출물 배포 시 사용</span>
-    <span>src: 실제 작업 폴더(sass, include 전 파일)</span>
-  </p>
-  <div class="horizon"></div>
-  <h3>gulp 세팅(sass, html include파일 등 빌드)</h3>
-  <p>
-    기본적으로 GOMLAB의 gulpfile.js 세팅을 참고한다.<br>
-    browser-sync, sass, html-include등 작업에 유용한 모듈은 이미 포함되어있으나 프로젝트에 따라 유동적으로 작업이 가능하다.<br>
-    필요에 의해 추가/수정시 먼저 팀에 공유해야 한다.
-    <span>Gulp 사용법은 아래 블로그 참고 <a href="http://programmingsummaries.tistory.com/356" target="_blank">http://programmingsummaries.tistory.com/356</a></span>
-    <span>모듈관련 검색 <a href="https://www.npmjs.com/" target="_blank">https://www.npmjs.com/</a></span>
-  </p>
-</div>
-<div class="horizon"></div>
-
-<h2 id="old">기존 프로젝트 실행 시 세팅</h2>
-<h3>01. Node.js 설치</h3>
-<a href="https://nodejs.org/ko/" target="_blank">https://nodejs.org/ko/</a> 설치 후 npm -v 으로 버전 확인
-<h3>02. gulp 설치</h3>
-<p>
-  STEP 1. <em>gitlab</em>에서 사용할 프로젝트를 <em>clone</em> 한다.<br/>
-  STEP 2. 해당 프로젝트 터미널에서 npm <em>init -y</em> 입력 하면 <em>package.json</em> 파일이 생성된다.
-  <span>
-    gulpfile.js에서 gulp에 추가한 모듈들이 모두 package.json의 devDependencies에 추가되어있는지 확인한다.
-    <img src="../../img/gulp5.png" alt="gulp 설명" style="height: 200px;">
-    <img src="../../img/gulp6.png" alt="gulp 설명" style="height: 350px;">
-  </span>
-  STEP 3. 모듈 세팅 완료 후 <em>npm install</em> => <em>node_modules</em> 폴더가 생성되었는지 확인한다.<br>
-  STEP 4. gulp 설치
-  <span>현재폴더에서만 설치: npm install --save-dev gulp</span>
-  <span>폴더 전역에 설치: npm install -g gulp</span>
-  <span>npm install gulp.spritesmith (자동설치 안됨- 수동으로 설치)</span>
-  STEP 5. 터미널에 gulp 입력 => 프로젝트 실행
-</p>
+<section class="container">
+  <article id="new" class="cont">
+    <h2>🥤 신규 프로젝트 세팅</h2>
+    <h3>01. Node.js 설치</h3>
+    <a href="https://nodejs.org/ko/" target="_blank">https://nodejs.org/ko/</a> 설치 후 npm -v 으로 버전 확인
+    <p>현재 사용 버전 : v8.10.0</p>
+    <h3>02. gitlab</h3>
+    <ul class="list">
+      <li>1) <a href="https://gitlab.gomtv.com/ui/ui_template" target="_blank">https://gitlab.gomtv.com/ui/ui_template</a>에서 fork떠 신규 프로젝트 생성</li>
+      <li>2) fork뜬 프로젝트의 setting 페이지에서 General project settings에서 프로젝트 이름과 설명을 변경</li>
+      <li>2-1) Advanced settings에서 Remove fork relationship를 눌러서 fork 연결을 해지 한다.</li>
+      <li>3) 새로 생성한 프로젝트 로컬에 clone <p class="desc"> 방법은 <a href="#">gitlab 가이드</a> 참고</p></li>
+      <li>4) 필요없는 폴더 및 파일은 모두 지우고, gulpfile.js 및 기타 파일을 해당 프로젝트에 맞게 작업 환경 세팅</li>
+      <li>
+        5) terminal 에서 <span class="gom">npm install</span> 입력
+        <p class="desc"> ackage.json에 이미 세팅을 해서, 필요한 모듈만 설치해 준다.</p>
+        <p class="desc"> gulp는 3.9.1 설치해야 한다. 4이상을 설치시 바벨 때문에 오류 남. 추후에 개발환경을 변경 할 수 있음</p>
+      </li>
+      <li>6) terminal 에서 <span class="gom">gulp</span> 입력<p class="desc">gulp 실행</p></li>
+      <li>4) readme.md에 새로운 프로젝트 가이드 작성</li>
+    </ul>
+  </article>
+  <article id="old" class="cont">
+    <h2>🥤 기존 프로젝트 세팅</h2>
+    <ul class="list">
+      <li>1) <a href="https://gitlab.gomtv.com/dashboard/groups" target="_blank">https://gitlab.gomtv.com/dashboard/groups</a>에서 원하는 프로젝트 선택</li>
+      <li>2) 프로젝트를 로컬에 clone <p class="desc"> 방법은 <a href="#">gitlab 가이드</a> 참고</p></li>
+      <li>3) terminal 에서 <span class="gom">npm install</span> 입력<br><span class="desc">package.json에 이미 세팅을 해서, 필요한 모듈만 설치해 준다.</span></li>
+      <li>4) terminal 에서 <span class="gom">gulp</span> 입력<br><span class="desc">gulp 실행</span></li>
+      <li>5) readme.md에 가이드 및 모듈 페이지 확인 후 작업</li>
+    </ul>
+  </article>
+</section>
+<footer id="footer"></footer>
 </body>
 </html>
