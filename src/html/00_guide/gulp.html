@@ -11,6 +11,7 @@
   <ul>
     <li><a href="#new">신규 프로젝트 세팅</a></li>
     <li><a href="#old">기존 프로젝트 세팅</a></li>
+    <li><a href="#gulp">Gulp Guide</a></li>
   </ul>
 </nav>
 <section class="container">
@@ -44,6 +45,147 @@
       <li>4) terminal 에서 <span class="gom">gulp</span> 입력<br><span class="desc">gulp 실행</span></li>
       <li>5) readme.md에 가이드 및 모듈 페이지 확인 후 작업</li>
     </ul>
+  </article>
+  <article id="gulp" class="cont">
+    <h2>🥤 Gulp Guide</h2>
+    <h3>1. gulp 사용 이유</h3>
+    <ul class="list">
+      <li>퍼블리싱 작업중에서 일일히 수작업으로 하기에 귀찮은 작업들이 너무 많다.</li>
+      <li>압축하거나 html 코드 include, scss, 브라우저 리로딩 등등..</li>
+      <li>이런 모든 귀찮은 작업을 gulp.js 를 이용하면 자동으로 해준다는 사실!</li>
+      <li>gulp는 편리한 전처리 도구이다. 무엇보다 문법이 쉬어서 빠르게 습득할 수 있는 장점이 있다.</li>
+    </ul>
+    <h3>2. gulp 설치</h3>
+    <ul class="list">
+      <li>1) gulp를 사용하려면 반드시 node.js 설치해야 한다. node.js 사이트에 접속해서 다운받고 설치 한다.</li>
+      <li>
+        2) gulp 를 전역에 설치하기
+        <p class="desc">
+          package.json 참고 : <a href="https://elegantcoder.com/beginning-npm-package/" target="_blank">https://elegantcoder.com/beginning-npm-package/</a>
+        </p>
+<pre class="code">
+# gulp를 전역에 설치하기
+$ npm install -g gulp
+# 프로젝트 폴더에 package.json 만들기
+$ npm init
+</pre>
+      </li>
+    </ul>
+    <h3>3. 디렉토리 구조</h3>
+<pre class="code">
+project_name
+    ├── dist
+            ├── css
+            ├── img
+            ├── html
+            └── js
+    ├── node_modules
+    ├── src
+        ├── scss
+            └── style.scss
+        ├── img
+         	├── image.png
+         	├── sprite
+            └── sprite_image.png
+        ├── html
+            ├── index.html
+            └── include
+                └── head.html
+        └── js
+            └── ui.js
+    ├── gulpfile.js
+    └── package.json
+</pre>
+    <h3>4. gulpfile.js 정의</h3>
+    <ul class="list">
+      <li>gulpfile.js에서 gulp 플러그인 활용을 정의한다.</li>
+      <li>아래 모듈 외에 추가를 원하는 모듈은 설치 후 package.json에 추가하면 된다.</li>
+      <li>gulp spritesmith를 사용하면 스프라이트 이미지와 css를 자동으로 생성해준다.<br>설정은  sprite.css.handlebars로 할수있다.
+        <span class="desc">추가할때마다 달라져서 현재는 잘 사용안함</span>
+      </li>
+    </ul>
+<pre class="code">
+<strong class="blue">gulpfile.js</strong>
+<span class="blue">var</span> gulp = require('gulp'),
+    browserSync = require('browser-sync').create(),
+    html = require('gulp-html-tag-include'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify');
+  var gulp = require('gulp'),
+    		sass = require('gulp-sass'),
+    		autoprefixer = require('gulp-autoprefixer'),
+    		sourecemaps = require('gulp-sourcemaps'),
+    		browserSync = require('browser-sync'),
+    		html = require('gulp-html-tag-include'),
+    		spritesmith = require('gulp.spritesmith'),
+    		watch = require('gulp-watch'),
+    		concat = require('gulp-concat'),
+    		babel = require('gulp-babel'),
+    		uglify = require('gulp-uglify-es').default, // es6용
+        gutil  = require('gulp-util'),
+        rename = require('gulp-rename');
+
+    /*=============================
+     @Path 정의
+     ==============================*/
+    var paths = {
+     	port:3000,
+    	input: 'src/**/*',
+    	output: 'dist/',
+    	style: {
+    		input: 'src/scss/*.scss',
+    		output: 'dist/css/'
+    	},
+    	...
+    };
+    ...
+    // browser-sync
+    gulp.task('browserSync', function () {
+        console.log("gulp 시작!!");
+        browserSync.init({
+            port:paths.port,            // port: 3000
+            server:{
+                baseDir: paths.html.output
+            },
+            startPath:'./html/index.html'
+        })
+    });
+    gulp.task('watch', ['html-include','sass','js','img'], function() {
+      gulp.watch(paths.style.input, ['sass']);
+      gulp.watch(paths.html.input, ['html-include']);
+      gulp.watch(paths.js.input, ['js']);
+    });
+
+    gulp.task('default',['browserSync','watch']);
+</pre>
+
+<pre class="code">
+  <strong class="blue">sprite.css.handlebars</strong>
+  .spurl {
+    	display:inline-block;
+    	background-image: url($url +'sprite.png');
+    	background-repeat:no-repeat;
+    }
+    {{#sprites}}
+    	%{{name}} {
+    		width: {{px.width}};
+    		height: {{px.height}};
+    		background-position:{{px.offset_x}} {{px.offset_y}};
+    		content:"";
+    		@extend .spurl;
+    	}
+    	.{{name}}{
+    		width: {{px.width}};
+    		height: {{px.height}};
+    		background-position:{{px.offset_x}} {{px.offset_y}};
+    		@extend .spurl;
+    		@include blind_txt;
+    		overflow: hidden;
+    	}
+    {{/sprites}}
+</pre>
   </article>
 </section>
 <footer id="footer"></footer>
