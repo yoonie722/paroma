@@ -1,13 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="ko">
-<include src="../include/head.html" title="Index | UI Template">
-  <style type="text/css">
-    .logo{background: url("/img/logo.png") no-repeat; background-size: 100%; width: 200px; height: 110px;margin: 0 auto 50px;line-height: 1;}
-  </style>
-</include>
+<include src="../include/head.html" title="UI Guide | UI Template"></include>
 <body id="body" class="guide">
 <include src="include/quick.html"></include>
-<div class="logo txt_blind">logo</div>
+<div class="logo">logo</div>
 <nav>
   <ul>
     <li><a href="#common">공통</a></li>
@@ -358,13 +354,12 @@ src
       </tbody>
     </table>
   </article>
-
   <article id="compression" class="cont">
     <h2>🐌 이미지 압축</h2>
     <ul>
       <li>
         - JPEG: Photoshop - Save for Web 사용<br/>
-        <p class="option">
+        <p class="desc">
           Option<br/>
           1) <b>Preset</b>: JPEG High (quality 60%) Optimized.<br/>
           2) <b>Metadata</b>: None. 사진에 대한 정보가 필요하지 않으므로 메타데이터는 저장하지 않는다.
@@ -373,7 +368,7 @@ src
       </li>
       <li>
         - SVG: <a href="https://jakearchibald.github.io/svgomg/" style="text-decoration: underline;" target="_blank">https://jakearchibald.github.io/svgomg/</a> 사용<br/>
-        <p class="option">
+        <p class="desc">
           Option<br/>
           1) <b>Precision</b>: 대부분 1~2, 간혹 깨지는 경우 더 높게 조정한다. 미리보기 화면을 확인하며 깨지지 않는 선에서 최대한 압축률을 낮게 조정한다.<br/>
           2) <b>Remove viewBox</b> 체크를 풀어서 viewBox가 삭제되지 않아야 css로 width를 조정할 수 있다.
