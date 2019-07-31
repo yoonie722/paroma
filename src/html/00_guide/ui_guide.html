@@ -21,17 +21,12 @@
     nav li{display: inline-block; line-height: 1;}
     nav li:before{display: inline-block; margin:0 10px 0 5px; content: "|";}
     nav li:first-child:before{display: none;}
-    .quick{position: fixed; bottom: 30px; right: 50px;width: 60px;}
-    .quick a{width:100%; display:block; padding: 10px 0; text-align:center;line-height: 1; background: rgba(0,0,0, 0.6); color: #fff;border-bottom: 1px solid #fff; font-size: 12px;}
     .tbl th{background: #efefef;border-top: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
     .tbl td{padding: 10px 20px;border-bottom: 1px solid #e0e0e0;}
   </style>
 </include>
 <body  id="body">
-<ul class="quick">
-  <li><a href="#body">Top</a></li>
-  <li><a href="#footer">Down</a></li>
-</ul>
+<include src="include/quick.html"></include>
 <div class="logo txt_blind">logo</div>
 <nav>
   <ul>
