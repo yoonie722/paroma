@@ -74,6 +74,7 @@
   }
   nav {
     margin: 100px 0 -50px;
+    line-height: 50px;
     text-align: right;
     li {
       display: inline-block;
@@ -85,6 +86,22 @@
       }
       &:first-child:before {
         display: none;
+      }
+    }
+    &.fix{
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      margin-top: 0;
+      background: #404143;
+      opacity: 0.95;
+      ul{
+        width: 1100px;
+        margin: 0 auto;
+      }
+      a{
+        color: #fff;
       }
     }
   }

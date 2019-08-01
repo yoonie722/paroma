@@ -1,10 +1,23 @@
 <!DOCTYPE HTML>
 <html lang="ko">
-<include src="../include/head.html" title="UI Guide | UI Template"></include>
+<include src="../include/head.html" title="UI Guide | UI Template">
+  <script>
+    $(function(){
+    	var nav_top = $("nav").offset().top;
+		$(window).scroll( function() {
+			if(nav_top <= $(document).scrollTop()){
+				$("nav").addClass("fix");
+            }else{
+				$("nav").removeClass("fix");
+            }
+        });
+    });
+  </script>
+</include>
 <body id="body" class="guide">
 <include src="include/quick.html"></include>
 <div class="logo">logo</div>
-<nav>
+<nav class="">
   <ul>
     <li><a href="#common">공통</a></li>
     <li><a href="#naming">Naming</a></li>
