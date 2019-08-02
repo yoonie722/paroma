@@ -26,6 +26,10 @@ var paths = {
       input:'./src/img/**/*',
       output:'./dist/img'
   },
+  font:{
+      input:'./src/font/**/*',
+      output:'./dist/font'
+  },
   js: {
     input : './src/ui_js/*.js',
     output : './dist/ui_js/'
@@ -95,7 +99,15 @@ gulp.task('img',function(){
 		}));
 });
 
-gulp.task('watch', ['html-include','sass','js','img'], function() {
+gulp.task('font',function(){
+	gulp.src(paths.font.input)
+		.pipe(gulp.dest(paths.font.output))
+		.pipe(browserSync.reload({
+			stream:true
+		}));
+});
+
+gulp.task('watch', ['html-include','sass','js','img','font'], function() {
   gulp.watch(paths.style.input, ['sass']);
   gulp.watch(paths.html.input, ['html-include']);
   gulp.watch(paths.js.input, ['js']);
