@@ -66,34 +66,3 @@
   line-height: 0;
   text-indent: -2000em;
 }
-
-
-@mixin ico_angle_vrt($direction: 'up', $width: 9px, $height: 15px, $thick: 2px, $color: #747474, $display: inline-block, $position: relative){
-  $size: floor($width/$sqrt_2 - 2*$thick);
-  $rate: 2*$height/$width;
-  content: '';
-  display: $display;
-  position: $position;
-  width: $size;
-  height: $size;
-  vertical-align: middle;
-  @if ($direction == 'left' or $direction == 'right') {
-    $margin-left: round($rate*$size/(2*$sqrt_2));
-    @if ($rate == 1) {
-      -webkit-transform: translate(-50%, -50%) rotate(45deg);
-      transform: translate(-50%, -50%) rotate(45deg);
-    } @else {
-      -webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
-      transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
-    }
-    @if ($direction == 'left') {
-      margin-left: $margin-left;
-      border-left: $thick solid $color;
-      border-bottom: $thick solid $color;
-    } @else if ($direction == 'right') {
-      margin-left: - $margin-left;
-      border-top: $thick solid $color;
-      border-right: $thick solid $color;
-    }
-  }
-}
