@@ -7,18 +7,6 @@
     UI 개발 관련 이미지와 CSS 관리, 산출물 관리에 대한 내용을 다루고 있습니다.
     이 문서는 ㈜곰앤컴퍼니의 지적 재산이므로 이 문서의 일부 또는 전체를 복제, 전송, 배포하거나 변경하여 사용할 수 없습니다.
 
-### **팀원의 의무**
-
-    UI개발팀의 모든 산출물은 회사 GITLAB에 업로드 되어야 합니다. 본 문서에 비밀번호와 같은 민감한 정보는 절대로 기입하지 않습니다.
-
-    GITLAB 세팅 되어있지 않는 프로젝트인 경우 추가하거나 공유 폴더에 업로드 해야합니다.
-
-
-# 구글, github 계정
-* **ID** : teamUIdev@gmail.com
-* **PW** : ui11ui!@
-* **github** : https://github.com/GomUI/guide
-* **github** - ui guide : https://gomui.github.io/guide/#body
 
 # 담당 프로젝트
 ### 소프트웨어 WEB - PROT 100*
