@@ -63,9 +63,7 @@ function sassComp(done) {
     // 압축버전 - 이버전은 소스맵이 안맞아서 배포용으로 따로 뺌
     gulp.src(paths.style.input, {sourcemaps: true})
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions','ie 8', 'ie 9']
-        }))
+        .pipe(autoprefixer())
         .pipe(sass({outputStyle:'compressed'})) //nested, expanded, compact, compressed
         .pipe(gulp.dest(paths.style.output+'/min', { sourcemaps: true }));
     done();
