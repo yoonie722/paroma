@@ -24,7 +24,8 @@
   },
   "browserslist": [
     "last 2 version",
-    "IE >= 8"
+    "IE >= 8",
+    "android >= 7"
   ],
   "dependencies": {},
   "optionalDependencies": {}
