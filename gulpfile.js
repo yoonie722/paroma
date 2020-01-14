@@ -9,30 +9,30 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 
-var paths = {
-  port:'9001',
-  input:'./src/**/*',
-  output:'./dist/',
-  html: {
-    input: './src/**/*.html',
-    output: './dist/'
-  },
-  style:{
-    input:'./src/scss/*.scss',
-    output:'./dist/css'
-  },
-  img:{
-      input:'./src/img/**/*',
-      output:'./dist/img'
-  },
-  font:{
-      input:'./src/font/**/*',
-      output:'./dist/font'
-  },
-  js: {
-    input : './src/ui_js/*.js',
-    output : './dist/ui_js/'
-  }
+const paths = {
+    port:'9001',
+    input:'./src/**/*',
+    output:'./dist/',
+    html: {
+        input: './src/**/*.html',
+        output: './dist/'
+    },
+    style:{
+        input:'./src/scss/*.scss',
+        output:'./dist/css'
+    },
+    img:{
+        input:'./src/img/**/*',
+        output:'./dist/img'
+    },
+    font:{
+        input:'./src/font/**/*',
+        output:'./dist/font'
+    },
+    js: {
+        input : './src/ui_js/*.js',
+        output : './dist/ui_js/'
+    }
 };
 
 function browserSync(done) {
@@ -58,7 +58,7 @@ function sassComp(done) {
     gulp.src(paths.style.input, {sourcemaps: true})
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(sass({outputStyle:'expanded'})) //nested, expanded, compact, compressed
-        .pipe(gulp.dest('./dist/css', { sourcemaps: true }))
+        .pipe(gulp.dest(paths.style.output, { sourcemaps: true }))
         .pipe(browsersync.reload({stream:true}));
     // 압축버전 - 이버전은 소스맵이 안맞아서 배포용으로 따로 뺌
     gulp.src(paths.style.input, {sourcemaps: true})
