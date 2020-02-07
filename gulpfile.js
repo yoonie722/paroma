@@ -15,8 +15,8 @@ const paths = {
   input: './src/**/*',
   output: './dist/',
   html: {
-    input: './src/**/*.html',
-    output: './dist/'
+    input: './src/html/**',
+    output: './dist/html/'
   },
   style: {
     input: './src/scss/*.scss',
@@ -41,7 +41,7 @@ function browserSync(done) {
   browsersync.init({
     port: paths.port,
     server: {
-      baseDir: paths.html.output
+      baseDir: paths.output
     },
     startPath: './html/index.html' //index.html 일반 프로젝트에서는 index.html 로 변경
   });
