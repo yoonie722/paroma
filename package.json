@@ -27,6 +27,8 @@
     "IE >= 8",
     "android >= 7"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  },
   "optionalDependencies": {}
 }
