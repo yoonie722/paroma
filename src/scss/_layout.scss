@@ -27,56 +27,54 @@ header{
     .upper{
         width: 100%;
         height: 41px;
-        background-color: #f1f1f1;
-        .upper_inner{
-            width: 1280px;
-            margin: 0 auto;
-            .location {
-                float: right;
-                li{
-                    display: inline-block;
-                    position: relative;
-                    &:nth-child(4) a::after{
-                        display: none;
-                    }
-                    &:last-child{
-                        a{
-                            background: url(../../img/myecc_bg.png) no-repeat center center;
-                            color: #fff;
-                            font-size: 0.813em;
-                            transition: background 0.3s;
-                            &:hover,&:focus{
-                                background: url(../../img/myecc_bg1.png) no-repeat center center;
-	                            color: #fff;
-                            }
-                            &:after{
-                                display: none;
-                            }
-                        }
-                    }
+        background-color: #f1f1f1;   
+    }
+    .upper_inner{
+        width: 1280px;
+        margin: 0 auto;
+    }
+    .location {
+        float: right;
+        li{
+            display: inline-block;
+            position: relative;
+            &:nth-child(4) a::after{
+                display: none;
+            }
+            &:last-child a{
+                background: url(../../img/myecc_bg.png) no-repeat center center;
+                color: #fff;
+                font-size: 0.813em;
+                transition: background 0.3s;
+                &:hover,&:focus{
+                    background: url(../../img/myecc_bg1.png) no-repeat center center;
+                    color: #fff;
                 }
-                a{
-                    display: block;
-                    color: #aaa;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 41px;
-                    padding: 0 10px;
-                    transition: color 0.3s;
-                    &:hover,&:focus{
-                        color: #71b42c;
-                    }
-                    &:after{
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        top: 14px;
-                        right: -3px;
-                        width: 1px;
-                        height: 14px;
-                        background-color: #aaa;
-                    }
+                &:after{
+                    display: none;
                 }
+            }
+        }
+        a{
+            display: block;
+            color: #aaa;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 41px;
+            padding: 0 10px;
+            transition: color 0.3s;
+            &:hover,&:focus{
+                color: #71b42c;
+            }
+            &:after{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 14px;
+                right: -3px;
+                width: 1px;
+                height: 14px;
+                background-color: #aaa;
             }
         }
     }
@@ -136,18 +134,18 @@ header{
                     }
                 }
             }
-            .bi{
-                position: absolute;
-                right: 0;
-                top: 20px;
-                z-index: 200;
-                width: 80px;
-                a{
-                    display: block;
-                    width: 80px;
-                    height: 28px;
-                }
-            }
+        }
+    }
+    .bi{
+        position: absolute;
+        right: 0;
+        top: 20px;
+        z-index: 200;
+        width: 80px;
+        a{
+            display: block;
+            width: 80px;
+            height: 28px;
         }
     }
     .slider{
@@ -222,15 +220,173 @@ header{
 }
 .container{
     position: relative;
-    // width: 100%;
-    // min-width: 1280px;
     height: 368px;
     .cont{
         position: absolute;
-        top: 0;
-        left: 50px;
-        margin-left: -640px;
-        width: 1280px;
+        top: -50px;
+        left: 50%;
+        margin-left: -550px;
+        width: 1100px;
+    }
+    .cont_top{
+        float: left;
+        width: 100%;
+    }
+    .notice{
+        float: left;
+        width: 275px;
+        height: 184px;
+        background-color: #efefef;
+    }
+    .title a{
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+        padding: 10px 10px 0 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 18px;
+            left: 90px;
+            width: 1px;
+            height: 20px;
+            background-color: #999;
+        }
+        &.two:after{
+            display: none;
+        }
+        &.active{
+            color: #f38200;
+        }
+    }
+    .tab_group > div{
+        // display: none;
+        width: 275px;
+        height: 140px;
+        padding: 10px 20px;
+        &.active{
+            display: block;
+        }
+        ul{
+            width: 100%;
+            height: 100%;
+        }
+        li{
+            border-bottom: 1px solid #bbb;
+        }
+        a{
+            display: block;
+            color: #89878a;
+            font-size:14px;
+            height: 28px;
+            line-height: 28px;
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    .product1{
+        float: left;
+        position: relative;
+        width: 184px;
+        height: 184px;
+        img.over{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 184px;
+            height: 184px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        a:hover img.over{
+            opacity: 1;
+        }
+    }
+    .product2{
+        float: left;
+        position: relative;
+        width: 184px;
+        height: 184px;
+        img.over{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 184px;
+            height: 184px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        a:hover img.over{
+            opacity: 1;
+        }
+    }
+    .product3{
+        float: left;
+        position: relative;
+        width: 184px;
+        height: 184px;
+        img.over{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 184px;
+            height: 184px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        a:hover img.over{
+            opacity: 1;
+        }
+    }
+    .map{
+        float: left;
+        position: relative;
+        padding: 10px 20px;
+        width: 273px;
+        height: 183px;
+        background-color: #efefef;
+        .title{
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            color: #555; 
+        }
+        .more{
+            position: absolute;
+            right: 20px;
+            top: 30px;
+            font-size: 13px;
+            color: #888;
+        }
+    }
+    .select{
+        float: left;
+        width: 100%;
+        dl{
+            display: inline-block;
+            position: relative;
+            line-height: 40px;
+            vertical-align: middle;
+        }
+        a{
+            display: block;
+            position: relative;
+            padding-left: 31px;
+            margin-top: 10px;
+            width: 200px;
+            height: 40px;
+            font-size: 0.875em;
+            color: #666;
+            border: 1px solid #dedede;
+        }
     }
 }
 footer{
