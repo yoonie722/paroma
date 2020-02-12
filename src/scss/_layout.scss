@@ -20,7 +20,7 @@
 //header
 header{
     width: 100%;
-    min-width: $pc;
+    min-width: 1280px;
     // height: $header;
     box-sizing: border-box;
     background: $white;
@@ -149,6 +149,7 @@ header{
                 }
             }
         }
+    }
     .slider{
         position: relative;
         min-width: 1280px;
@@ -234,7 +235,7 @@ header{
 }
 footer{
     width: 100%;
-    min-width: $pc;
+    min-width: 1280px;
     box-sizing: border-box;
     background: $white;
     .site_wrap{
@@ -244,12 +245,12 @@ footer{
             width: 1280px;
             margin: 0 auto;
             height: 68px;
-            .direction{
+            // .direction{
 
-            }
-            .site{
+            // }
+            // .site{
 
-            }
+            // }
         }
     }
     .wrap{
