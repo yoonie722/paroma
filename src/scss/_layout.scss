@@ -245,13 +245,14 @@ header{
         padding: 10px 10px 0 0;
         font-size: 20px;
         font-weight: bold;
+        letter-spacing: -1px;
         color: #555;
         &:after{
             content: "";
             display: block;
             position: absolute;
             top: 18px;
-            left: 90px;
+            left: 85px;
             width: 1px;
             height: 20px;
             background-color: #999;
@@ -264,7 +265,7 @@ header{
         }
     }
     .tab_group > div{
-        // display: none;
+        display: none;
         width: 275px;
         height: 140px;
         padding: 10px 20px;
@@ -387,6 +388,98 @@ header{
             color: #666;
             border: 1px solid #dedede;
         }
+    }
+    .cont_bottom{
+        float: left;
+    }
+    .brochure{
+        float: left;
+        width: 275px;
+        height: 184px;
+        padding: 0 20px;
+        background: url(//sonyoonkyung.github.io/test/dist/img/main_bg1_1.png) no-repeat;
+        border: 1px solid #efefef;
+        .title{
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            color: #555;
+            margin-top: 10px;
+        }
+        .sub_title{
+            font-size: 14px;
+            letter-spacing: -1px;
+            color: #89878a;
+            margin-top: 10px;
+        }
+    }
+    .btn_wrap a{
+        display: inline-block;
+        text-align: center;
+        width: 46px;
+        height: 26px;
+        margin-top: 20px;
+        line-height: 26px;
+        color: #fff;
+        font-size: 0.875em;
+        font-weight: 400;
+        &.kor{
+            background-color: #f38200;
+        }
+        &.eng{
+            background-color: #6c5e51;
+        }
+    }
+    .shopping{
+        float: left;
+        position: relative;
+        width: 184px;
+        height: 184px;
+        padding: 0 20px;
+        background-color: #fff;
+        border: 1px solid #efefef;
+        .title{
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            color: #555;
+        }
+        .sub_title{
+            font-size: 14px;
+            letter-spacing: -1px;
+            color: #89878a;
+        }
+    }
+    .btn_dot{
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        width: 100%;
+        height: 10px;
+        text-align: center;
+        li{
+            display: inline-block;
+            margin: 0 2px;
+            &.active a{
+                background-color: #f90;
+            }
+        }
+        a{
+            display: block;
+            width: 10px;
+            height: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
+            background-color: #b2b2b2;
+            border-radius: 7px;
+        }
+    }
+    .event{
+        position: relative;
+        float: left;
+        width: 368px;
+        height: 184px;
+        overflow: hidden;
     }
 }
 footer{
