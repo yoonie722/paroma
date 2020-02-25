@@ -11,10 +11,19 @@
   <script src="/ui_js/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <!--<script type="text/javascript" src="//www.xxxx/jquery-1.12.4.min.js"></script>-->
-  <!-- <script type="text/javascript" src="/js/ui_jquery.js"></script> -->
+  <script type="text/javascript" src="/ui_js/ui.js"></script>
   
 </head>
 <body class="main">
+  <div class="popup">
+		<div class="text">
+			<form>
+				<label><input type="checkbox" name="todayClose"><span>오늘 하루 그만보기</span></label>
+			</form>
+			<div class="top"><a href="#" class="close" title="close">닫기</a></div>
+		</div>
+		<img src="//sonyoonkyung.github.io/test/dist/img/popup.jpg" alt="popup" title="popup">
+	</div>
   <ul class="quick">
   	<li><a href="#header" tabindex="1" title="메뉴">메뉴 바로가기</a></li>
   	<li><a href="#container" tabindex="1" title="본문">본문 바로가기</a></li>
@@ -36,9 +45,11 @@
     </div>
     <div class="menu">
       <div class="menu_inner">
-        <h1 class="logo"><a href="#" title="파로마"><img src="//sonyoonkyung.github.io/test/dist/img/logo12.png" alt="파로마" title="파로마"></a></h1>
-        <nav>
-          <ul class="gnb">
+        <div class="logo">
+          <h1><a href="#" title="paroma"><img src="//sonyoonkyung.github.io/test/dist/img/logo12.png" alt="logo" title="paroma"></a></h1>
+        </div>
+        <nav id="gnb">
+          <ul class="dep_wrap">
             <li class="dep1">
               <a href="#" title="옷장/붙박이장">옷장/붙박이장</a>
               <ul class="dep2">
@@ -85,19 +96,24 @@
             </li>
           </ul>
         </nav>
-        <div class="bi"><a href="#" title="카르텔"><img src="//sonyoonkyung.github.io/test/dist/img/kartell3.gif" alt="카르텔" title="카르텔"></a></div> 
-      </div>  
+        <div class="bi">
+          <a href="#" title="kartell">
+            <img src="//sonyoonkyung.github.io/test/dist/img/kartell3.gif" alt="kartell" title="kartell">
+          </a>
+        </div>
+      </div>
     </div>
     <div class="slider">
-      <div class="slider_img">
+      <!-- <div class="slider_img">
         <ul>
-          <li><a href="#" title="메인사진1"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg" alt="keyvisual1" title="keyvisual1"></a></li>
-          <li><a href="#" title="메인사진2"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual2.jpg" alt="keyvisual2" title="keyvisual1"></a></li>
-          <li><a href="#" title="메인사진3"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual3.jpg" alt="keyvisual3" title="keyvisual1"></a></li>
-          <li><a href="#" title="메인사진4"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual4.jpg" alt="keyvisual4" title="keyvisual1"></a></li>
+          <li><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg" alt="keyvisual1" title="keyvisual1"></li>
+          <li><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual2.jpg" alt="keyvisual2" title="keyvisual2"></li>
+          <li><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual3.jpg" alt="keyvisual3" title="keyvisual3"></li>
+          <li><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual4.jpg" alt="keyvisual4" title="keyvisual4"></li>
+          <li><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual5.jpg" alt="keyvisual5" title="keyvisual5"></li>
         </ul>
       </div>
-      <div class="slider_direction">
+      <div class="controller">
         <ul>
           <li><a href="#" title="1">1</a></li>
           <li><a href="#" title="2">2</a></li>
@@ -105,7 +121,7 @@
           <li><a href="#" title="4">4</a></li>
           <li><a href="#" title="5">5</a></li>
         </ul>
-      </div>
+      </div> -->
       <div class="arrow">
         <a class="left" href="#" title="왼쪽버튼"><img src="//sonyoonkyung.github.io/test/dist/img/btn_left.png" alt="left" title="왼쪽버튼"></a>
   			<a class="right" href="#" title="오른쪽버튼"><img src="//sonyoonkyung.github.io/test/dist/img/btn_right.png" alt="right" title="오른쪽버튼"></a>
@@ -117,8 +133,10 @@
       <div class="cont_top">
         <div class="notice">
           <div class="title">
-            <a href="#" title="notice">NOTICE</a>
-            <a class="two" href="#" title="question">QUESTION</a>
+            <h2>
+              <a href="#" title="notice">NOTICE</a>
+              <a class="two" href="#" title="question">QUESTION</a>
+            </h2>
           </div>
           <div class="tab_group">
             <div class="tab1">
@@ -160,7 +178,7 @@
         <div class="map">
           <p class="title">전국 지점 찾기</p>
           <a href="#" class="more" title="more">더보기 +</a>
-          <form action="" method="" id="form">
+          <!-- <form action="" method="" id="form">
             <div class="select">
               <dl class="local">
                 <dt><a href="#" title="seoul">서울<span></span></a></dt>
@@ -195,7 +213,7 @@
                 <option>자양점</option>
               </select>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
       <div class="cont_bottom">
@@ -222,13 +240,13 @@
           <div class="img_moving">
             <ul>
               <li>
-                <a href="#" title="이벤트"><img src="//sonyoonkyung.github.io/test/dist/img/img_banner1.png" alt="하반기 시즌 오프 가구이벤트" title="시즌 오프 가구이벤트"></a>
+                <a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트" title="시즌 오프 가구이벤트"></a>
               </li>
               <li>
-                <a href="#" title="이벤트"><img src="//sonyoonkyung.github.io/test/dist/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트" title="시즌 오프 가구이벤트"></a>
+                <a href="#" title="이벤트2"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner1.png" alt="이벤트" title="이벤트"></a>
               </li>
               <li>
-                <a href="#" title="이벤트"><img src="//sonyoonkyung.github.io/test/dist/img/img_banner3.png" alt="하반기 시즌 오프 가구이벤트" title="시즌 오프 가구이벤트"></a>
+                <a href="#" title="이벤트3"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner3.png" alt="이벤트" title="이벤트"></a>
               </li>
             </ul>
           </div>
@@ -244,18 +262,18 @@
       <div class="site_inner">
         <div class="direction">
           <a class="prev" href="#" title="prev"><img src="//sonyoonkyung.github.io/test/dist/img/footer_btn_prev.jpg" alt="prev" title="prev"></a>
-          <a class="prev" href="#" title="next"><img src="//sonyoonkyung.github.io/test/dist/img/footer_btn_next.jpg" alt="next" title="next"></a>
+          <a class="next" href="#" title="next"><img src="//sonyoonkyung.github.io/test/dist/img/footer_btn_next.jpg" alt="next" title="next"></a>
         </div>
         <div class="site">
           <ul>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner1.png" alt="kartell" title="kartell"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner2.png" alt="acquaviva" title="acquaviva"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner3.png" alt="rochebobois" title="rochebobois"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner4.png" alt="flou S.P.A" title="flou S.P.A"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner5.png" alt="mdf italia" title="mdf italia"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner6.png" alt="한국가구" title="한국가구"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner7.png" alt="mirage furniture" title="mirage furniture"></li>
-            <li><img src="//sonyoonkyung.github.io/test/dist/img/banner8.png" alt="mirage" title="mirage"></li>
+            <li><a href="#" title="kartell"><img src="//sonyoonkyung.github.io/test/dist/img/banner1.png" alt="kartell" title="kartell"></a></li>
+            <li><a href="#" title="acquaviva"><img src="//sonyoonkyung.github.io/test/dist/img/banner2.png" alt="acquaviva" title="acquaviva"></a></li>
+            <li><a href="#" title="rochebobois"><img src="//sonyoonkyung.github.io/test/dist/img/banner3.png" alt="rochebobois" title="rochebobois"></a></li>
+            <li><a href="#" title="flou S.P.A"><img src="//sonyoonkyung.github.io/test/dist/img/banner4.png" alt="flou S.P.A" title="flou S.P.A"></a></li>
+            <li><a href="#" title="mdf italia"><img src="//sonyoonkyung.github.io/test/dist/img/banner5.png" alt="mdf italia" title="mdf italia"></a></li>
+            <li><a href="#" title="한국가구"><img src="//sonyoonkyung.github.io/test/dist/img/banner6.png" alt="한국가구" title="한국가구"></a></li>
+            <li><a href="#" title="mirage furniture"><img src="//sonyoonkyung.github.io/test/dist/img/banner7.png" alt="mirage furniture" title="mirage furniture"></a></li>
+            <li><a href="#" title="mirage"><img src="//sonyoonkyung.github.io/test/dist/img/banner8.png" alt="mirage" title="mirage"></a></li>
           </ul>
         </div>
       </div>
@@ -279,13 +297,15 @@
         </div>
       </div>
       <div class="biz">
-        <h4 class="biz_logo"><a href="#" title="footer_logo"><img src="//sonyoonkyung.github.io/test/dist/img/logo12.png" alt="파로마" title="파로마"></a></h4>
-        <adress>
-          <p>COMPANY 파로마리빙 OWNER 김병숙 TEL 070-7714-8014
-            <br>사업자등록번호 105-35-98403 NETWORK REG.NO 제2017-경기광명-0564 <a href="#" title="INFORMATION">INFORMATION</a>
-            <br>ADDRESS 경기도 광명시 오리로 801 (하안동) 109동 501호 (POST:14256) MASTER 안윤주 ALLIANCE <a href="#" title="이메일">@paromaon@naver.com</a>
-          </p>
-        </adress>
+        <div class="biz_inner">
+          <div class="biz_logo"><a href="#" title="footer_logo"><img src="//sonyoonkyung.github.io/test/dist/img/logo12.png" alt="파로마" title="파로마"></a></div>
+          <adress>
+            <p>COMPANY 파로마리빙 OWNER 김병숙 TEL 070-7714-8014
+              <br>사업자등록번호 105-35-98403 NETWORK REG.NO 제2017-경기광명-0564 <a href="#" title="INFORMATION">INFORMATION</a>
+              <br>ADDRESS 경기도 광명시 오리로 801 (하안동) 109동 501호 (POST:14256) MASTER 안윤주 ALLIANCE <a href="#" title="이메일">@paromaon@naver.com</a>
+            </p>
+          </adress>
+        </div>
       </div>
     </div>
   </footer>

@@ -1,5 +1,9 @@
-@include setFont("NotoSans", "NotoSansCJK_Light", 100);
-@include setFont("NotoSans", "NotoSansCJK_Medium", 400);
+@include setFont("VarelaRound", "VarelaRound-Regular", 100);
+@include setFont("Dohyeon", "DoHyeon-Regular", 100);
+@include setFont("NanumGothic", "NanumGothic-Regular", 100);
+@include setFont("NanumGothic", "NanumGothic-ExtraBold", 600);
+@include setFont("NanumGothic", "NanumGothic-Bold", 400);
+//@include setFont("NotoSans", "NotoSansCJK_Medium", 400);
 //common control
 html,body {
   border:none;

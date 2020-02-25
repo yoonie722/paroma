@@ -1,3 +1,8 @@
+.main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 //quick
 .quick{
     a{
@@ -8,7 +13,7 @@
         width: 100%;
         z-index: 100;
         text-align: center;
-        background-color: #000; /*메인 색상*/
+        background-color: $black; /*메인 색상*/
         color: #f90;
         &:focus{
             left: 0;
@@ -16,25 +21,82 @@
     }
 
 }
+//popup
+.popup{
+    position: fixed;
+	left: 50%;
+	bottom: 0;
+	margin-left: -600px;
+	width: 1200px;
+	transition: transform 0.4s;
+	transform: translateY(100%);
+	z-index: 1000;
+    border: 1px solid #bbb;
+    &.active{
+	    transform: translateY(0);
+    }
+    .text{
+        position: relative;
+        form{
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+        input[type=checkbox]{
+            margin-right: 6px;
+	        vertical-align: middle;
+        }
+        span{
+            display: inline-block;
+            line-height: 20px;
+            vertical-align: middle;
+            font-size: 14px;
+        }
+    }
+    .top{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        a{
+            display: block;
+            width: 50px;
+            padding: 0 5px;
+            border-radius: 5px;
+            line-height: 20px;
+            font-size: 14px;
+            text-align: center;
+            color:#000;
+            transition: background-color 0.3s;
+            &:hover{
+                background-color: #ffd237;
+            }
+        }
+    }
+    img{
+        width: 100%;
+    }
+}
 
 //header
 header{
-    width: 100%;
-    min-width: 1280px;
-    // height: $header;
-    box-sizing: border-box;
-    background: $white;
+    position: relative;
     .upper{
-        width: 100%;
+        min-width: 1280px;
         height: 41px;
         background-color: #f1f1f1;   
     }
     .upper_inner{
+        position: relative;
         width: 1280px;
-        margin: 0 auto;
+        height: 41px;
+        left: 50%;
+        margin-left: -640px;
     }
     .location {
-        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 360px;
         li{
             display: inline-block;
             position: relative;
@@ -50,7 +112,7 @@ header{
                     background: url(../../img/myecc_bg1.png) no-repeat center center;
                     color: #fff;
                 }
-                &:after{
+                &::after{
                     display: none;
                 }
             }
@@ -66,7 +128,7 @@ header{
             &:hover,&:focus{
                 color: #71b42c;
             }
-            &:after{
+            &::after{
                 content: "";
                 display: block;
                 position: absolute;
@@ -79,69 +141,100 @@ header{
         }
     }
     .menu{
+        position: absolute;
+        top: 41px;
+        left: 0;
+        z-index: 11;
         width: 100%;
+        min-width: 1200px;
+        height: 68px; 
+        overflow: hidden;
+        background-color: rgba(255,255,255,0.8);
+        transition: height 0.4s;
+    }
+    .menu:hover, .menu.over{
+        height: 250px;
+        z-index: 11;
+    }
+    .menu_inner{
+        position: relative;
+        margin: 0 auto;
+        width: 1200px;
         height: 68px;
-        background-color: $white;
-        .menu_inner{
+        line-height: 68px;
+    }
+    .logo{
+        position: absolute;
+        left: 0;
+        top: 6px;
+        z-index: 100;
+        width: 165px; 
+    }
+    #gnb{
+        text-align: center;
+        margin-left: 60px;
+    }
+    .dep1 {
+        display: inline-block;
+        position: relative;
+        &:hover > a::after{
+            width: 100%;
+        }
+        > a{
             position: relative;
-            width: 1280px;
-            margin: 0 auto;
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin: 0 20px;
+            padding: 0 25px;
             height: 68px;
             line-height: 68px;
-            .logo{
+            &::after{
+                content: "";
+                display: block;
                 position: absolute;
                 left: 0;
-                top: 0;
-                z-index: 200;
-                width: 165px;
-                a{
-                    display: block;
-                    width: 165px;
-                    height: 68px;
-                }
+                bottom: 0;
+                width: 0;
+                height: 4px;
+                background-color: #ff9e0f;
+                transition: width 0.5s;
             }
-            .nav{
-                height: 100%;
-                float: left;
-                display: block;
+            &.over::after{
+                width: 100%;
             }
-            .gnb{
-                text-align: center;
-                margin-left: 60px;
-                &>.dep1{
-                    display: inline-block;
-                    position: relative;
-                    &>a{
-                        position: relative;
-                        display: block;
-                        margin: 0 20px;
-                        padding: 0 25px;
-                        height: 68px;
-                        line-height: 68px;
-                        color: #555;
-                        font-weight: 600;
-                        &:after{
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            left: 0;
-                            bottom: 0;
-                            width: 0;
-                            height: 4px;
-                            background-color: #ff9e0f;
-                            transition: width 0.5s;
-                        }
-                    }
-                }
+        }
+    }
+    .dep2{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        padding: 20px 0;
+        a{
+            display: block;
+            width: 100%;
+            z-index: 200;
+            color: #616161;
+            line-height: 28px;
+            font-size: 15px;
+            color: #000;
+            text-align: center;
+            transition: color 0.3s; 
+            &:hover, &:focus{
+                color: #ff9f0d;
+	            width: 100%;
             }
         }
     }
     .bi{
         position: absolute;
-        right: 0;
         top: 20px;
-        z-index: 200;
+        right: 0;
+        z-index: 100;
         width: 80px;
+        height: 28px;
         a{
             display: block;
             width: 80px;
@@ -150,6 +243,7 @@ header{
     }
     .slider{
         position: relative;
+        top: 68px;
         min-width: 1280px;
         height: 840px;
         overflow: hidden;
@@ -173,28 +267,31 @@ header{
                 // }
             }
         }
-        .slider_direction{
+        .controller{
             position: absolute;
             left: 0;
-            bottom: 140px;
+            bottom: 180px;
             width: 100%;
             height: 16px;
             text-align: center;
+            font-size: 0; //inlin-block 여백 없애기
             li{
                 display: inline-block;
-                margin: 0 6px;
+                margin: 0 10px;
+                // width: 16px;
+                // height: 16px;
                 &.active a{
                     background-color: #f90;
                 }
-            }
-            a{
-                display: block;
-                width: 16px;
-                height: 16px;
-                overflow: hidden;
-                text-indent: -9999px;
-                background-color: rgba(255,255,255,.5);
-	            border-radius: 8px;
+                a{
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    overflow: hidden;
+                    text-indent: -9999px;
+                    background-color: rgba(255,255,255,.5);
+                    border-radius: 8px;
+                }
             }
         }
         .arrow{
@@ -236,7 +333,7 @@ header{
         float: left;
         width: 275px;
         height: 184px;
-        background-color: #efefef;
+        background-color: $gray;
     }
     .title a{
         position: relative;
@@ -247,7 +344,7 @@ header{
         font-weight: bold;
         letter-spacing: -1px;
         color: #555;
-        &:after{
+        &::after{
             content: "";
             display: block;
             position: absolute;
@@ -257,7 +354,7 @@ header{
             height: 20px;
             background-color: #999;
         }
-        &.two:after{
+        &.two::after{
             display: none;
         }
         &.active{
@@ -265,7 +362,7 @@ header{
         }
     }
     .tab_group > div{
-        display: none;
+        //display: none;
         width: 275px;
         height: 140px;
         padding: 10px 20px;
@@ -351,10 +448,9 @@ header{
         padding: 10px 20px;
         width: 273px;
         height: 183px;
-        background-color: #efefef;
+        background-color: $gray;
         .title{
             margin-bottom: 10px;
-            margin-top: 10px;
             font-size: 20px;
             font-weight: bold;
             letter-spacing: -1px;
@@ -363,7 +459,7 @@ header{
         .more{
             position: absolute;
             right: 20px;
-            top: 30px;
+            top: 20px;
             font-size: 13px;
             color: #888;
         }
@@ -398,7 +494,7 @@ header{
         height: 184px;
         padding: 0 20px;
         background: url(//sonyoonkyung.github.io/test/dist/img/main_bg1_1.png) no-repeat;
-        border: 1px solid #efefef;
+        border: 1px solid $gray;
         .title{
             font-size: 20px;
             font-weight: bold;
@@ -437,17 +533,20 @@ header{
         height: 184px;
         padding: 0 20px;
         background-color: #fff;
-        border: 1px solid #efefef;
+        border: 1px solid $gray;
         .title{
             font-size: 20px;
+            line-height: 20px;
             font-weight: bold;
             letter-spacing: -1px;
             color: #555;
+            margin-top: 10px;
         }
         .sub_title{
             font-size: 14px;
             letter-spacing: -1px;
             color: #89878a;
+            margin-top: 10px;
         }
     }
     .btn_dot{
@@ -481,35 +580,181 @@ header{
         height: 184px;
         overflow: hidden;
     }
+    .img_moving{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1104px;
+        height: 184px;
+        overflow: hidden;
+        li{
+            position: relative;
+            float: left;
+            width: 368px;
+            height: 184px;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -184px;
+            width: 368px;
+            height: 184px;
+        }
+    }
+    .ad{
+        float: left;
+        width: 273px;
+        height: 183px;
+        background: url(//sonyoonkyung.github.io/test/dist/img/main_bg3.png)
+    }
 }
 footer{
     width: 100%;
     min-width: 1280px;
     box-sizing: border-box;
+    margin-top: 80px;
     background: $white;
     .site_wrap{
         width: 100%;
+        min-width: 1100px;
         height: 68px;
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        background-color: #fff;
         .site_inner{
-            width: 1280px;
+            position: relative;
             margin: 0 auto;
+            width: 1100px;
             height: 68px;
-            // .direction{
-
-            // }
-            // .site{
-
-            // }
+        }
+    }
+    .direction a{
+        &.prev{
+            position: absolute;
+            left: 0;
+            top: 25px;
+        }
+        &.next{
+            position: absolute;
+            right: 0;
+            top: 25px;
+        }
+    }
+    .site{
+        position: relative;
+        margin: 0 auto;
+        width: 835px;
+        height: 67px;
+        overflow: hidden;
+        ul{
+            position: absolute;
+            width: 1336px; /* 167*8 */
+            height: 67px;
+        }
+        li{
+            position: relative;
+            float: left;
+            padding: 0 20px;
+            width: 167px;
+            height: 65px;
+        }
+        a{
+            display: block;
+            height: 65px;
+            line-height: 65px;
+            text-align: center;
+        }
+        img{
+            vertical-align: middle;
         }
     }
     .wrap{
         width: 100%;
         height: 185px;
         background-color: #f2f2f2;
-        .f_top{
-            width: 100%;
-            height: 45px;
-            border-bottom: 1px solid #d7d5d5;
+    }
+    .f_top{
+        float: left;
+        width: 100%;
+        min-width: 1100px;
+        height: 45px;
+        line-height: 45px;
+        border-bottom: 1px solid #d7d5d5;
+    }
+    .f_top_inner{
+        margin: 0 auto;
+        width: 1100px;
+        height: 45px;
+    }
+    .f_menu{
+        li{
+            float: left;
+            &:first-child a{
+                padding-left: 0;
+            }
+            &:first-child a::after{
+                display: none;
+            }
+        }
+        a{
+            position: relative;
+            display: inline-block;
+            padding: 0 13px;
+            color: #777;
+            &::after{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 15px;
+                left: 1px;
+                width: 1px;
+                height: 14px;
+                background-color:#d7d5d5;
+            }
         }
     }
+    .f_right{
+        float: right;
+        a{
+            display: inline-block;
+            width: 32px;
+            height: 45px;
+            padding: 0 13px;
+            color: #777;
+        }
+    }
+    .biz{
+        min-width: 1100px;
+        height: 185px;
+    }
+    .biz_inner{
+        width: 1100px;
+        margin: 0 auto;
+        .biz_logo{
+            float: left;
+            width: 165px;
+            height: 56px;
+            margin-top: 30px;
+            a{
+                display: block;
+            }
+        }
+    }
+    .address{
+        float: left;
+        margin: 10px 0 0 30px;
+        p{
+            line-height: 30px;
+            font-size: 14px;
+            font-style: normal;
+            color: #89878a;
+        }
+        a{
+            color: $black;
+            font-weight: 400;
+        }
+    }
+
 }
