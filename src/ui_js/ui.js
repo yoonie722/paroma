@@ -220,7 +220,4 @@ $(function(){
 		$(".main_notice .tab_group > div").eq(n).addClass("active");
 	});
 
-
-	
-
 });
