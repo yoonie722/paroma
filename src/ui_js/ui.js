@@ -125,7 +125,29 @@ $(function(){
 	var n=0;
 	var pos;
 
-	$controlls.find("li").eq(n).addClass("active"); //여기 이상함
+	// setInterval(function(){
+	// 	if(n < 5){
+	// 		n=n+1;
+	// 	}
+	// 	else{
+	// 		n=0;
+	// 	}
+		
+	// 	$controlls.find("li").removeClass("active");
+	// 	$controlls.find("li").eq(n).addClass("active"); 
+
+	// 	pos=-1*n*100+"%";
+	// 	$slider.animate({left:pos}, 400, function(){
+	// 		if(n == 5){
+	// 			n=0;
+	// 			moving=0;
+	// 			$slider.animate({"left" : 0}, 0);
+	// 			$controlls.find("li").eq(n).addClass("active");
+	// 		}
+	// 	});
+	// }, 4000);
+
+	$controlls.find("li").eq(n).addClass("active"); 
 
 	$controlls.find("a").click(function(e){
 		e.preventDefault();
@@ -157,29 +179,47 @@ $(function(){
 			$slider.animate({left:pos}, 400);
 		}
 	});
+	
+	var $imgMoving=$(".img_moving");
+	var $controll=$(".btn_dot");
 
-	// setInterval(function(){
-	// 	if(n < 5){
-	// 		n=n+1;
-	// 	}
-	// 	else{
-	// 		n=0;
-	// 	}
+	var n=0;
+	var moving;
 
-	// 	$controlls.find("li").removeClass("active");
-	// 	$controlls.find("li").eq(n).addClass("active");
+	$controll.find("li").eq(n).addClass("active");
 
-	// 	pos=-1*n*100+"%";
+	$controll.find("a").click(function(e){
+		e.preventDefault();
+		$controll.find("li").removeClass("active");
+		$(this).parent().addClass("active");
 
-	// 	$slider.animate({"left":pos}, 400, function(){
-	// 		if(n == 5){
-	// 			n=0;
-	// 			pos=0;
-	// 			$slider.animate({"left" : 0}, 0);
-	// 			$controlls.find("li").eq(n).addClass("active");
-	// 		}
-	// 	});
-	// }, 4000);
+		n=$(this).parent().index();
+		moving=n*-1*100+"%";
+		$imgMoving.animate({left:moving}, 400);
+	});
+
+	setInterval(function(){
+		if(n < 3){
+			n=n+1;
+		}
+		else{
+			n=0;
+		}
+
+		$controll.find("li").removeClass("active");
+		$controll.find("li").eq(n).addClass("active");
+
+		moving=-1*n*100+"%";
+
+		$imgMoving.animate({"left":moving}, 400, function(){
+			if(n == 3){
+				n=0;
+				moving=0;
+				$imgMoving.animate({"left" : 0}, 0);
+				$controll.find("li").eq(n).addClass("active");
+			}
+		});
+	}, 4000);
 
 	//dep1에 포커스를 두면 menu가 내려온다. 
 	$(".dep1").focusin(function(){
