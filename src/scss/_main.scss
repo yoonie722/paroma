@@ -1,0 +1,373 @@
+.main{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.container{
+	position: relative;
+	height: 368px;
+	.cont{
+		position: absolute;
+		top: -50px;
+		left: 50%;
+		margin-left: -550px;
+		width: 1100px;
+	}
+	.cont_top{
+		float: left;
+		width: 100%;
+	}
+	.notice{
+		float: left;
+		width: 275px;
+		height: 184px;
+		background-color: $gray;
+	}
+	.title a{
+		position: relative;
+		display: inline-block;
+		margin-left: 20px;
+		padding: 10px 10px 0 0;
+		font-size: 20px;
+		font-weight: bold;
+		letter-spacing: -1px;
+		color: #555;
+		&::after{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 18px;
+			left: 85px;
+			width: 1px;
+			height: 20px;
+			background-color: #999;
+		}
+		&.two::after{
+			display: none;
+		}
+		&.active{
+			color: #f38200;
+		}
+	}
+	.tab_group > div{
+		//display: none;
+		width: 275px;
+		height: 140px;
+		padding: 10px 20px;
+		&.active{
+			display: block;
+		}
+		ul{
+			width: 100%;
+			height: 100%;
+		}
+		li{
+			border-bottom: 1px solid #bbb;
+		}
+		a{
+			display: block;
+			color: #89878a;
+			font-size:14px;
+			height: 28px;
+			line-height: 28px;
+			width: 100%;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	}
+	.product1{
+		float: left;
+		position: relative;
+		width: 184px;
+		height: 184px;
+		img.over{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 184px;
+			height: 184px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+		a:hover img.over{
+			opacity: 1;
+		}
+	}
+	.product2{
+		float: left;
+		position: relative;
+		width: 184px;
+		height: 184px;
+		img.over{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 184px;
+			height: 184px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+		a:hover img.over{
+			opacity: 1;
+		}
+	}
+	.product3{
+		float: left;
+		position: relative;
+		width: 184px;
+		height: 184px;
+		img.over{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 184px;
+			height: 184px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+		a:hover img.over{
+			opacity: 1;
+		}
+	}
+	.map{
+		float: left;
+		position: relative;
+		padding: 10px 20px;
+		width: 273px;
+		height: 183px;
+		background-color: $gray;
+		.title{
+			margin-bottom: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #555; 
+		}
+		.more{
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			font-size: 13px;
+			color: #888;
+		}
+	}
+	.select{
+		float: left;
+		width: 100%;
+		dl{
+			display: inline-block;
+			position: relative;
+			line-height: 40px;
+			vertical-align: middle;
+		}
+		a{
+			display: block;
+			position: relative;
+			padding-left: 31px;
+			margin-top: 10px;
+			width: 200px;
+			height: 40px;
+			font-size: 0.875em;
+			color: #666;
+			border: 1px solid #dedede;
+		}
+	}
+	.cont_bottom{
+		float: left;
+	}
+	.brochure{
+		float: left;
+		width: 275px;
+		height: 184px;
+		padding: 0 20px;
+		background: url('//sonyoonkyung.github.io/test/dist/img/main_bg1_1.png') no-repeat;
+		border: 1px solid $gray;
+		.title{
+			font-size: 20px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #555;
+			margin-top: 10px;
+		}
+		.sub_title{
+			font-size: 14px;
+			letter-spacing: -1px;
+			color: #89878a;
+			margin-top: 10px;
+		}
+	}
+	.btn_wrap a{
+		display: inline-block;
+		text-align: center;
+		width: 46px;
+		height: 26px;
+		margin-top: 20px;
+		line-height: 26px;
+		color: #fff;
+		font-size: 0.875em;
+		font-weight: 400;
+		&.kor{
+			background-color: #f38200;
+		}
+		&.eng{
+			background-color: #6c5e51;
+		}
+	}
+	.shopping{
+		float: left;
+		position: relative;
+		width: 184px;
+		height: 184px;
+		padding: 0 20px;
+		background-color: #fff;
+		border: 1px solid $gray;
+		.title{
+			font-size: 20px;
+			line-height: 20px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #555;
+			margin-top: 10px;
+		}
+		.sub_title{
+			font-size: 14px;
+			letter-spacing: -1px;
+			color: #89878a;
+			margin-top: 10px;
+		}
+	}
+	.btn_dot{
+		position: absolute;
+		left: 0;
+		bottom: 20px;
+		width: 100%;
+		height: 10px;
+		text-align: center;
+		li{
+			display: inline-block;
+			margin: 0 2px;
+			&.active a{
+				background-color: #f90;
+			}
+		}
+		a{
+			display: block;
+			width: 10px;
+			height: 10px;
+			overflow: hidden;
+			text-indent: -9999px;
+			background-color: #b2b2b2;
+			border-radius: 7px;
+		}
+	}
+	.event{
+		position: relative;
+		float: left;
+		width: 368px;
+		height: 184px;
+		overflow: hidden;
+	}
+	.img_moving{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 1472px;
+		height: 184px;
+		overflow: hidden;
+		li{
+			position: relative;
+			float: left;
+			width: 368px;
+			height: 184px;
+			overflow: hidden;
+		}
+		img{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -184px;
+			width: 368px;
+			height: 184px;
+		}
+	}
+	.ad{
+		float: left;
+		width: 273px;
+		height: 183px;
+		background: url('//sonyoonkyung.github.io/test/dist/img/main_bg3.png') 0 0 no-repeat
+	}
+}
+.slider{
+	position: relative;
+	top: 68px;
+	min-width: 1280px;
+	height: 840px;
+	overflow: hidden;
+	.slider_img{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 840px;
+		width: 500%;
+		li{
+			float: left;
+			width: 20%;
+			height: 840px;
+			//overflow: hidden;
+			// img{
+			//     position: absolute;
+			//     left: 50%;
+			//     margin-left: -960px;
+			//     min-width: 1200px;
+			//     height: 840px;   
+			// }
+		}
+	}
+	.controller{
+		position: absolute;
+		left: 0;
+		bottom: 180px;
+		width: 100%;
+		height: 16px;
+		text-align: center;
+		font-size: 0; //inlin-block 여백 없애기
+		li{
+			display: inline-block;
+			margin: 0 10px;
+			// width: 16px;
+			// height: 16px;
+			&.active a{
+				background-color: #f90;
+			}
+			a{
+				display: block;
+				width: 16px;
+				height: 16px;
+				overflow: hidden;
+				text-indent: -9999px;
+				background-color: rgba(255,255,255,.5);
+				border-radius: 8px;
+			}
+		}
+	}
+	.arrow{
+		position: relative;
+		.left{
+			position: absolute;
+			top: 420px;
+			left: 40px;
+			width: 44px;
+			z-index: 200;
+			margin-top: -43px;
+		}
+		.right{
+			position: absolute;
+			top: 420px;
+			right: 40px;
+			width: 44px;
+			z-index: 200;
+			margin-top: -43px;
+		}
+	}
+}
