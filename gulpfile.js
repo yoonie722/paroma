@@ -31,8 +31,8 @@ const paths = {
     output: './dist/font'
   },
   js: {
-    input: './src/ui_js/*.js',
-    output: './dist/ui_js/'
+    input: './src/js/*.js',
+    output: './dist/js/'
   }
 };
 

@@ -1,14 +1,9 @@
 {
-  "name": "ui_template",
+  "name": "project1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.gomtv.com:ui/ui_template.git"
   },
   "author": "",
   "license": "ISC",
