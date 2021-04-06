@@ -29,6 +29,18 @@ function getInternetExplorerVersion() {
   }
   $("html").addClass("ie"+rv);
 }
+// 자주하는 질문 BEST 높이 맞춤 스크립트 추가
+function setBestHeight() {
+	if ($(window).width() < 1281) {
+		$('.bx_list .unit strong').css('height', 'auto');
+	} else {
+		var hlist = [];
+		$('.bx_list .unit strong').each(function() {
+			hlist.push($(this).css('height').slice(0,-2));
+		});
+		$('.bx_list .unit strong').css('height', hlist.sort(function(a, b) {return b-a})[0] + 'px');
+	}
+}
 
 // pop_up
 $(function(){
@@ -73,112 +85,6 @@ $(function(){
 		} return value;
 	}
 
-	//slider
-	var keyvisual={
-		key1 : "keyvisual1.jpg",
-		key2 : "keyvisual2.jpg",
-		key3 : "keyvisual3.jpg",
-		key4 : "keyvisual4.jpg",
-		key5 : "keyvisual5.jpg"
-	}
-	
-	var dataN=0;
-	//<div class="slider">
-	var keyContainer=document.getElementsByClassName("slider")[0];
-
-	//<div class="slider_img">
-	var inner=document.createElement("div");
-	inner.setAttribute("class", "slider_img");
-	keyContainer.appendChild(inner);
-
-	//<div class="controller">
-	var controller=document.createElement("div");
-	controller.setAttribute("class", "controller");
-	keyContainer.appendChild(controller);
-
-	var keyString="";
-	var controllString="";
-
-	keyString+='<ul>\n'
-	controllString+='<ul>\n'
-
-	for(key in keyvisual){
-		//<li><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg" alt="keyvisual"
-		keyString += '<li><img src="//sonyoonkyung.github.io/test/dist/img/' + keyvisual[key] + '"alt=" + "keyvisual' + (dataN+1) + '" title="keyvisual'+ (dataN+1) + '"></li>\n';
-		
-		controllString += '<li><a href="#" title="' + (dataN+1) + '">' + (dataN+1) + '</a></li>' 
-		dataN++;
-	}
-
-	keyString+='</ul>';
-	inner.innerHTML=keyString;
-	
-	controllString+='</ul>';
-	controller.innerHTML=controllString;
-
-	var $slider=$(".slider_img");
-	var $controlls=$(".controller");
-	var $left=$(".left");
-	var $right=$(".right");
-	var sliderNum=5;
-
-	var n=0;
-	var pos;
-
-	// setInterval(function(){
-	// 	if(n < 5){
-	// 		n=n+1;
-	// 	}
-	// 	else{
-	// 		n=0;
-	// 	}
-		
-	// 	$controlls.find("li").removeClass("active");
-	// 	$controlls.find("li").eq(n).addClass("active"); 
-
-	// 	pos=-1*n*100+"%";
-	// 	$slider.animate({left:pos}, 400, function(){
-	// 		if(n == 5){
-	// 			n=0;
-	// 			moving=0;
-	// 			$slider.animate({"left" : 0}, 0);
-	// 			$controlls.find("li").eq(n).addClass("active");
-	// 		}
-	// 	});
-	// }, 4000);
-
-	$controlls.find("li").eq(n).addClass("active"); 
-
-	$controlls.find("a").click(function(e){
-		e.preventDefault();
-		$controlls.find("li").removeClass("active");
-		$(this).parent().addClass("active");
-
-		n=$(this).parent().index();
-		pos=n*-1*100+"%";
-		$slider.animate({left:pos}, 400);
-	});
-
-	$left.click(function(e){
-		e.preventDefault();
-		if(n > 0){
-			n--;
-			$controlls.find("li").removeClass("active");
-			$controlls.find("li").eq(n).addClass("active");
-			pos=n*-1*100+"%";
-			$slider.animate({left:pos}, 400);
-		}
-	});
-	$right.click(function(e){
-		e.preventDefault();
-		if(n < (sliderNum-1)){
-			n++;
-			$controlls.find("li").removeClass("active");
-			$controlls.find("li").eq(n).addClass("active");
-			pos=n*-1*100+"%";
-			$slider.animate({left:pos}, 400);
-		}
-	});
 	
 	var $imgMoving=$(".img_moving");
 	var $controll=$(".btn_dot");
