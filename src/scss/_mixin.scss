@@ -18,6 +18,16 @@
   }
 }
 
+// @mixin respond-to($media) {
+// 	@if $media == tablet {
+// 		@media (max-width:$pc_size) { @content; }
+// 	}@else if $media == mobile {
+// 		@media (max-width:$tablet_size) { @content; }
+// 	}@else if $media == pc {
+// 		@media (min-width:$pc_size) { @content; }
+// 	}
+// }
+
 @mixin fontfamily($weight:100){
   font-family: $family;
   font-weight:$weight;
@@ -49,6 +59,12 @@
   content: "";
 }
 
+@mixin blind_txt {
+	text-indent:-2000em;
+	font-size:1px;
+	overflow:hidden;
+}
+
 @mixin set_content($width:auto, $height:auto, $display:inline-block, $position:relative,  $color:null) {
   content:"";
   width:$width;
@@ -65,4 +81,48 @@
   font-size: 0;
   line-height: 0;
   text-indent: -2000em;
+}
+
+@mixin ico_circle($size: 20px, $content:"", $bg: #fff, $color: #000, $weight:100, $display: inline-block,$position: relative) {
+	display:$display;
+	position:$position;
+	content:$content;
+	width:$size;
+	height:$size;
+	font-size:$size - 6;
+	font-weight:$weight;
+	line-height:$size - 1;
+	text-align:center;
+	color:$color;
+	background:$bg;
+	border-radius:25px;
+}
+@mixin ico_plus($width: 10px, $height: 10px, $thick: 2px, $color: #000, $display: inline-block, $position: relative) {
+	position: $position;
+	content: '';
+	display: $display;
+	width: $width;
+	height: $height;
+	&:after,&:before  {
+			content:"";
+			display:block;
+			position:absolute;
+			top: 50%;
+			left: 50%;
+			background-color:$color;
+	}
+	&:before {
+			-webkit-transform: translate(-50%,0);
+			transform: translate(-50%,0);
+			margin-top: -($thick / 2);
+			height:$thick;
+			width:$width;
+	}
+	&:after {
+			-webkit-transform: translate(0, -50%);
+			transform: translate(0, -50%);
+			margin-left: -($thick / 2);
+			height:$height;
+			width:$thick;
+	}
 }

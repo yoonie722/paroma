@@ -7,6 +7,7 @@
 			$(".main_slider").slick({
 				infinite: true,
 				dots: true,
+				dotsClass:'controller',
 				arrows: true,
 				prevArrow: "<button type='button' class='btn_arrow prev'>PREV</button>",
 				nextArrow: "<button type='button' class='btn_arrow next'>NEXT</button>"
@@ -18,6 +19,13 @@
 			$(_this).addClass("on").siblings("button").removeClass("on");
 			$(".tab[data-tab='"+tabName+"']").addClass("active").siblings(".tab").removeClass("active");
 		}
+		function fnShowCont(e, target, num) {
+			$(e).parent().find("a").removeClass("on");
+			$(e).addClass("on");
+			$("." + target + " .cont").hide();
+			$("." + target + " .cont").eq(num).show();
+		}
+		//<a href="#" onclick="event.preventDefault();fnShowCont(this,'module','0');" class="on">슬라이드</a>
 	</script>
   <!-- <include src="../include/pop/pop_ad.html"></include> -->
 	<include src="../include/skip_navi.html"></include>
@@ -32,15 +40,15 @@
 		</div>
 		<section class="wrap_cont">
 			<div class="cont">
-				<div class="cont_top">
+				<div class="box">
 					<div class="unit noti">
-						<div class="title">
+						<div class="btn_tit">
 							<button type="button" onclick="fnTab(this, 'notice')" class="on">NOTICE</button>
 							<button type="button" onclick="fnTab(this, 'question')">QUESTION</button>
 						</div>
 						<ul class="tab active" data-tab="notice">
 							<li><a href="#" title="2019년 여름휴가 공지안내">2019년 여름휴가 공지안내</a></li>
-							<li><a href="#" title="2019년 09월 카드사 부분 무이자 할부">2019년 09월 카드사 부분 무이자 할부</a></li>
+							<li><a href="#" title="2019년 09월 카드사 부분 무이자 할부">2019년 09월 카드사 부분 무이자 할부 더 알아보시려면 클릭하시오.</a></li>
 							<li><a href="#" title="2019년 08월 카드사 부분 무이자 할부">2019년 08월 카드사 부분 무이자 할부</a></li>
 							<li><a href="#" title="2019년 07월 카드사 부분 무이자 할부">2019년 07월 카드사 부분 무이자 할부</a></li>
 						</ul>
@@ -51,80 +59,69 @@
 							<li><a href="#" title="제품 재고슈량은 어디서 확인해야 되나요?">제품 재고슈량은 어디서 확인해야 되나요?</a></li>		
 						</ul>
 					</div>
-					<a href="#" class="product tp1" title="이달의 best상품">
-						<img src="//sonyoonkyung.github.io/test/dist/img/ico_main1.jpg" alt="이달의 best상품">
-						<img class="over" src="//sonyoonkyung.github.io/test/dist/img/ico_main1_over.jpg" alt="display sale">
+					<a href="#" class="product" title="이달의 best상품">
+						<img class="img" src="//sonyoonkyung.github.io/test/dist/img/ico_main1.jpg" alt="이달의 best상품">
+						<img class="img over" src="//sonyoonkyung.github.io/test/dist/img/ico_main1_over.jpg" alt="display sale">
 					</a>
-					<a href="#" class="product tp2" title="파로마 시크릿 수납화장대">
-						<img src="//sonyoonkyung.github.io/test/dist/img/ico_main3.jpg" alt="파로마 시크릿 수납화장대">
-						<img class="over" src="//sonyoonkyung.github.io/test/dist/img/ico_main3_over.jpg" alt="magic price">
+					<a href="#" class="product" title="파로마 시크릿 수납화장대">
+						<img class="img" src="//sonyoonkyung.github.io/test/dist/img/ico_main3.jpg" alt="파로마 시크릿 수납화장대">
+						<img class="img over" src="//sonyoonkyung.github.io/test/dist/img/ico_main3_over.jpg" alt="magic price">
 					</a>
-					<a href="#" class="product tp3" title="give for you">
-						<img src="//sonyoonkyung.github.io/test/dist/img/ico_main2.png" alt="give for you">
-						<img class="over" src="//sonyoonkyung.github.io/test/dist/img/ico_main2_over.jpg" alt="fall living promotion">
+					<a href="#" class="product" title="give for you">
+						<img class="img" src="//sonyoonkyung.github.io/test/dist/img/ico_main2.png" alt="give for you">
+						<img class="img over" src="//sonyoonkyung.github.io/test/dist/img/ico_main2_over.jpg" alt="fall living promotion">
 					</a>
 					<div class="unit map">
-						<p class="title">전국 지점 찾기</p>
-						<a href="#" class="more" title="more">더보기 +</a>
-						<form action="" method="" id="form">
-							<div class="select">
-								<select class="local_select">
-									<option selected="selected">서울</option>
-									<option>서울</option>
-									<option>경기</option>
-									<option>대전</option>
-								</select>
-								<select class="center_select">
-									<option selected="selected">센터선택</option>
-									<option>강남점</option>
-									<option>수지점</option>
-									<option>자양점</option>
-								</select>
-							</div>
-						</form>
+						<p class="tit">전국 지점 찾기 <a href="#" class="more" title="more">더보기 +</a></p>
+						<div class="select">
+							<select name="" class="slct">
+								<option selected="selected">서울</option>
+								<option>서울</option>
+								<option>경기</option>
+								<option>대전</option>
+							</select>
+						</div>
+
+						<!-- 커스텀 셀렉트 -->
+						<div class="bx_slct">
+							<button type="button" class="nm"><b>센터선택</b></button>
+							<ul>
+								<li class="nm"><b>센터선택</b></li>
+								<li class="on"><span class="name">강남점</span></li>
+								<li><span class="name">수지점</span></li>
+								<li><span class="name">자양점</span></li>
+							</ul>
+						</div>
+						<!-- 커스텀 셀렉트 -->
 					</div>
 				</div>
-				<div class="cont_bottom">
-					<div class="brochure">
-						<h3 class="title">Paroma Brochure</h3>
-						<p class="sub_title">MD's Pick<br>브로셔를 만나 보세요</p>
+				<div class="box">
+					<div class="unit brochure">
+						<h3 class="tit">Paroma Brochure</h3>
+						<p class="sub_tit">MD's Pick<br>브로셔를 만나 보세요</p>
 						<div class="btn_wrap">
-							<a class="kor" href="#" title="한글">한글</a>
-							<a class="eng" href="#" title="ENG">ENG</a>
+							<button type="button" class="btn ko">한글</button>
+							<button type="button" class="btn en">ENG</button>
 						</div>
 					</div>
-					<div class="shopping">
-						<h3 class="title">Shopping<br>Guide</h3>
-						<p class="sub_title">쇼핑안내<br>상품후기</p>
-						<div class="btn_dot">
-							<ul>
-								<li><a href="#" title="1">1</a></li>
-								<li><a href="#" title="2">2</a></li>
-								<li><a href="#" title="3">3</a></li>
-							</ul>
-						</div>
+					<div class="product shop">
+						<h3 class="tit">Shopping <br>Guide</h3>
+						<p class="sub_tit">쇼핑안내<br>상품후기</p>
+						<ul class="btn_dot">
+							<li><a href="#" title="1">1</a></li>
+							<li><a href="#" title="2">2</a></li>
+							<li><a href="#" title="3">3</a></li>
+						</ul>
 					</div>
-					<div class="event">
-						<div class="img_moving">
-							<ul>
-								<li>
-									<a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트" title="시즌 오프 가구이벤트"></a>
-								</li>
-								<li>
-									<a href="#" title="이벤트2"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner1.png" alt="이벤트" title="이벤트"></a>
-								</li>
-								<li>
-									<a href="#" title="이벤트3"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner3.png" alt="이벤트" title="이벤트"></a>
-								</li>
-								<li>
-									<a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트" title="시즌 오프 가구이벤트"></a>
-								</li>
-							</ul>
-						</div>
+					<div class="event_img">
+						<ul class="img_moving">
+							<li><a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트"></a></li>
+							<li><a href="#" title="이벤트2"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner1.png" alt="이벤트"></a></li>
+							<li><a href="#" title="이벤트3"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner3.png" alt="이벤트"></a></li>
+							<li><a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트"></a></li>
+						</ul>
 					</div>
-					<div class="ad">
-						<a href="#" title="대리점/취급점"><img src="//sonyoonkyung.github.io/test/dist/img/main_bg3.png" alt="Kartell대리점/취급점 모집" title="Kartell대리점/취급점 모집"></a>
-					</div>
+					<a href="#" class="ad" title="대리점/취급점"><img src="//sonyoonkyung.github.io/test/dist/img/main_bg3.png" alt="Kartell대리점/취급점 모집"></a>
 				</div>
 			</div>
 		</section>

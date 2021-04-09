@@ -1,48 +1,52 @@
-.main_slider{
+// 메인 슬라이드
+.main_slider {
 	position: relative;
 	width: 100%;
 	height: 840px;
 	.slide {
 		width: 100%;
 		height: 840px;
+		img:focus {
+			outline: none;
+		}
 	}
-	.controller{
+	.controller {
 		position: absolute;
-		left: 0;
+		left: 50%;
 		bottom: 180px;
-		width: 100%;
-		height: 16px;
-		text-align: center;
-		font-size: 0; //inlin-block 여백 없애기
-		li{
-			display: inline-block;
+		transform: translateX(-50%);
+		width: auto;
+		li {
+			float: left;
 			margin: 0 10px;
-			// width: 16px;
-			// height: 16px;
-			&.active a{
+			&.slick-active button {
 				background-color: #f90;
 			}
-			a{
+			button {
 				display: block;
 				width: 16px;
 				height: 16px;
-				overflow: hidden;
-				text-indent: -9999px;
 				background-color: rgba(255,255,255,.5);
 				border-radius: 8px;
+				@include blind_txt;
 			}
 		}
 	}
 	.btn_arrow {
 		position: absolute;
+		display: block;
 		top: 377px;
 		width: 44px;
+		height: 86px;
 		z-index: 10;
+		@include blind_txt;
 		&.prev {
 			left: 40px;
+			background: url("//sonyoonkyung.github.io/test/dist/img/btn_left.png") 0 0 no-repeat;
 		}
 		&.next {
 			right: 40px;
+			background: url("//sonyoonkyung.github.io/test/dist/img/btn_right.png") 0 0 no-repeat;
 		}
 	}
 }
@@ -52,23 +56,26 @@
 		position: relative;
 		height: 328px;
 	}
-	.cont{
+	.cont {
 		position: absolute;
 		top: -90px;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 1100px;
+		width: 1102px;
+		&:after {
+			@include clear;
+		}
+		.box {
+			float: left;
+			width: 100%;
+		}
 	}
-	.cont_top{
-		float: left;
-		width: 100%;
-	}
-	.unit{
+	.unit {
 		float: left;
 		width: 275px;
 		height: 184px;
 		background-color: $gray;
-		.title button{
+		.btn_tit button {
 			position: relative;
 			display: inline-block;
 			margin-left: 20px;
@@ -77,45 +84,89 @@
 			font-weight: bold;
 			letter-spacing: -1px;
 			color: #555;
-			&::after{
+			&.on{
+				color: #f38200;
+			}
+			&:before{
 				content: "";
 				display: block;
 				position: absolute;
-				top: 18px;
-				left: 85px;
+				top: 0;
+				left: 2px;
 				width: 1px;
 				height: 20px;
 				background-color: #999;
 			}
-			&.two::after{
-				display: none;
-			}
-			&.on{
-				color: #f38200;
-			}
 		}
-	}
-	.tab {
-		display: none;
-		width: 100%;
-		padding: 10px 20px;
-		box-sizing: border-box;
-		&.active{
-			display: block;
-		}
-		li{
-			border-bottom: 1px solid #bbb;
-		}
-		a{
-			display: block;
-			color: #89878a;
-			font-size:14px;
-			height: 28px;
-			line-height: 28px;
+		.tab {
+			display: none;
 			width: 100%;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			overflow: hidden;
+			padding: 10px 20px;
+			box-sizing: border-box;
+			&.active {
+				display: block;
+			}
+			li {
+				border-bottom: 1px solid #bbb;
+			}
+			a {
+				display: block;
+				color: #89878a;
+				font-size:14px;
+				height: 28px;
+				line-height: 28px;
+				width: 100%;
+				@include ellipsis;
+			}
+		}
+		.tit {
+			margin-bottom: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #555; 
+			.more{
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				font-size: 13px;
+				color: #888;
+			}
+		}
+		&.map {
+			position: relative;
+			padding: 10px 20px;
+		}
+		&.brochure {
+			padding: 0 20px;
+			background: url('//sonyoonkyung.github.io/test/dist/img/main_bg1_1.png') no-repeat;
+			border: 1px solid $gray;
+			.tit{
+				margin: 10px 0 0 0;
+			}
+			.sub_tit{
+				font-size: 14px;
+				letter-spacing: -1px;
+				color: #89878a;
+				margin-top: 10px;
+			}
+		}
+		.btn_wrap .btn{
+			display: inline-block;
+			text-align: center;
+			width: 46px;
+			height: 26px;
+			margin-top: 20px;
+			line-height: 26px;
+			color: #fff;
+			font-size: 0.875em;
+			font-weight: 400;
+			&.ko{
+				background-color: #f38200;
+			}
+			&.en{
+				background-color: #6c5e51;
+			}
 		}
 	}
 	.product{
@@ -123,184 +174,98 @@
 		position: relative;
 		width: 184px;
 		height: 184px;
-		img.over{
+		box-sizing: border-box;
+		.img.over{
 			position: absolute;
 			left: 0;
 			top: 0;
-			width: 184px;
-			height: 184px;
+			width: 100%;
 			opacity: 0;
 			transition: opacity 0.3s;
 		}
-		a:hover img.over{
+		&:hover .img.over{
 			opacity: 1;
 		}
-	}
-	.map{
-		float: left;
-		position: relative;
-		padding: 10px 20px;
-		width: 273px;
-		height: 183px;
-		background-color: $gray;
-		.title{
-			margin-bottom: 10px;
-			font-size: 20px;
-			font-weight: bold;
-			letter-spacing: -1px;
-			color: #555; 
-		}
-		.more{
-			position: absolute;
-			right: 20px;
-			top: 20px;
-			font-size: 13px;
-			color: #888;
-		}
-	}
-	.select{
-		float: left;
-		width: 100%;
-		dl{
-			display: inline-block;
-			position: relative;
-			line-height: 40px;
-			vertical-align: middle;
-		}
-		a{
-			display: block;
-			position: relative;
-			padding-left: 31px;
-			margin-top: 10px;
-			width: 200px;
-			height: 40px;
-			font-size: 0.875em;
-			color: #666;
-			border: 1px solid #dedede;
-		}
-	}
-	.cont_bottom{
-		float: left;
-	}
-	.brochure{
-		float: left;
-		width: 275px;
-		height: 184px;
-		padding: 0 20px;
-		background: url('//sonyoonkyung.github.io/test/dist/img/main_bg1_1.png') no-repeat;
-		border: 1px solid $gray;
-		.title{
-			font-size: 20px;
-			font-weight: bold;
-			letter-spacing: -1px;
-			color: #555;
-			margin-top: 10px;
-		}
-		.sub_title{
-			font-size: 14px;
-			letter-spacing: -1px;
-			color: #89878a;
-			margin-top: 10px;
-		}
-	}
-	.btn_wrap a{
-		display: inline-block;
-		text-align: center;
-		width: 46px;
-		height: 26px;
-		margin-top: 20px;
-		line-height: 26px;
-		color: #fff;
-		font-size: 0.875em;
-		font-weight: 400;
-		&.kor{
-			background-color: #f38200;
-		}
-		&.eng{
-			background-color: #6c5e51;
-		}
-	}
-	.shopping{
-		float: left;
-		position: relative;
-		width: 184px;
-		height: 184px;
-		padding: 0 20px;
-		background-color: #fff;
-		border: 1px solid $gray;
-		.title{
-			font-size: 20px;
-			line-height: 20px;
-			font-weight: bold;
-			letter-spacing: -1px;
-			color: #555;
-			margin-top: 10px;
-		}
-		.sub_title{
-			font-size: 14px;
-			letter-spacing: -1px;
-			color: #89878a;
-			margin-top: 10px;
-		}
-	}
-	.btn_dot{
-		position: absolute;
-		left: 0;
-		bottom: 20px;
-		width: 100%;
-		height: 10px;
-		text-align: center;
-		li{
-			display: inline-block;
-			margin: 0 2px;
-			&.active a{
-				background-color: #f90;
+		&.shop{
+			padding: 0 20px;
+			background-color: #fff;
+			border: 1px solid $gray;
+			.tit{
+				font-size: 20px;
+				line-height: 20px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				color: #555;
+				margin-top: 10px;
+			}
+			.sub_tit{
+				font-size: 14px;
+				letter-spacing: -1px;
+				color: #89878a;
+				margin-top: 10px;
 			}
 		}
-		a{
-			display: block;
-			width: 10px;
+		.btn_dot{
+			position: absolute;
+			left: 50%;
+			bottom: 20px;
+			transform: translateX(-50%);
 			height: 10px;
-			overflow: hidden;
-			text-indent: -9999px;
-			background-color: #b2b2b2;
-			border-radius: 7px;
+			text-align: center;
+			li{
+				float: left;
+				margin: 0 2px;
+				&.active a{
+					background-color: #f90;
+				}
+			}
+			a{
+				display: block;
+				width: 10px;
+				height: 10px;
+				background-color: #b2b2b2;
+				border-radius: 7px;
+				@include blind_txt;
+			}
 		}
 	}
-	.event{
+	.event_img{
 		position: relative;
 		float: left;
 		width: 368px;
 		height: 184px;
 		overflow: hidden;
-	}
-	.img_moving{
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 1472px;
-		height: 184px;
-		overflow: hidden;
-		li{
-			position: relative;
-			float: left;
-			width: 368px;
+		.img_moving{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1472px;
 			height: 184px;
 			overflow: hidden;
-		}
-		img{
-			position: absolute;
-			top: 0;
-			left: 50%;
-			margin-left: -184px;
-			width: 368px;
-			height: 184px;
+			li{
+				position: relative;
+				float: left;
+				width: 368px;
+				height: 184px;
+				overflow: hidden;
+			}
+			img{
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -184px;
+				width: 368px;
+			}
 		}
 	}
 	.ad{
 		float: left;
+		display: block;
 		width: 273px;
-		height: 183px;
-		background: url('//sonyoonkyung.github.io/test/dist/img/main_bg3.png') 0 0 no-repeat
+		height: 184px;
+		background-color: #000;
+		img {
+			width: 100%;
+		}
 	}
 }

@@ -1,4 +1,4 @@
-# GOMLab
+<!-- # GOMLab
 * **실서비스 URL** : [https://www.gomlab.com/?language=kr](https://www.gomlab.com/?language=kr)  
     * host 설정 :  34.192.176.169	www.gomlab.com
     
@@ -131,4 +131,4 @@
 <br/><br/><br/>
 
 ## 참고  
-페이스 북 버튼 API 참고  : [https://developers.facebook.com/docs/plugins/like-button](https://developers.facebook.com/docs/plugins/like-button)
+페이스 북 버튼 API 참고  : [https://developers.facebook.com/docs/plugins/like-button](https://developers.facebook.com/docs/plugins/like-button) -->
