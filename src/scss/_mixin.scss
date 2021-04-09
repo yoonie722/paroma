@@ -59,6 +59,13 @@
   content: "";
 }
 
+@mixin blind {
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -2000em;
+}
+
 @mixin blind_txt {
 	text-indent:-2000em;
 	font-size:1px;
@@ -76,13 +83,296 @@
   }
 }
 
-@mixin blind {
-  overflow: hidden;
-  font-size: 0;
-  line-height: 0;
-  text-indent: -2000em;
+@mixin ico_cancel($size: 21px, $thick: 2px, $color: #000, $padding: 0, $display: inline-block, $position: relative) {
+	position: $position;
+	display: $display;
+	width: $size + $padding*2;
+	height: $size + $padding*2;
+	&:before, &:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: round($size*$sqrt_2 - $thick);
+			height: $thick;
+			background-color: $color;
+	}
+	&:before {
+			-webkit-transform: translate(-50%, -50%) rotate(45deg);
+			transform: translate(-50%, -50%) rotate(45deg);
+	}
+	&:after {
+			-webkit-transform: translate(-50%, -50%) rotate(135deg);
+			transform: translate(-50%, -50%) rotate(135deg);
+	}
 }
 
+//불러올때 가로값 + 6
+@mixin ico_angle_vrt($direction: 'up', $width: 50px, $height: 25px, $thick: 2px, $color: #222, $display: inline-block, $position: relative) {
+	$size: floor($width/$sqrt_2 - 2*$thick);
+    $rate: 2*$height/$width;
+    content: '';
+    position: $position;
+    display: $display;
+    vertical-align: middle;
+    width: $size;
+    height: $size;
+    @if ($direction == 'up' or $direction == 'down') {
+        $margin-top: round($rate*$size/(2*$sqrt_2));
+            @if ($rate == 1) {
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
+            } @else {
+                -webkit-transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+                transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+            }
+            @if ($direction == 'up') {
+                margin-top: $margin-top;
+                border-top: $thick solid $color;
+                border-left: $thick solid $color;
+                border-right: none;
+                border-bottom: none;
+            } @else if ($direction == 'down') {
+                margin-top: - $margin-top;
+                border-top: none;
+                border-left: none;
+                border-right: $thick solid $color;
+                border-bottom: $thick solid $color;
+            }
+    }@else if ($direction == 'left' or $direction == 'right') {
+        $margin-left: round($rate*$size/(2*$sqrt_2));
+        @if ($rate == 1) {
+            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+        } @else {
+            -webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+            transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+        }
+
+        @if ($direction == 'left') {
+            margin-left: $margin-left;
+            border-left: $thick solid $color;
+            border-bottom: $thick solid $color;
+        } @else if ($direction == 'right') {
+            margin-left: - $margin-left;
+            border-top: $thick solid $color;
+            border-right: $thick solid $color;
+        }
+    }
+}
+@mixin ico_angle($direction: 'up', $width: 50px, $height: 25px, $thick: 2px, $color: #222, $display: inline-block, $position: relative) {
+    position: $position;
+    display: $display;
+    width: $width;
+    height: $height;
+    @if ($direction == 'up' or $direction == 'down') {
+        $size: floor($width/$sqrt_2 - 2*$thick);
+        $rate: 2*$height/$width;
+        $margin-top: round($rate*$size/(2*$sqrt_2));
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $size;
+            height: $size;
+            @if ($rate == 1) {
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
+            } @else {
+                -webkit-transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+                transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+            }
+
+            @if ($direction == 'up') {
+                margin-top: $margin-top;
+                border-top: $thick solid $color;
+                border-left: $thick solid $color;
+            } @else if ($direction == 'down') {
+                margin-top: - $margin-top;
+                border-right: $thick solid $color;
+                border-bottom: $thick solid $color;
+            }
+        }
+    } @else if ($direction == 'left' or $direction == 'right') {
+        $size: floor($height/$sqrt_2 - 2*$thick);
+        $rate: 2*$width/$height;
+        $margin-left: round($rate*$size/(2*$sqrt_2));
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $size;
+            height: $size;
+
+            @if ($rate == 1) {
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
+            } @else {
+                -webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+                transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+            }
+
+            @if ($direction == 'left') {
+                margin-left: $margin-left;
+                border-left: $thick solid $color;
+                border-bottom: $thick solid $color;
+            } @else if ($direction == 'right') {
+                margin-left: - $margin-left;
+                border-top: $thick solid $color;
+                border-right: $thick solid $color;
+            }
+        }
+    }
+}
+@mixin ico_arrow($direction: 'up', $width: 50px, $height: 50px, $thick: 2px, $color: #222, $display: inline-block, $position: relative) {
+    position: $position;
+    display: $display;
+    width: $width;
+    height: $height;
+    &:before {
+        content: '';
+        position: absolute;
+        border-top: $thick solid $color;
+        border-left: $thick solid $color;
+
+        @if ($direction == 'up' or $direction == 'down') {
+            $size: round($width/$sqrt_2 - $thick);
+            left: 50%;
+            width: $size;
+            height: $size;
+
+            @if ($direction == 'up') {
+                top: round($width/2);
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
+            } @else if ($direction == 'down') {
+                bottom: round($width/2);
+                -webkit-transform: translate(-50%, 50%) rotate(-135deg);
+                transform: translate(-50%, 50%) rotate(-135deg);
+            }
+        } @else if ($direction == 'left' or $direction == 'right') {
+            $size: round($height/$sqrt_2 - $thick);
+            top: 50%;
+            width: $size;
+            height: $size;
+
+            @if ($direction == 'left') {
+                left: round($height/2);
+                -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                transform: translate(-50%, -50%) rotate(-45deg);
+            } @else if ($direction == 'right') {
+                right: round($height/2);
+                -webkit-transform: translate(50%, -50%) rotate(135deg);
+                transform: translate(50%, -50%) rotate(135deg);
+            }
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        background-color: $color;
+
+        @if ($direction == 'up' or $direction == 'down') {
+
+            @if ($direction == 'up') {
+                top: round($thick/$sqrt_2);
+            } @else if ($direction == 'down') {
+                bottom: round($thick/$sqrt_2);
+            }
+
+            left: 50%;
+            width: $thick;
+            height: $height - round($thick/$sqrt_2);
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+
+        } @else if ($direction == 'left' or $direction == 'right') {
+            top: 50%;
+
+            @if ($direction == 'left') {
+                left: round($thick/$sqrt_2);
+            } @else if ($direction == 'right') {
+                right: round($thick/$sqrt_2);
+            }
+
+            width: $width - round($thick/$sqrt_2);
+            height: $thick;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+        }
+    }
+}
+@mixin ico_download($width: 50px, $height: 50px, $thick: 2px, $interval: 2px, $color: #222, $display: inline-block, $position: relative, $type:'') {
+	position: $position;
+	display: $display;
+	width: $width;
+	height: $thick;
+	background-color: $color;
+	&:before {
+		content: '';
+		position: absolute;
+		@if ($type == 'full') {
+		width: 0px;
+		height: 0px;
+		left: 50%;
+		margin-left: round($width/2) * -1;
+		bottom: $thick + $interval;
+		border-left: round($width/2) solid transparent;
+		border-right: round($width/2) solid transparent;
+		border-top: round($height/3) solid $color;
+		}@else{
+			bottom: round($width/2) + $thick + $interval;
+			border-top: $thick solid $color;
+			border-left: $thick solid $color;
+			$size: round($width/$sqrt_2 - $thick)-1;
+			left: 50%;
+			width: $size;
+			height: $size;
+			-webkit-transform: translate(-50%, 50%) rotate(-135deg);
+			transform: translate(-50%, 50%) rotate(-135deg);
+		}
+	}
+	&:after {
+			content: '';
+			position: absolute;
+			background-color: $color;
+			bottom: round($thick/$sqrt_2) + $thick + $interval;
+			left: 50%;
+			width: $thick;
+			height: $height - round($thick/$sqrt_2) - $thick - $interval;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+	}
+}
+@mixin ico_menu($width: 21px, $thick: 2px, $interval: 6px, $color: #000, $display: inline-block,$padding: 0) {
+	position: relative;
+	display: $display;
+	margin: $thick+$interval+$padding $padding;
+
+	&, &:before, &:after {
+		width: $width;
+		height: $thick;
+		background-color: $color;
+	}
+
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		left: 0;
+	}
+
+	&:before {
+		top: -($thick+$interval);
+	}
+
+	&:after {
+		top: $thick+$interval;
+	}
+}
 @mixin ico_circle($size: 20px, $content:"", $bg: #fff, $color: #000, $weight:100, $display: inline-block,$position: relative) {
 	display:$display;
 	position:$position;
@@ -104,25 +394,25 @@
 	width: $width;
 	height: $height;
 	&:after,&:before  {
-			content:"";
-			display:block;
-			position:absolute;
-			top: 50%;
-			left: 50%;
-			background-color:$color;
+		content:"";
+		display:block;
+		position:absolute;
+		top: 50%;
+		left: 50%;
+		background-color:$color;
 	}
 	&:before {
-			-webkit-transform: translate(-50%,0);
-			transform: translate(-50%,0);
-			margin-top: -($thick / 2);
-			height:$thick;
-			width:$width;
+		-webkit-transform: translate(-50%,0);
+		transform: translate(-50%,0);
+		margin-top: -($thick / 2);
+		height:$thick;
+		width:$width;
 	}
 	&:after {
-			-webkit-transform: translate(0, -50%);
-			transform: translate(0, -50%);
-			margin-left: -($thick / 2);
-			height:$height;
-			width:$thick;
+		-webkit-transform: translate(0, -50%);
+		transform: translate(0, -50%);
+		margin-left: -($thick / 2);
+		height:$height;
+		width:$thick;
 	}
 }
