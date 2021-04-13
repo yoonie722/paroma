@@ -17,18 +17,19 @@ html,body,div,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,form,fieldset {
   padding:0;
 }
 html {
-  min-width: 1024px;
-  width: 100%;
   -webkit-text-size-adjust:none;
 }
 h1,h2,h3,h4,h5,h6,strong,b,th{
   font-weight:$bold;
 }
-article, aside, details, figcaption, figure, footer, header, menu, nav, section, main {display: block;}
+article, aside, details, figcaption, figure, footer, header, menu, nav, section, main {
+	display: block;
+	clear: both;
+}
 ul,ol,dl {
   list-style:none;
 }
-em,address{font-style:normal}
+em,address,i{font-style:normal}
 img {
   border:0;
   vertical-align:top;
@@ -38,8 +39,8 @@ fieldset {
 }
 table {
   table-layout: fixed;
-  width:100%;
   border-collapse:collapse;
+	border-spacing: 0px;
 }
 caption{
   display: none;
@@ -49,6 +50,7 @@ button {
   background:none;
   cursor:pointer;
   outline:none;
+	padding:0px;
 }
 input[type=text], input[type=password], input[type=tel], input[type=email], input[type=button], input[type=submit], input[type=reset], button, select {
   font-family:$family;
@@ -59,6 +61,11 @@ a {
   &:active, &:link, &:visited, &:hover{
     text-decoration: none;
   }
+}
+hr {
+	margin:0;
+	border-top:1px solid $black;
+  border-bottom:0;
 }
 .blind {
   display: block;

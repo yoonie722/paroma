@@ -4,6 +4,8 @@
 <body class="main">
 	<script>
 		$(function(){
+
+			//메인 키비쥬얼 슬라이드
 			$(".main_slider").slick({
 				infinite: true,
 				dots: true,
@@ -12,31 +14,56 @@
 				prevArrow: "<button type='button' class='btn_arrow prev'>PREV</button>",
 				nextArrow: "<button type='button' class='btn_arrow next'>NEXT</button>"
 			});
+			// 하단 사이트 로고 슬라이드
+			$(".site_slider").slick({
+				centerMode: true,
+				centerPadding: "65px",
+				slidesToShow: 5,
+				infinite: true,
+				dots: false,
+				arrows: true,
+				prevArrow: "<button type='button' class='btn_arrow prev'>PREV</button>",
+				nextArrow: "<button type='button' class='btn_arrow next'>NEXT</button>"
+			});
 		});
-		//tab메뉴
+
+		//공지사항 tab메뉴
 		function fnTab(obj,tabName) {
 			var _this = obj;
 			$(_this).addClass("on").siblings("button").removeClass("on");
 			$(".tab[data-tab='"+tabName+"']").addClass("active").siblings(".tab").removeClass("active");
 		}
+
+		//다른 케이스 탭메뉴 만드는 법
 		function fnShowCont(e, target, num) {
 			$(e).parent().find("a").removeClass("on");
 			$(e).addClass("on");
 			$("." + target + " .cont").hide();
 			$("." + target + " .cont").eq(num).show();
 		}
-		//<a href="#" onclick="event.preventDefault();fnShowCont(this,'module','0');" class="on">슬라이드</a>
+		//<a href="#none" onclick="event.preventDefault();fnShowCont(this,'module','0');" class="on">슬라이드</a>
+
 	</script>
   <!-- <include src="../include/pop/pop_ad.html"></include> -->
 	<include src="../include/skip_navi.html"></include>
   <include src="../include/header.html"></include>
   <div class="container">
 		<div class="main_slider">
-			<div class="slide"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg" alt="keyvisual1"></div>
-			<div class="slide"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual2.jpg" alt="keyvisual2"></div>
-			<div class="slide"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual3.jpg" alt="keyvisual3"></div>
-			<div class="slide"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual4.jpg" alt="keyvisual4"></div>
-			<div class="slide"><img src="//sonyoonkyung.github.io/test/dist/img/keyvisual5.jpg" alt="keyvisual5"></div>
+			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg) no-repeat 0 50%;">
+				<p class="blind">키비쥬얼1</p>
+			</div>
+			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual2.jpg) no-repeat 0 50%;">
+				<p class="blind">키비쥬얼2</p>
+			</div>
+			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual3.jpg) no-repeat 0 50%;">
+				<p class="blind">키비쥬얼3</p>
+			</div>
+			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual4.jpg) no-repeat 0 50%;">
+				<p class="blind">키비쥬얼4</p>
+			</div>
+			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual5.jpg) no-repeat 0 50%;">
+				<p class="blind">키비쥬얼5</p>
+			</div>
 		</div>
 		<section class="wrap_cont">
 			<div class="cont">
@@ -47,32 +74,32 @@
 							<button type="button" onclick="fnTab(this, 'question')">QUESTION</button>
 						</div>
 						<ul class="tab active" data-tab="notice">
-							<li><a href="#" title="2019년 여름휴가 공지안내">2019년 여름휴가 공지안내</a></li>
-							<li><a href="#" title="2019년 09월 카드사 부분 무이자 할부">2019년 09월 카드사 부분 무이자 할부 더 알아보시려면 클릭하시오.</a></li>
-							<li><a href="#" title="2019년 08월 카드사 부분 무이자 할부">2019년 08월 카드사 부분 무이자 할부</a></li>
-							<li><a href="#" title="2019년 07월 카드사 부분 무이자 할부">2019년 07월 카드사 부분 무이자 할부</a></li>
+							<li><a href="#none" title="2021년 여름휴가 공지안내">2021년 여름휴가 공지안내</a></li>
+							<li><a href="#none" title="2021년 03월 카드사 부분 무이자 할부">2021년 03월 카드사 부분 무이자 할부 더 알아보시려면 클릭하시오.</a></li>
+							<li><a href="#none" title="2021년 04월 카드사 부분 무이자 할부">2021년 04월 카드사 부분 무이자 할부</a></li>
+							<li><a href="#none" title="2021년 05월 카드사 부분 무이자 할부">2021년 05월 카드사 부분 무이자 할부</a></li>
 						</ul>
 						<ul class="tab" data-tab="question">
-							<li><a href="#" title="파로마가구의 자재등급은 어떻게 되나요?">파로마가구의 자재등급은 어떻게 되나요?</a></li>
-							<li><a href="#" title="회원 탈퇴는 어떻게 하나요?">회원 탈퇴는 어떻게 하나요?</a></li>
-							<li><a href="#" title="휴일에도 주문/배송이 되나요?">휴일에도 주문/배송이 되나요?</a></li>	
-							<li><a href="#" title="제품 재고슈량은 어디서 확인해야 되나요?">제품 재고슈량은 어디서 확인해야 되나요?</a></li>		
+							<li><a href="#none" title="파로마가구의 자재등급은 어떻게 되나요?">파로마가구의 자재등급은 어떻게 되나요?</a></li>
+							<li><a href="#none" title="회원 탈퇴는 어떻게 하나요?">회원 탈퇴는 어떻게 하나요?</a></li>
+							<li><a href="#none" title="휴일에도 주문/배송이 되나요?">휴일에도 주문/배송이 되나요?</a></li>	
+							<li><a href="#none" title="제품 재고 수량은 어디서 확인해야 되나요?">제품 재고 수량은 어디서 확인해야 되나요?</a></li>		
 						</ul>
 					</div>
-					<a href="#" class="product" title="이달의 best상품">
+					<a href="#none" class="product" title="이달의 best상품">
 						<img class="img" src="//sonyoonkyung.github.io/test/dist/img/ico_main1.jpg" alt="이달의 best상품">
 						<img class="img over" src="//sonyoonkyung.github.io/test/dist/img/ico_main1_over.jpg" alt="display sale">
 					</a>
-					<a href="#" class="product" title="파로마 시크릿 수납화장대">
+					<a href="#none" class="product" title="파로마 시크릿 수납화장대">
 						<img class="img" src="//sonyoonkyung.github.io/test/dist/img/ico_main3.jpg" alt="파로마 시크릿 수납화장대">
 						<img class="img over" src="//sonyoonkyung.github.io/test/dist/img/ico_main3_over.jpg" alt="magic price">
 					</a>
-					<a href="#" class="product" title="give for you">
+					<a href="#none" class="product" title="give for you">
 						<img class="img" src="//sonyoonkyung.github.io/test/dist/img/ico_main2.png" alt="give for you">
 						<img class="img over" src="//sonyoonkyung.github.io/test/dist/img/ico_main2_over.jpg" alt="fall living promotion">
 					</a>
 					<div class="unit map">
-						<p class="tit">전국 지점 찾기 <a href="#" class="more" title="more">더보기 +</a></p>
+						<p class="tit">전국 지점 찾기 <a href="#none" class="more" title="more">더보기 +</a></p>
 						<div class="select">
 							<select name="" class="slct">
 								<option selected="selected">서울</option>
@@ -98,7 +125,7 @@
 				<div class="box">
 					<div class="unit brochure">
 						<h3 class="tit">Paroma Brochure</h3>
-						<p class="sub_tit">MD's Pick<br>브로셔를 만나 보세요</p>
+						<p class="sub_tit">MD's Pick <br>브로셔를 만나 보세요</p>
 						<div class="btn_wrap">
 							<button type="button" class="btn ko">한글</button>
 							<button type="button" class="btn en">ENG</button>
@@ -106,23 +133,35 @@
 					</div>
 					<div class="product shop">
 						<h3 class="tit">Shopping <br>Guide</h3>
-						<p class="sub_tit">쇼핑안내<br>상품후기</p>
+						<p class="sub_tit">쇼핑안내 <br>상품후기</p>
 						<ul class="btn_dot">
-							<li><a href="#" title="1">1</a></li>
-							<li><a href="#" title="2">2</a></li>
-							<li><a href="#" title="3">3</a></li>
+							<li><a href="#none" title="1">1</a></li>
+							<li><a href="#none" title="2">2</a></li>
+							<li><a href="#none" title="3">3</a></li>
 						</ul>
 					</div>
 					<div class="event_img">
 						<ul class="img_moving">
-							<li><a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트"></a></li>
-							<li><a href="#" title="이벤트2"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner1.png" alt="이벤트"></a></li>
-							<li><a href="#" title="이벤트3"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner3.png" alt="이벤트"></a></li>
-							<li><a href="#" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트"></a></li>
+							<li><a href="#none" title="이벤트1"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트"></a></li>
+							<li><a href="#none" title="이벤트2"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner1.png" alt="이벤트"></a></li>
+							<li><a href="#none" title="이벤트3"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner3.png" alt="이벤트"></a></li>
+							<li><a href="#none" title="이벤트4"><img src="//Sonyoonkyung.github.io/test/src/img/img_banner2.png" alt="하반기 시즌 오프 가구이벤트"></a></li>
 						</ul>
 					</div>
-					<a href="#" class="ad" title="대리점/취급점"><img src="//sonyoonkyung.github.io/test/dist/img/main_bg3.png" alt="Kartell대리점/취급점 모집"></a>
+					<a href="#none" class="ad" title="대리점/취급점"><img src="//sonyoonkyung.github.io/test/dist/img/main_bg3.png" alt="Kartell 대리점/취급점 모집"></a>
 				</div>
+			</div>
+			<div class="wrap_site">
+				<ul class="site_slider">
+					<a href="#none" class="slide" title="kartell"><img src="//sonyoonkyung.github.io/test/dist/img/banner1.png" alt="kartell"></a>
+					<a href="#none" class="slide" title="acquaviva"><img src="//sonyoonkyung.github.io/test/dist/img/banner2.png" alt="acquaviva"></a>
+					<a href="#none" class="slide" title="rochebobois"><img src="//sonyoonkyung.github.io/test/dist/img/banner3.png" alt="rochebobois"></a>
+					<a href="#none" class="slide" title="flou S.P.A"><img src="//sonyoonkyung.github.io/test/dist/img/banner4.png" alt="flou S.P.A"></a>
+					<a href="#none" class="slide" title="mdf italia"><img src="//sonyoonkyung.github.io/test/dist/img/banner5.png" alt="mdf italia"></a>
+					<a href="#none" class="slide" title="한국가구"><img src="//sonyoonkyung.github.io/test/dist/img/banner6.png" alt="한국가구"></a>
+					<a href="#none" class="slide" title="mirage furniture"><img src="//sonyoonkyung.github.io/test/dist/img/banner7.png" alt="mirage furniture"></a>
+					<a href="#none" class="slide" title="mirage"><img src="//sonyoonkyung.github.io/test/dist/img/banner8.png" alt="mirage"></a>
+				</ul>
 			</div>
 		</section>
   </div>

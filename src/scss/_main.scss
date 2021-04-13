@@ -2,18 +2,18 @@
 .main_slider {
 	position: relative;
 	width: 100%;
-	height: 840px;
+	height: 540px;
 	.slide {
 		width: 100%;
-		height: 840px;
-		img:focus {
-			outline: none;
+		height: 540px;
+		&:focus {
+			outline: 0;
 		}
 	}
 	.controller {
 		position: absolute;
 		left: 50%;
-		bottom: 180px;
+		bottom: 110px;
 		transform: translateX(-50%);
 		width: auto;
 		li {
@@ -35,7 +35,8 @@
 	.btn_arrow {
 		position: absolute;
 		display: block;
-		top: 377px;
+		top: 50%;
+		transform: translateY(-50%);
 		width: 44px;
 		height: 86px;
 		z-index: 10;
@@ -54,7 +55,7 @@
 	position: relative;
 	.wrap_cont {
 		position: relative;
-		height: 328px;
+		height: 476px;
 	}
 	.cont {
 		position: absolute;
@@ -75,29 +76,37 @@
 		width: 275px;
 		height: 184px;
 		background-color: $gray;
-		.btn_tit button {
-			position: relative;
-			display: inline-block;
-			margin-left: 20px;
-			padding: 10px 10px 0 0;
-			font-size: 20px;
-			font-weight: bold;
-			letter-spacing: -1px;
-			color: #555;
-			&.on{
-				color: #f38200;
+		.btn_tit {
+			padding: 10px 20px 0;
+			button {
+				position: relative;
+				display: inline-block;
+				font-size: 20px;
+				line-height: 20px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				color: #555;
+				&.on{
+					color: #f38200;
+				}
+				&:first-child::before {
+					display: none;
+				}
+				&:before{
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: -7px;
+					width: 1px;
+					height: 20px;
+					background-color: #999;
+				}
+				&+button {
+					margin-left: 14px;
+				}
 			}
-			&:before{
-				content: "";
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 2px;
-				width: 1px;
-				height: 20px;
-				background-color: #999;
-			}
-		}
+		} 
 		.tab {
 			display: none;
 			width: 100%;
@@ -266,6 +275,56 @@
 		background-color: #000;
 		img {
 			width: 100%;
+		}
+	}
+}
+//맨 아래 로고 슬라이드
+.wrap_site {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1102px;
+	height: 68px;
+	padding: 0 40px;
+	box-sizing: border-box;
+	.site_slider {
+		width: 100%;
+		height: 68px;
+		.slide {
+			display: inline-block;
+			text-align: center;
+			img {
+				display: inline-block;
+			}
+			&:focus {
+				outline: 0;
+			}
+		}
+	}
+	.btn_arrow {
+		// position: absolute;
+		// display: block;
+		top: 0;
+		// width: 9px;
+		// height: 16px;
+		z-index: 10;
+		@include blind_txt;
+		&.prev {
+			left: -20px;
+			@include ico_angle_vrt(left, 16px, 9px, 2px, #222, block, absolute);
+			//background: url("//sonyoonkyung.github.io/test/dist/img/footer_btn_prev.jpg") 0 0 no-repeat;
+			&:hover {
+				color: #000;
+			}
+		}
+		&.next {
+			right: -20px;
+			@include ico_angle_vrt(right, 16px, 9px, 2px, #222, block, absolute);
+			//background: url("//sonyoonkyung.github.io/test/dist/img/footer_btn_next.jpg") 0 0 no-repeat;
+			&:hover {
+				color: #000;
+			}
 		}
 	}
 }
