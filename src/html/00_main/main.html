@@ -17,8 +17,9 @@
 			// 하단 사이트 로고 슬라이드
 			$(".site_slider").slick({
 				centerMode: true,
-				centerPadding: "65px",
+				centerPadding: "0px",
 				slidesToShow: 5,
+				slidesToScroll: 1,
 				infinite: true,
 				dots: false,
 				arrows: true,
@@ -48,24 +49,24 @@
   <!-- <include src="../include/pop/pop_ad.html"></include> -->
 	<include src="../include/skip_navi.html"></include>
   <include src="../include/header.html"></include>
-  <div class="container">
-		<div class="main_slider">
+  <main class="container" role="main">
+		<section class="main_slider">
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼1</p>
+				<h2 class="blind">키비쥬얼1</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual2.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼2</p>
+				<h2 class="blind">키비쥬얼2</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual3.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼3</p>
+				<h2 class="blind">키비쥬얼3</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual4.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼4</p>
+				<h2 class="blind">키비쥬얼4</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual5.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼5</p>
+				<h2 class="blind">키비쥬얼5</h2>
 			</div>
-		</div>
+		</section>
 		<section class="wrap_cont">
 			<div class="cont">
 				<div class="box">
@@ -153,7 +154,7 @@
 				</div>
 			</div>
 			<div class="wrap_site">
-				<ul class="site_slider">
+				<div class="site_slider">
 					<a href="#none" class="slide" title="kartell"><img src="//sonyoonkyung.github.io/test/dist/img/banner1.png" alt="kartell"></a>
 					<a href="#none" class="slide" title="acquaviva"><img src="//sonyoonkyung.github.io/test/dist/img/banner2.png" alt="acquaviva"></a>
 					<a href="#none" class="slide" title="rochebobois"><img src="//sonyoonkyung.github.io/test/dist/img/banner3.png" alt="rochebobois"></a>
@@ -162,10 +163,10 @@
 					<a href="#none" class="slide" title="한국가구"><img src="//sonyoonkyung.github.io/test/dist/img/banner6.png" alt="한국가구"></a>
 					<a href="#none" class="slide" title="mirage furniture"><img src="//sonyoonkyung.github.io/test/dist/img/banner7.png" alt="mirage furniture"></a>
 					<a href="#none" class="slide" title="mirage"><img src="//sonyoonkyung.github.io/test/dist/img/banner8.png" alt="mirage"></a>
-				</ul>
+				</div>
 			</div>
 		</section>
-  </div>
+  </main>
   <include src="../include/footer.html"></include>
 </body>
 </html>

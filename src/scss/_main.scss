@@ -1,74 +1,25 @@
-// 메인 슬라이드
-.main_slider {
-	position: relative;
+.main {
 	width: 100%;
-	height: 540px;
-	.slide {
-		width: 100%;
-		height: 540px;
-		&:focus {
-			outline: 0;
-		}
-	}
-	.controller {
-		position: absolute;
-		left: 50%;
-		bottom: 110px;
-		transform: translateX(-50%);
-		width: auto;
-		li {
-			float: left;
-			margin: 0 10px;
-			&.slick-active button {
-				background-color: #f90;
-			}
-			button {
-				display: block;
-				width: 16px;
-				height: 16px;
-				background-color: rgba(255,255,255,.5);
-				border-radius: 8px;
-				@include blind_txt;
-			}
-		}
-	}
-	.btn_arrow {
-		position: absolute;
-		display: block;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 44px;
-		height: 86px;
-		z-index: 10;
-		@include blind_txt;
-		&.prev {
-			left: 40px;
-			background: url("//sonyoonkyung.github.io/test/dist/img/btn_left.png") 0 0 no-repeat;
-		}
-		&.next {
-			right: 40px;
-			background: url("//sonyoonkyung.github.io/test/dist/img/btn_right.png") 0 0 no-repeat;
-		}
-	}
-}
-.main .container {
-	position: relative;
-	.wrap_cont {
+	min-width: 1280px;
+	.container {
 		position: relative;
-		height: 476px;
-	}
-	.cont {
-		position: absolute;
-		top: -90px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 1102px;
-		&:after {
-			@include clear;
+		.wrap_cont {
+			position: relative;
+			height: 476px;
 		}
-		.box {
-			float: left;
-			width: 100%;
+		.cont {
+			position: absolute;
+			top: -90px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1102px;
+			&:after {
+				@include clear;
+			}
+			.box {
+				float: left;
+				width: 100%;
+			}
 		}
 	}
 	.unit {
@@ -277,20 +228,75 @@
 			width: 100%;
 		}
 	}
+} 
+
+// 메인 슬라이드
+.main_slider {
+	position: relative;
+	width: 100%;
+	height: 540px;
+	.slide {
+		width: 100%;
+		height: 540px;
+		&:focus {
+			outline: 0;
+		}
+	}
+	.controller {
+		position: absolute;
+		left: 50%;
+		bottom: 110px;
+		transform: translateX(-50%);
+		width: auto;
+		li {
+			float: left;
+			margin: 0 10px;
+			&.slick-active button {
+				background-color: #f90;
+			}
+			button {
+				display: block;
+				width: 16px;
+				height: 16px;
+				background-color: rgba(255,255,255,.5);
+				border-radius: 8px;
+				@include blind_txt;
+			}
+		}
+	}
+	.btn_arrow {
+		position: absolute;
+		display: block;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 44px;
+		height: 86px;
+		z-index: 10;
+		@include blind_txt;
+		&.prev {
+			left: 40px;
+			background: url("//sonyoonkyung.github.io/test/dist/img/btn_left.png") 0 0 no-repeat;
+		}
+		&.next {
+			right: 40px;
+			background: url("//sonyoonkyung.github.io/test/dist/img/btn_right.png") 0 0 no-repeat;
+		}
+	}
 }
+
 //맨 아래 로고 슬라이드
 .wrap_site {
 	position: absolute;
 	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 1102px;
+	left: 0;
+	width: 100%;
 	height: 68px;
-	padding: 0 40px;
-	box-sizing: border-box;
+	border-top: 1px solid $gray;
 	.site_slider {
-		width: 100%;
-		height: 68px;
+		width: 1102px;
+		padding: 0 135px;
+		margin: 0 auto;
+		box-sizing: border-box;
 		.slide {
 			display: inline-block;
 			text-align: center;

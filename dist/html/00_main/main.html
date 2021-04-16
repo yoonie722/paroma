@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="Description" content="사이트 설명">
   <!-- <link rel="shortcut icon" href="../../img/favicon_20171130172335.ico" type="image/x-icon"> -->
-  <title></title> <!-- [페이지명 | 사이트명] -->
+  <title>test</title> <!-- [페이지명 | 사이트명] -->
   <script src="/ui_js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<!--<script type="text/javascript" src="//www.xxxx/jquery-1.12.4.min.js"></script>-->
@@ -32,8 +32,9 @@
 			// 하단 사이트 로고 슬라이드
 			$(".site_slider").slick({
 				centerMode: true,
-				centerPadding: "65px",
+				centerPadding: "0px",
 				slidesToShow: 5,
+				slidesToScroll: 1,
 				infinite: true,
 				dots: false,
 				arrows: true,
@@ -56,6 +57,7 @@
 			$("." + target + " .cont").hide();
 			$("." + target + " .cont").eq(num).show();
 		}
+		//dkdkd
 		//<a href="#none" onclick="event.preventDefault();fnShowCont(this,'module','0');" class="on">슬라이드</a>
 
 	</script>
@@ -175,24 +177,24 @@
   	<button class="ico ico_close btn_close"><span>닫기</span></button>
   </div> -->
   <!-- E : popup -->
-  <div class="container">
-		<div class="main_slider">
+  <main class="container" role="main">
+		<section class="main_slider">
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual1.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼1</p>
+				<h2 class="blind">키비쥬얼1</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual2.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼2</p>
+				<h2 class="blind">키비쥬얼2</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual3.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼3</p>
+				<h2 class="blind">키비쥬얼3</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual4.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼4</p>
+				<h2 class="blind">키비쥬얼4</h2>
 			</div>
 			<div class="slide" style="background: #fff url(//sonyoonkyung.github.io/test/dist/img/keyvisual5.jpg) no-repeat 0 50%;">
-				<p class="blind">키비쥬얼5</p>
+				<h2 class="blind">키비쥬얼5</h2>
 			</div>
-		</div>
+		</section>
 		<section class="wrap_cont">
 			<div class="cont">
 				<div class="box">
@@ -280,7 +282,7 @@
 				</div>
 			</div>
 			<div class="wrap_site">
-				<ul class="site_slider">
+				<div class="site_slider">
 					<a href="#none" class="slide" title="kartell"><img src="//sonyoonkyung.github.io/test/dist/img/banner1.png" alt="kartell"></a>
 					<a href="#none" class="slide" title="acquaviva"><img src="//sonyoonkyung.github.io/test/dist/img/banner2.png" alt="acquaviva"></a>
 					<a href="#none" class="slide" title="rochebobois"><img src="//sonyoonkyung.github.io/test/dist/img/banner3.png" alt="rochebobois"></a>
@@ -289,29 +291,11 @@
 					<a href="#none" class="slide" title="한국가구"><img src="//sonyoonkyung.github.io/test/dist/img/banner6.png" alt="한국가구"></a>
 					<a href="#none" class="slide" title="mirage furniture"><img src="//sonyoonkyung.github.io/test/dist/img/banner7.png" alt="mirage furniture"></a>
 					<a href="#none" class="slide" title="mirage"><img src="//sonyoonkyung.github.io/test/dist/img/banner8.png" alt="mirage"></a>
-				</ul>
+				</div>
 			</div>
 		</section>
-  </div>
+  </main>
   <footer>
-    <div class="site_wrap">
-      <div class="site_inner">
-        <div class="direction">
-          <a class="prev" href="#none" title="prev"><img src="//sonyoonkyung.github.io/test/dist/img/footer_btn_prev.jpg" alt="prev" title="prev"></a>
-          <a class="next" href="#none" title="next"><img src="//sonyoonkyung.github.io/test/dist/img/footer_btn_next.jpg" alt="next" title="next"></a>
-        </div>
-  			<ul class="site">
-  				<li><a href="#none" title="kartell"><img src="//sonyoonkyung.github.io/test/dist/img/banner1.png" alt="kartell" title="kartell"></a></li>
-  				<li><a href="#none" title="acquaviva"><img src="//sonyoonkyung.github.io/test/dist/img/banner2.png" alt="acquaviva" title="acquaviva"></a></li>
-  				<li><a href="#none" title="rochebobois"><img src="//sonyoonkyung.github.io/test/dist/img/banner3.png" alt="rochebobois" title="rochebobois"></a></li>
-  				<li><a href="#none" title="flou S.P.A"><img src="//sonyoonkyung.github.io/test/dist/img/banner4.png" alt="flou S.P.A" title="flou S.P.A"></a></li>
-  				<li><a href="#none" title="mdf italia"><img src="//sonyoonkyung.github.io/test/dist/img/banner5.png" alt="mdf italia" title="mdf italia"></a></li>
-  				<li><a href="#none" title="한국가구"><img src="//sonyoonkyung.github.io/test/dist/img/banner6.png" alt="한국가구" title="한국가구"></a></li>
-  				<li><a href="#none" title="mirage furniture"><img src="//sonyoonkyung.github.io/test/dist/img/banner7.png" alt="mirage furniture" title="mirage furniture"></a></li>
-  				<li><a href="#none" title="mirage"><img src="//sonyoonkyung.github.io/test/dist/img/banner8.png" alt="mirage" title="mirage"></a></li>
-  			</ul>
-      </div>
-    </div>
     <div class="wrap">
       <div class="f_top">
         <div class="f_top_inner">
@@ -332,13 +316,15 @@
       </div>
       <div class="biz">
         <div class="biz_inner">
-          <div class="biz_logo"><a href="#none" title="footer_logo"><img src="//sonyoonkyung.github.io/test/dist/img/logo12.png" alt="파로마" title="파로마"></a></div>
-          <adress>
-            <p>COMPANY 파로마리빙 OWNER 김병숙 TEL 070-7714-8014
-              <br>사업자등록번호 105-35-98403 NETWORK REG.NO 제2017-경기광명-0564 <a href="#none" title="INFORMATION">INFORMATION</a>
-              <br>ADDRESS 경기도 광명시 오리로 801 (하안동) 109동 501호 (POST:14256) MASTER 안윤주 ALLIANCE <a href="#none" title="이메일">@paromaon@naver.com</a>
-            </p>
-          </adress>
+          <div class="biz_logo">
+  					<a href="#none" title="footer_logo">
+  						<img src="//sonyoonkyung.github.io/test/dist/img/logo12.png" alt="파로마" title="파로마">
+  					</a>
+  				</div>
+  				<p>COMPANY 파로마리빙 OWNER 김병숙 TEL 070-7714-8014
+  					<br>사업자등록번호 105-35-98403 NETWORK REG.NO 제2017-경기광명-0564 <a href="#none" title="INFORMATION">INFORMATION</a>
+  					<br>ADDRESS 경기도 광명시 오리로 801 (하안동) 109동 501호 (POST:14256) MASTER 안윤주 ALLIANCE <a href="#none" title="이메일">@paromaon@naver.com</a>
+  				</p>
         </div>
       </div>
     </div>
