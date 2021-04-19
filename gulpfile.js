@@ -15,7 +15,7 @@ const paths = {
   input: './src/**/*',
   output: './dist/',
   html: {
-    input: './src/html/**',
+    input: './src/html/**/**/**',
     output: './dist/html/'
   },
   style: {

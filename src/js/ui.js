@@ -166,4 +166,43 @@ $(function(){
 		$(".main_notice .tab_group > div").eq(n).addClass("active");
 	});
 
+	//셀렉트 박스 제어 //select 커스텀 - type1
+	$('.bx_slct .nm').click(function () {
+		if ($(this).parent().hasClass("over")) {
+			$(this).parent().removeClass("over");
+		} else {
+			$(".bx_slct").removeClass("over");
+			$(this).parent().addClass("over");
+		}
+	});
+
+	$('.bx_slct li').click(function () {
+		$('.bx_slct li').removeClass("on");
+		$(".bx_slct").removeClass("over");
+		$(this).addClass("on");
+		$(this).parents(".bx_slct").find(".nm strong").text($(this).contents('.name').text());
+	});
+
+	//select 커스텀 - type2
+	$('.bx_selc .nm').click(function () {
+		if ($(this).parent().hasClass("over")) {
+			$(this).parent().removeClass("over");
+		} else {
+			$(".bx_selc").removeClass("over");
+			$(this).parent().addClass("over");
+			// if(_device === 'mobile'){
+			// 	_popMask.addClass('active');
+			// }
+		}
+	});
+	$('.bx_selc li').click(function () {
+		var currentele = $(this).html();
+
+		$('.bx_selc li').removeClass("on");
+		$(".bx_selc").removeClass("over");
+		$(this).addClass("on");
+		// $(this).parents(".bx_selc").find(".nm span").text($(this).contents('.name').text());
+		$(this).parents(".bx_selc").find(".nm span").html(currentele);
+	});
+
 });

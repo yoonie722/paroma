@@ -299,9 +299,18 @@
 		box-sizing: border-box;
 		.slide {
 			display: inline-block;
-			text-align: center;
+			height:68px; 
+			line-height:68px;
+      text-align:center;
+			/* slick 지지직 오류시 넣는거 */
+			overflow: hidden;
+			-webkit-backface-visibility: hidden;
+    	-webkit-transform: translateZ(0) scale(1, 1);
+			/* slick 지지직 오류시 넣는거 */
 			img {
 				display: inline-block;
+				max-width:100%; max-height:100%;
+        vertical-align:middle;
 			}
 			&:focus {
 				outline: 0;
@@ -311,14 +320,15 @@
 	.btn_arrow {
 		// position: absolute;
 		// display: block;
-		top: 0;
 		// width: 9px;
 		// height: 16px;
+		top: 50%;
+		transform: translateY(-50%);
 		z-index: 10;
 		@include blind_txt;
 		&.prev {
 			left: -20px;
-			@include ico_angle_vrt(left, 16px, 9px, 2px, #222, block, absolute);
+			@include ico_angle_vrt(left, 32px, 18px, 3px, #b2b2b2, block, absolute);
 			//background: url("//sonyoonkyung.github.io/test/dist/img/footer_btn_prev.jpg") 0 0 no-repeat;
 			&:hover {
 				color: #000;
@@ -326,11 +336,14 @@
 		}
 		&.next {
 			right: -20px;
-			@include ico_angle_vrt(right, 16px, 9px, 2px, #222, block, absolute);
+			@include ico_angle_vrt(right, 32px, 18px, 3px, #b2b2b2, block, absolute);
 			//background: url("//sonyoonkyung.github.io/test/dist/img/footer_btn_next.jpg") 0 0 no-repeat;
 			&:hover {
 				color: #000;
 			}
+		}
+		&:hover {
+			border-color: $point;
 		}
 	}
 }

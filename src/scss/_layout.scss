@@ -244,82 +244,21 @@ footer {
 	width: 100%;
 	min-width: 1280px;
 	box-sizing: border-box;
-	background: $white;
-	.site_wrap{
+	background-color: #f2f2f2;
+	.top{
 		width: 100%;
-		min-width: 1100px;
-		height: 68px;
-		border-top: 1px solid $gray;
-		border-bottom: 1px solid $gray;
-		background-color: #fff;
-		.site_inner{
-			position: relative;
+		height: 45px;
+		border-bottom: 1px solid #d7d5d5;
+		.wrap {
 			margin: 0 auto;
 			width: 1100px;
-			height: 68px;
+			height: 45px;
 		}
 	}
-	.direction a{
-		&.prev{
-			position: absolute;
-			left: 0;
-			top: 25px;
-		}
-		&.next{
-			position: absolute;
-			right: 0;
-			top: 25px;
-		}
-	}
-	.site{
-		position: relative;
-		margin: 0 auto;
-		width: 835px;
-		height: 67px;
-		overflow: hidden;
-		ul{
-			position: absolute;
-			width: 1336px; /* 167*8 */
-			height: 67px;
-		}
-		li{
-			position: relative;
-			float: left;
-			padding: 0 20px;
-			width: 167px;
-			height: 65px;
-		}
-		a{
-			display: block;
-			height: 65px;
-			line-height: 65px;
-			text-align: center;
-		}
-		img{
-			vertical-align: middle;
-		}
-	}
-	.wrap{
-		width: 100%;
-		height: 185px;
-		background-color: #f2f2f2;
-	}
-	.f_top{
-		float: left;
-		width: 100%;
-		min-width: 1100px;
-		height: 45px;
-		line-height: 45px;
-		border-bottom: 1px solid #d7d5d5;
-	}
-	.f_top_inner{
-		margin: 0 auto;
-		width: 1100px;
-		height: 45px;
-	}
-	.f_menu{
+	.footmenu{
 		li{
 			float: left;
+			line-height: 45px;
 			&:first-child a{
 				padding-left: 0;
 			}
@@ -354,35 +293,33 @@ footer {
 			color: #777;
 		}
 	}
-	.biz{
-		min-width: 1100px;
-		height: 185px;
-	}
-	.biz_inner{
-		width: 1100px;
-		margin: 0 auto;
-		.biz_logo{
-			float: left;
-			width: 165px;
-			height: 56px;
-			margin-top: 30px;
-			a{
-				display: block;
+	.bottom{
+		padding: 30px 0;
+		box-sizing: border-box;
+		.wrap {
+			width: 1100px;
+			margin: 0 auto;
+		}
+		.address{
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 30px;
+			line-height: 30px;
+			font-size: 14px;
+			color: #89878a;
+			a {
+				color: $black;
+				font-weight: $bold;
 			}
 		}
 	}
-	.address{
-		float: left;
-		margin: 10px 0 0 30px;
-		p{
-			line-height: 30px;
-			font-size: 14px;
-			font-style: normal;
-			color: #89878a;
-		}
-		a{
-			color: $black;
-			font-weight: 400;
+	.footer_logo{
+		display: inline-block;
+		width: 165px;
+		height: 56px;
+		vertical-align: middle;
+		img {
+			width: 100%;
 		}
 	}
 }
