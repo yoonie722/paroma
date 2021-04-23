@@ -1,13 +1,11 @@
-@include setFont("VarelaRound", "VarelaRound-Regular", 100);
-@include setFont("Dohyeon", "DoHyeon-Regular", 100);
-@include setFont("NanumGothic", "NanumGothic-Regular", 100);
-@include setFont("NanumGothic", "NanumGothic-ExtraBold", 600);
-@include setFont("NanumGothic", "NanumGothic-Bold", 400);
-//@include setFont("NotoSans", "NotoSansCJK_Medium", 400);
+@include setFont("NotoSans", "NotoSansCJK_Light", 100);
+@include setFont("NotoSans", "NotoSansCJK_Medium", 400);
+@include setFont("NotoSans", "NotoSansCJK_Bold", 600);
+
 //common control
 html,body {
   border:none;
-  font-family:$family;
+  @include fontfamily(100);
   font-size:15px;
   line-height: 1.6;
   color:$black;
@@ -53,7 +51,7 @@ button {
 	padding:0px;
 }
 input[type=text], input[type=password], input[type=tel], input[type=email], input[type=button], input[type=submit], input[type=reset], button, select {
-  font-family:$family;
+  @include fontfamily(100);
 }
 
 a {
