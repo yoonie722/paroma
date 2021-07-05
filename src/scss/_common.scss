@@ -59,10 +59,10 @@ select::-ms-expand {
 .slct {
 	width: 100%;
 	height: 40px;
+	color: #222;
 	border: 1px solid #dddddd;
 	border-radius: 4px; 
 	padding: 0px 20px;
-	font-family: inherit;  /* 폰트 상속 */
 	font-size: 15px;
 	line-height: 2.6;
 	box-sizing: border-box;
@@ -80,6 +80,12 @@ select::-ms-expand {
 			color:#c4c4c4;
 		}
 	}
+	option {
+		font-weight: 100; //글씨가 굵게 보이는 현상으로 인하여 설정
+	} 
+}
+select::-ms-expand {
+	display: none;
 }
 .bx_slct {
 	font-size: 17px;

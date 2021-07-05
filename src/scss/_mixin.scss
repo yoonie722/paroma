@@ -17,7 +17,10 @@
     local("※"), url($font_url + $fileNm + ".woff") format("woff");
   }
 }
-
+@mixin fontfamily($weight:100){
+  font-family: $family;
+  font-weight:$weight;
+}
 // @mixin respond-to($media) {
 // 	@if $media == tablet {
 // 		@media (max-width:$pc_size) { @content; }
@@ -27,11 +30,6 @@
 // 		@media (min-width:$pc_size) { @content; }
 // 	}
 // }
-
-@mixin fontfamily($weight:100){
-  font-family: $family;
-  font-weight:$weight;
-}
 
 @mixin bg($fileNm:null, $repeat:no-repeat, $bgPos:0 0, $bgSize:null, $bgColor:null){
   background:$bgColor url($url + $fileNm + $version) $repeat $bgPos;

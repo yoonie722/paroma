@@ -43,7 +43,7 @@ function browserSync(done) {
     server: {
       baseDir: paths.output
     },
-    startPath: './html/index.html' //index.html 일반 프로젝트에서는 index.html 로 변경
+    startPath: './html/00_main/main.html' //index.html 일반 프로젝트에서는 index.html 로 변경
   });
   done();
 }
